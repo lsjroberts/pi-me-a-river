@@ -1,0 +1,46 @@
+extends layouts/master
+
+include mixins/form
+
+block content
+    header.hero
+        h1 Pi Me A River
+
+    div.row
+        div.small-12.large-6.columns
+            p
+                a(href="http://www.youtube.com/watch?v=TUErNWBOkUM") Numberphile
+
+        div.small-12.large-6.columns
+            +form("river", "post")
+                +field("name")
+                +field("real_length")
+
+                p either
+                +field("crow_length")
+
+                p or
+                +field("source_lat")
+                +field("source_lng")
+                +field("mouth_lat")
+                +field("mouth_lng")
+
+                input(type="submit", value="Add your river").button
+
+    div.row
+        div.small-12.large-12.columns
+            h2 Is it Pi?
+            h3 Average Sinuosity: #{averageSinuosity}
+
+    div.row
+        div.small-12.large-12.columns
+            each river in rivers
+                div.row
+                    div.small-12.large-6.columns
+                        h2
+                            a(href="/river/#{river._id}")= river.name
+                        p Real Length #{river.realLength} km
+                        p Crow Length #{river.crowLength} km
+                        p Sinuosity #{river.sinuosity}
+                    div.small-12.large-6.columns
+                        p some graphs

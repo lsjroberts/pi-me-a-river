@@ -1,0 +1,1708 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.2.23
+3 info using node@v0.11.3-pre
+4 verbose read json /home/laurence/Documents/Code/pimeariver/package.json
+5 warn package.json pimeariver@0.0.1 No repository field.
+6 warn package.json pimeariver@0.0.1 No readme data.
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ '/home/laurence/Documents/Code/pimeariver',
+8 verbose install   [ 'http', 'express', 'jade', 'nedb', 'haversine', 'gulp' ] ]
+9 verbose from cache /home/laurence/Documents/Code/pimeariver/package.json
+10 info preinstall pimeariver@0.0.1
+11 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/express/package.json
+12 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/haversine/package.json
+13 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/http/package.json
+14 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/jade/package.json
+15 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/nedb/package.json
+16 warn package.json http@0.0.0 No repository field.
+17 verbose from cache /home/laurence/Documents/Code/pimeariver/package.json
+18 verbose readDependencies using package.json deps
+19 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/express/package.json
+20 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/haversine/package.json
+21 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/http/package.json
+22 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/jade/package.json
+23 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/nedb/package.json
+24 verbose cache add [ 'nedb@~0.10.4', null ]
+25 verbose cache add name=undefined spec="nedb@~0.10.4" args=["nedb@~0.10.4",null]
+26 verbose parsed url { protocol: null,
+26 verbose parsed url   slashes: null,
+26 verbose parsed url   auth: null,
+26 verbose parsed url   host: null,
+26 verbose parsed url   port: null,
+26 verbose parsed url   hostname: null,
+26 verbose parsed url   hash: null,
+26 verbose parsed url   search: null,
+26 verbose parsed url   query: null,
+26 verbose parsed url   pathname: 'nedb@~0.10.4',
+26 verbose parsed url   path: 'nedb@~0.10.4',
+26 verbose parsed url   href: 'nedb@~0.10.4' }
+27 verbose cache add name="nedb" spec="~0.10.4" args=["nedb","~0.10.4"]
+28 verbose parsed url { protocol: null,
+28 verbose parsed url   slashes: null,
+28 verbose parsed url   auth: null,
+28 verbose parsed url   host: null,
+28 verbose parsed url   port: null,
+28 verbose parsed url   hostname: null,
+28 verbose parsed url   hash: null,
+28 verbose parsed url   search: null,
+28 verbose parsed url   query: null,
+28 verbose parsed url   pathname: '~0.10.4',
+28 verbose parsed url   path: '~0.10.4',
+28 verbose parsed url   href: '~0.10.4' }
+29 verbose addNamed [ 'nedb', '~0.10.4' ]
+30 verbose addNamed [ null, '>=0.10.4- <0.11.0-' ]
+31 verbose already installed skipping haversine@0.0.4 /home/laurence/Documents/Code/pimeariver
+32 verbose cache add [ 'gulp@~3', null ]
+33 verbose cache add name=undefined spec="gulp@~3" args=["gulp@~3",null]
+34 verbose parsed url { protocol: null,
+34 verbose parsed url   slashes: null,
+34 verbose parsed url   auth: null,
+34 verbose parsed url   host: null,
+34 verbose parsed url   port: null,
+34 verbose parsed url   hostname: null,
+34 verbose parsed url   hash: null,
+34 verbose parsed url   search: null,
+34 verbose parsed url   query: null,
+34 verbose parsed url   pathname: 'gulp@~3',
+34 verbose parsed url   path: 'gulp@~3',
+34 verbose parsed url   href: 'gulp@~3' }
+35 verbose cache add name="gulp" spec="~3" args=["gulp","~3"]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: '~3',
+36 verbose parsed url   path: '~3',
+36 verbose parsed url   href: '~3' }
+37 verbose addNamed [ 'gulp', '~3' ]
+38 verbose addNamed [ null, '>=3.0.0- <4.0.0-' ]
+39 silly lockFile 5f45bedd-nedb-0-10-4 nedb@~0.10.4
+40 verbose lock nedb@~0.10.4 /home/laurence/.npm/5f45bedd-nedb-0-10-4.lock
+41 silly lockFile f47fd40f-gulp-3 gulp@~3
+42 verbose lock gulp@~3 /home/laurence/.npm/f47fd40f-gulp-3.lock
+43 verbose already installed skipping http@0.0.0 /home/laurence/Documents/Code/pimeariver
+44 silly addNameRange { name: 'nedb', range: '>=0.10.4- <0.11.0-', hasData: false }
+45 silly addNameRange { name: 'gulp', range: '>=3.0.0- <4.0.0-', hasData: false }
+46 verbose cache add [ 'express@~3.4.8', null ]
+47 verbose cache add name=undefined spec="express@~3.4.8" args=["express@~3.4.8",null]
+48 verbose parsed url { protocol: null,
+48 verbose parsed url   slashes: null,
+48 verbose parsed url   auth: null,
+48 verbose parsed url   host: null,
+48 verbose parsed url   port: null,
+48 verbose parsed url   hostname: null,
+48 verbose parsed url   hash: null,
+48 verbose parsed url   search: null,
+48 verbose parsed url   query: null,
+48 verbose parsed url   pathname: 'express@~3.4.8',
+48 verbose parsed url   path: 'express@~3.4.8',
+48 verbose parsed url   href: 'express@~3.4.8' }
+49 verbose cache add name="express" spec="~3.4.8" args=["express","~3.4.8"]
+50 verbose parsed url { protocol: null,
+50 verbose parsed url   slashes: null,
+50 verbose parsed url   auth: null,
+50 verbose parsed url   host: null,
+50 verbose parsed url   port: null,
+50 verbose parsed url   hostname: null,
+50 verbose parsed url   hash: null,
+50 verbose parsed url   search: null,
+50 verbose parsed url   query: null,
+50 verbose parsed url   pathname: '~3.4.8',
+50 verbose parsed url   path: '~3.4.8',
+50 verbose parsed url   href: '~3.4.8' }
+51 verbose addNamed [ 'express', '~3.4.8' ]
+52 verbose addNamed [ null, '>=3.4.8- <3.5.0-' ]
+53 silly lockFile 655fa913-express-3-4-8 express@~3.4.8
+54 verbose lock express@~3.4.8 /home/laurence/.npm/655fa913-express-3-4-8.lock
+55 silly addNameRange { name: 'express', range: '>=3.4.8- <3.5.0-', hasData: false }
+56 verbose url raw nedb
+57 verbose url resolving [ 'https://registry.npmjs.org/', './nedb' ]
+58 verbose url resolved https://registry.npmjs.org/nedb
+59 info trying registry request attempt 1 at 11:03:44
+60 verbose etag "37Q101HUUFHNY8LCMCZRKMA3V"
+61 http GET https://registry.npmjs.org/nedb
+62 verbose already installed skipping jade@~1.1.5 /home/laurence/Documents/Code/pimeariver
+63 verbose url raw gulp
+64 verbose url resolving [ 'https://registry.npmjs.org/', './gulp' ]
+65 verbose url resolved https://registry.npmjs.org/gulp
+66 info trying registry request attempt 1 at 11:03:44
+67 verbose etag "9DS7MQQ7B53SIYU4EYDKWHPGB"
+68 http GET https://registry.npmjs.org/gulp
+69 verbose url raw express
+70 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+71 verbose url resolved https://registry.npmjs.org/express
+72 info trying registry request attempt 1 at 11:03:44
+73 verbose etag "AW1WIKSMHHVZZVR9QZKM1ODKX"
+74 http GET https://registry.npmjs.org/express
+75 http 304 https://registry.npmjs.org/nedb
+76 silly registry.get cb [ 304,
+76 silly registry.get   { date: 'Sat, 15 Mar 2014 11:03:45 GMT',
+76 silly registry.get     server: 'Apache',
+76 silly registry.get     via: '1.1 varnish',
+76 silly registry.get     'last-modified': 'Sat, 15 Mar 2014 11:03:45 GMT',
+76 silly registry.get     'cache-control': 'max-age=1',
+76 silly registry.get     etag: '"37Q101HUUFHNY8LCMCZRKMA3V"',
+76 silly registry.get     'x-served-by': 'cache-lcy1129-LCY',
+76 silly registry.get     'x-cache': 'MISS',
+76 silly registry.get     'x-cache-hits': '0',
+76 silly registry.get     'x-timer': 'S1394881425.486145973,VS0,VE132',
+76 silly registry.get     vary: 'Accept',
+76 silly registry.get     'content-length': '0',
+76 silly registry.get     'keep-alive': 'timeout=10, max=50',
+76 silly registry.get     connection: 'Keep-Alive' } ]
+77 verbose etag nedb from cache
+78 silly addNameRange number 2 { name: 'nedb', range: '>=0.10.4- <0.11.0-', hasData: true }
+79 silly addNameRange versions [ 'nedb',
+79 silly addNameRange   [ '0.0.1',
+79 silly addNameRange     '0.0.2',
+79 silly addNameRange     '0.0.3',
+79 silly addNameRange     '0.0.4',
+79 silly addNameRange     '0.0.5',
+79 silly addNameRange     '0.0.6',
+79 silly addNameRange     '0.0.7',
+79 silly addNameRange     '0.2.0',
+79 silly addNameRange     '0.3.0',
+79 silly addNameRange     '0.3.2',
+79 silly addNameRange     '0.3.3',
+79 silly addNameRange     '0.3.4',
+79 silly addNameRange     '0.3.5',
+79 silly addNameRange     '0.3.6',
+79 silly addNameRange     '0.4.0',
+79 silly addNameRange     '0.4.1',
+79 silly addNameRange     '0.4.2',
+79 silly addNameRange     '0.5.0',
+79 silly addNameRange     '0.5.1',
+79 silly addNameRange     '0.5.2',
+79 silly addNameRange     '0.5.3',
+79 silly addNameRange     '0.5.4',
+79 silly addNameRange     '0.6.0',
+79 silly addNameRange     '0.6.1',
+79 silly addNameRange     '0.6.2',
+79 silly addNameRange     '0.7.0',
+79 silly addNameRange     '0.7.1',
+79 silly addNameRange     '0.7.2',
+79 silly addNameRange     '0.7.3',
+79 silly addNameRange     '0.7.4',
+79 silly addNameRange     '0.7.5',
+79 silly addNameRange     '0.7.6',
+79 silly addNameRange     '0.7.7',
+79 silly addNameRange     '0.7.8',
+79 silly addNameRange     '0.7.9',
+79 silly addNameRange     '0.7.10',
+79 silly addNameRange     '0.7.11',
+79 silly addNameRange     '0.7.12',
+79 silly addNameRange     '0.7.13',
+79 silly addNameRange     '0.7.14',
+79 silly addNameRange     '0.7.15',
+79 silly addNameRange     '0.8.0',
+79 silly addNameRange     '0.8.1',
+79 silly addNameRange     '0.8.2',
+79 silly addNameRange     '0.8.3',
+79 silly addNameRange     '0.8.4',
+79 silly addNameRange     '0.8.5',
+79 silly addNameRange     '0.8.6',
+79 silly addNameRange     '0.8.7',
+79 silly addNameRange     '0.8.8',
+79 silly addNameRange     '0.8.9',
+79 silly addNameRange     '0.8.10',
+79 silly addNameRange     '0.8.11',
+79 silly addNameRange     '0.8.12',
+79 silly addNameRange     '0.8.13',
+79 silly addNameRange     '0.9.1',
+79 silly addNameRange     '0.9.2',
+79 silly addNameRange     '0.9.3',
+79 silly addNameRange     '0.9.4',
+79 silly addNameRange     '0.10.0',
+79 silly addNameRange     '0.10.1',
+79 silly addNameRange     '0.10.2',
+79 silly addNameRange     '0.10.3',
+79 silly addNameRange     '0.10.4' ] ]
+80 verbose addNamed [ 'nedb', '0.10.4' ]
+81 verbose addNamed [ '0.10.4', '0.10.4' ]
+82 silly lockFile faf723cc-nedb-0-10-4 nedb@0.10.4
+83 verbose lock nedb@0.10.4 /home/laurence/.npm/faf723cc-nedb-0-10-4.lock
+84 verbose read json /home/laurence/.npm/nedb/0.10.4/package/package.json
+85 silly lockFile faf723cc-nedb-0-10-4 nedb@0.10.4
+86 silly lockFile faf723cc-nedb-0-10-4 nedb@0.10.4
+87 silly lockFile 5f45bedd-nedb-0-10-4 nedb@~0.10.4
+88 silly lockFile 5f45bedd-nedb-0-10-4 nedb@~0.10.4
+89 http 304 https://registry.npmjs.org/express
+90 silly registry.get cb [ 304,
+90 silly registry.get   { date: 'Sat, 15 Mar 2014 11:03:45 GMT',
+90 silly registry.get     server: 'Apache',
+90 silly registry.get     via: '1.1 varnish',
+90 silly registry.get     'last-modified': 'Sat, 15 Mar 2014 11:03:46 GMT',
+90 silly registry.get     'cache-control': 'max-age=1',
+90 silly registry.get     etag: '"AW1WIKSMHHVZZVR9QZKM1ODKX"',
+90 silly registry.get     'x-served-by': 'cache-lcy1124-LCY',
+90 silly registry.get     'x-cache': 'HIT',
+90 silly registry.get     'x-cache-hits': '1',
+90 silly registry.get     'x-timer': 'S1394881425.489045620,VS0,VE606',
+90 silly registry.get     vary: 'Accept',
+90 silly registry.get     'content-length': '0',
+90 silly registry.get     'keep-alive': 'timeout=10, max=50',
+90 silly registry.get     connection: 'Keep-Alive' } ]
+91 verbose etag express from cache
+92 silly addNameRange number 2 { name: 'express', range: '>=3.4.8- <3.5.0-', hasData: true }
+93 silly addNameRange versions [ 'express',
+93 silly addNameRange   [ '0.14.0',
+93 silly addNameRange     '0.14.1',
+93 silly addNameRange     '1.0.0',
+93 silly addNameRange     '1.0.1',
+93 silly addNameRange     '1.0.2',
+93 silly addNameRange     '1.0.3',
+93 silly addNameRange     '1.0.4',
+93 silly addNameRange     '1.0.5',
+93 silly addNameRange     '1.0.6',
+93 silly addNameRange     '1.0.7',
+93 silly addNameRange     '1.0.8',
+93 silly addNameRange     '2.0.0',
+93 silly addNameRange     '2.1.0',
+93 silly addNameRange     '2.1.1',
+93 silly addNameRange     '2.2.0',
+93 silly addNameRange     '2.2.1',
+93 silly addNameRange     '2.2.2',
+93 silly addNameRange     '2.3.0',
+93 silly addNameRange     '2.3.1',
+93 silly addNameRange     '2.3.2',
+93 silly addNameRange     '2.3.3',
+93 silly addNameRange     '2.3.4',
+93 silly addNameRange     '2.3.5',
+93 silly addNameRange     '2.3.6',
+93 silly addNameRange     '2.3.7',
+93 silly addNameRange     '2.3.8',
+93 silly addNameRange     '2.3.9',
+93 silly addNameRange     '2.3.10',
+93 silly addNameRange     '2.3.11',
+93 silly addNameRange     '2.3.12',
+93 silly addNameRange     '2.4.0',
+93 silly addNameRange     '2.4.1',
+93 silly addNameRange     '2.4.2',
+93 silly addNameRange     '2.4.3',
+93 silly addNameRange     '2.4.4',
+93 silly addNameRange     '2.4.5',
+93 silly addNameRange     '2.4.6',
+93 silly addNameRange     '2.4.7',
+93 silly addNameRange     '2.5.0',
+93 silly addNameRange     '2.5.1',
+93 silly addNameRange     '2.5.2',
+93 silly addNameRange     '2.5.3',
+93 silly addNameRange     '2.5.4',
+93 silly addNameRange     '2.5.5',
+93 silly addNameRange     '2.5.6',
+93 silly addNameRange     '2.5.7',
+93 silly addNameRange     '2.5.8',
+93 silly addNameRange     '2.5.9',
+93 silly addNameRange     '2.5.10',
+93 silly addNameRange     '2.5.11',
+93 silly addNameRange     '3.0.0',
+93 silly addNameRange     '3.0.1',
+93 silly addNameRange     '3.0.2',
+93 silly addNameRange     '3.0.3',
+93 silly addNameRange     '3.0.4',
+93 silly addNameRange     '3.0.5',
+93 silly addNameRange     '3.0.6',
+93 silly addNameRange     '3.1.0',
+93 silly addNameRange     '3.1.1',
+93 silly addNameRange     '3.1.2',
+93 silly addNameRange     '3.2.0',
+93 silly addNameRange     '3.2.1',
+93 silly addNameRange     '3.2.2',
+93 silly addNameRange     '3.2.3',
+93 silly addNameRange     '3.2.4',
+93 silly addNameRange     '3.2.5',
+93 silly addNameRange     '3.2.6',
+93 silly addNameRange     '3.3.0',
+93 silly addNameRange     '3.3.1',
+93 silly addNameRange     '3.3.2',
+93 silly addNameRange     '3.3.3',
+93 silly addNameRange     '3.3.4',
+93 silly addNameRange     '3.3.5',
+93 silly addNameRange     '3.3.6',
+93 silly addNameRange     '1.0.0-beta',
+93 silly addNameRange     '1.0.0-beta2',
+93 silly addNameRange     '1.0.0-rc',
+93 silly addNameRange     '1.0.0-rc2',
+93 silly addNameRange     '1.0.0-rc3',
+93 silly addNameRange     '1.0.0-rc4',
+93 silly addNameRange     '2.0.0-beta',
+93 silly addNameRange     '2.0.0-beta2',
+93 silly addNameRange     '2.0.0-beta3',
+93 silly addNameRange     '2.0.0-rc',
+93 silly addNameRange     '2.0.0-rc2',
+93 silly addNameRange     '2.0.0-rc3',
+93 silly addNameRange     '3.0.0-alpha1',
+93 silly addNameRange     '3.0.0-alpha2',
+93 silly addNameRange     '3.0.0-alpha3',
+93 silly addNameRange     '3.0.0-alpha4',
+93 silly addNameRange     '3.0.0-alpha5',
+93 silly addNameRange     '3.0.0-beta1',
+93 silly addNameRange     '3.0.0-beta2',
+93 silly addNameRange     '3.0.0-beta3',
+93 silly addNameRange     '3.0.0-beta4',
+93 silly addNameRange     '3.0.0-beta6',
+93 silly addNameRange     '3.0.0-beta7',
+93 silly addNameRange     '3.0.0-rc1',
+93 silly addNameRange     '3.0.0-rc2',
+93 silly addNameRange     '3.0.0-rc3',
+93 silly addNameRange     '3.0.0-rc4',
+93 silly addNameRange     '3.0.0-rc5',
+93 silly addNameRange     '3.3.7',
+93 silly addNameRange     '3.3.8',
+93 silly addNameRange     '3.4.0',
+93 silly addNameRange     '3.4.1',
+93 silly addNameRange     '3.4.2',
+93 silly addNameRange     '3.4.3',
+93 silly addNameRange     '3.4.4',
+93 silly addNameRange     '3.4.5',
+93 silly addNameRange     '3.4.6',
+93 silly addNameRange     '3.4.7',
+93 silly addNameRange     '3.4.8',
+93 silly addNameRange     '4.0.0-rc1',
+93 silly addNameRange     '4.0.0-rc2',
+93 silly addNameRange     '3.5.0',
+93 silly addNameRange     '4.0.0-rc3' ] ]
+94 verbose addNamed [ 'express', '3.4.8' ]
+95 verbose addNamed [ '3.4.8', '3.4.8' ]
+96 silly lockFile 15cb8528-express-3-4-8 express@3.4.8
+97 verbose lock express@3.4.8 /home/laurence/.npm/15cb8528-express-3-4-8.lock
+98 verbose read json /home/laurence/.npm/express/3.4.8/package/package.json
+99 silly lockFile 15cb8528-express-3-4-8 express@3.4.8
+100 silly lockFile 15cb8528-express-3-4-8 express@3.4.8
+101 silly lockFile 655fa913-express-3-4-8 express@~3.4.8
+102 silly lockFile 655fa913-express-3-4-8 express@~3.4.8
+103 http 304 https://registry.npmjs.org/gulp
+104 silly registry.get cb [ 304,
+104 silly registry.get   { date: 'Sat, 15 Mar 2014 11:03:50 GMT',
+104 silly registry.get     server: 'Apache',
+104 silly registry.get     via: '1.1 varnish',
+104 silly registry.get     'last-modified': 'Sat, 15 Mar 2014 11:03:51 GMT',
+104 silly registry.get     'cache-control': 'max-age=1',
+104 silly registry.get     etag: '"9DS7MQQ7B53SIYU4EYDKWHPGB"',
+104 silly registry.get     'x-served-by': 'cache-lcy1132-LCY',
+104 silly registry.get     'x-cache': 'MISS',
+104 silly registry.get     'x-cache-hits': '0',
+104 silly registry.get     'x-timer': 'S1394881430.477282286,VS0,VE564',
+104 silly registry.get     vary: 'Accept',
+104 silly registry.get     'content-length': '0',
+104 silly registry.get     'keep-alive': 'timeout=10, max=50',
+104 silly registry.get     connection: 'Keep-Alive' } ]
+105 verbose etag gulp from cache
+106 silly addNameRange number 2 { name: 'gulp', range: '>=3.0.0- <4.0.0-', hasData: true }
+107 silly addNameRange versions [ 'gulp',
+107 silly addNameRange   [ '0.0.1',
+107 silly addNameRange     '0.0.2',
+107 silly addNameRange     '0.0.3',
+107 silly addNameRange     '0.0.4',
+107 silly addNameRange     '0.0.5',
+107 silly addNameRange     '0.0.7',
+107 silly addNameRange     '0.0.8',
+107 silly addNameRange     '0.0.9',
+107 silly addNameRange     '0.1.0',
+107 silly addNameRange     '0.2.0',
+107 silly addNameRange     '1.0.0',
+107 silly addNameRange     '1.1.0',
+107 silly addNameRange     '1.2.0',
+107 silly addNameRange     '1.2.1',
+107 silly addNameRange     '2.0.0',
+107 silly addNameRange     '2.0.1',
+107 silly addNameRange     '2.1.0',
+107 silly addNameRange     '2.2.0',
+107 silly addNameRange     '2.3.0',
+107 silly addNameRange     '2.4.0',
+107 silly addNameRange     '2.4.1',
+107 silly addNameRange     '2.6.0',
+107 silly addNameRange     '2.6.1',
+107 silly addNameRange     '2.7.0',
+107 silly addNameRange     '3.0.0',
+107 silly addNameRange     '3.1.1',
+107 silly addNameRange     '3.1.2',
+107 silly addNameRange     '3.1.3',
+107 silly addNameRange     '3.1.4',
+107 silly addNameRange     '3.2.0',
+107 silly addNameRange     '3.2.1',
+107 silly addNameRange     '3.2.2',
+107 silly addNameRange     '3.2.3',
+107 silly addNameRange     '3.2.4',
+107 silly addNameRange     '3.2.5',
+107 silly addNameRange     '3.3.0',
+107 silly addNameRange     '3.3.1',
+107 silly addNameRange     '3.3.2',
+107 silly addNameRange     '3.3.4',
+107 silly addNameRange     '3.4.0',
+107 silly addNameRange     '3.5.0',
+107 silly addNameRange     '3.5.1',
+107 silly addNameRange     '3.5.2',
+107 silly addNameRange     '3.5.5',
+107 silly addNameRange     '3.5.6' ] ]
+108 verbose addNamed [ 'gulp', '3.5.6' ]
+109 verbose addNamed [ '3.5.6', '3.5.6' ]
+110 silly lockFile cb982ef7-gulp-3-5-6 gulp@3.5.6
+111 verbose lock gulp@3.5.6 /home/laurence/.npm/cb982ef7-gulp-3-5-6.lock
+112 verbose read json /home/laurence/.npm/gulp/3.5.6/package/package.json
+113 silly lockFile cb982ef7-gulp-3-5-6 gulp@3.5.6
+114 silly lockFile cb982ef7-gulp-3-5-6 gulp@3.5.6
+115 silly lockFile f47fd40f-gulp-3 gulp@~3
+116 silly lockFile f47fd40f-gulp-3 gulp@~3
+117 silly resolved [ { name: 'nedb',
+117 silly resolved     version: '0.10.4',
+117 silly resolved     author: { name: 'Louis Chatriot', email: 'louis.chatriot@gmail.com' },
+117 silly resolved     contributors: [ [Object] ],
+117 silly resolved     description: 'File-based embedded data store for node.js',
+117 silly resolved     keywords: [ 'database', 'datastore', 'embedded' ],
+117 silly resolved     homepage: 'https://github.com/louischatriot/nedb',
+117 silly resolved     repository: { type: 'git', url: 'git@github.com:louischatriot/nedb.git' },
+117 silly resolved     dependencies:
+117 silly resolved      { async: '0.2.10',
+117 silly resolved        underscore: '~1.4.4',
+117 silly resolved        'binary-search-tree': '0.2.3',
+117 silly resolved        mkdirp: '~0.3.5' },
+117 silly resolved     devDependencies:
+117 silly resolved      { chai: '1.0.x',
+117 silly resolved        mocha: '1.4.x',
+117 silly resolved        request: '2.9.x',
+117 silly resolved        sinon: '1.3.x',
+117 silly resolved        'exec-time': '0.0.2',
+117 silly resolved        commander: '1.1.1' },
+117 silly resolved     scripts: { test: './node_modules/.bin/mocha --reporter spec --timeout 2000' },
+117 silly resolved     browser:
+117 silly resolved      { './lib/customUtils.js': './browser-version/browser-specific/lib/customUtils.js',
+117 silly resolved        './lib/persistence.js': './browser-version/browser-specific/lib/persistence.js' },
+117 silly resolved     main: 'index',
+117 silly resolved     licence: 'MIT',
+117 silly resolved     readme: '# NeDB (Node embedded database)\r\n\r\n<img src="http://i.imgur.com/GdeQBmc.png" style="width: 25%; height: 25%; float: left;">\r\n\r\n**Embedded persistent database for Node.js, written in Javascript, with no dependency** (except npm\r\nmodules of course). You can **think of it as a SQLite for Node.js projects**, which\r\ncan be used with a simple `require` statement. The API is a subset of MongoDB\'s. You can use it as a persistent or an in-memory only datastore.\r\n\r\nNeDB is not intended to be a replacement of large-scale databases such as MongoDB! Its goal is to provide you with a clean and easy way to query data and persist it to disk, for web applications that do not need lots of concurrent connections, for example a <a href="https://github.com/louischatriot/braindead-ci" target="_blank">continuous integration and deployment server</a> and desktop applications built with <a href="https://github.com/rogerwang/node-webkit" target="_blank">Node Webkit</a>.\r\n\r\nNeDB was benchmarked against the popular client-side database <a href="http://www.taffydb.com/" target="_blank">TaffyDB</a> and <a href="https://github.com/louischatriot/taffydb-benchmark" target="_blank">NeDB is much, much faster</a>. That\'s why there is now <a href="#browser-version">a browser version</a>.\r\n\r\nCheck the <a href="https://github.com/louischatriot/nedb/wiki/Change-log" target="_blank">change log in the wiki</a> if you think nedb doesn\'t behave as the documentation describes! Most of the issues I get are due to non-latest version NeDBs.\r\n\r\nYou want to help out? Check out how!\r\n\r\n\r\n## Installation, tests\r\nModule name on npm is `nedb`.\r\n```javascript\r\nnpm install nedb --save   // Put latest version in your package.json\r\n\r\nnpm test   // You\'ll need the dev dependencies to test it\r\n```\r\n\r\n## API\r\nIt\'s a subset of MongoDB\'s API (the most used operations). The current API will not change, but I will add operations as they are needed. Summary of the API:  \r\n\r\n* <a href="#creatingloading-a-database">Creating/loading a database</a>\r\n* <a href="#compacting-the-database">Compacting the database</a>\r\n* <a href="#inserting-documents">Inserting documents</a>\r\n* <a href="#finding-documents">Finding documents</a>\r\n  * <a href="#basic-querying">Basic Querying</a>\r\n  * <a href="#operators-lt-lte-gt-gte-in-nin-ne-exists-regex">Operators ($lt, $lte, $gt, $gte, $in, $nin, $ne, $exists, $regex)</a>\r\n  * <a href="#array-fields">Array fields</a>\r\n  * <a href="#logical-operators-or-and-not-where">Logical operators $or, $and, $not, $where</a>\r\n  * <a href="#sorting-and-paginating">Sorting and paginating</a>\r\n* <a href="#counting-documents">Counting documents</a>\r\n* <a href="#updating-documents">Updating documents</a>\r\n* <a href="#removing-documents">Removing documents</a>\r\n* <a href="#indexing">Indexing</a>\r\n\r\n### Creating/loading a database\r\nYou can use NeDB as an in-memory only datastore or as a persistent datastore. One datastore is the equivalent of a MongoDB collection. The constructor is used as follows `new Datastore(options)` where `options` is an object with the following fields:  \r\n\r\n* `filename` (optional): path to the file where the data is persisted. If left blank, the datastore is automatically considered in-memory only. It cannot end with a `~` which is used in the temporary files NeDB uses to perform crash-safe writes\r\n* `inMemoryOnly` (optional, defaults to false): as the name implies.\r\n* `autoload` (optional, defaults to false): if used, the database will\r\n  automatically be loaded from the datafile upon creation (you don\'t\r\nneed to call `loadDatabase`). Any command\r\nissued before load is finished is buffered and will be executed when\r\nload is done.\r\n* `onload` (optional): if you use autoloading, this is the handler called after the `loadDatabase`. It takes one `error` argument. If you use autoloading without specifying this handler, and an error happens during load, an error will be thrown.\r\n* `nodeWebkitAppName` (optional, **DEPRECATED**): if you are using NeDB from whithin a Node Webkit app, specify its name (the same one you use in the `package.json`) in this field and the `filename` will be relative to the directory Node Webkit uses to store the rest of the application\'s data (local storage etc.). It works on Linux, OS X and Windows. Now that you can use `require(\'nw.gui\').App.dataPath` in Node Webkit to get the path to the data directory for your application, you should not use this option anymore and it will be removed.\r\n\r\nIf you use a persistent datastore without the `autoload` option, you need to call `loadDatabase` manually.\r\nThis function fetches the data from datafile and prepares the database. **Don\'t forget it!** If you use a\r\npersistent datastore, no command (insert, find, update, remove) will be executed before `loadDatabase`\r\nis called, so make sure to call it yourself or use the `autoload`\r\noption.\r\n\r\n```javascript\r\n// Type 1: In-memory only datastore (no need to load the database)\r\nvar Datastore = require(\'nedb\')\r\n  , db = new Datastore();\r\n\r\n\r\n// Type 2: Persistent datastore with manual loading\r\nvar Datastore = require(\'nedb\')\r\n  , db = new Datastore({ filename: \'path/to/datafile\' });\r\ndb.loadDatabase(function (err) {    // Callback is optional\r\n  // Now commands will be executed\r\n});\r\n\r\n\r\n// Type 3: Persistent datastore with automatic loading\r\nvar Datastore = require(\'nedb\')\r\n  , db = new Datastore({ filename: \'path/to/datafile\', autoload: true });\r\n// You can issue commands right away\r\n\r\n\r\n// Type 4: Persistent datastore for a Node Webkit app called \'nwtest\'\r\n// For example on Linux, the datafile will be ~/.config/nwtest/nedb-data/something.db\r\nvar Datastore = require(\'nedb\')\r\n  , path = require(\'path\')\r\n  , db = new Datastore({ filename: path.join(require(\'nw.gui\').App.dataPath, \'something.db\') });\r\n\r\n\r\n// Of course you can create multiple datastores if you need several\r\n// collections. In this case it\'s usually a good idea to use autoload for all collections.\r\ndb = {};\r\ndb.users = new Datastore(\'path/to/users.db\');\r\ndb.robots = new Datastore(\'path/to/robots.db\');\r\n\r\n// You need to load each database (here we do it asynchronously)\r\ndb.users.loadDatabase();\r\ndb.robots.loadDatabase();\r\n```\r\n\r\n### Compacting the database\r\nUnder the hood, NeDB\'s persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile. The reason for this is that disk space is very cheap and appends are much faster than rewrites since they don\'t do a seek. The database is automatically compacted (i.e. put back in the one-line-per-document format) everytime your application restarts.\r\n\r\nYou can manually call the compaction function with `yourDatabase.persistence.compactDatafile` which takes a `callback(err)` as argument.\r\n\r\nYou can also set automatic compaction at regular intervals with `yourDatabase.persistence.setAutocompactionInterval(interval)`, `interval` in milliseconds (a minimum of 5s is enforced), and stop automatic compaction with `yourDatabase.persistence.stopAutocompaction()`.\r\n\r\nKeep in mind that compaction takes a bit of time (not too much: 130ms for 50k records on my slow machine) and no other operation can happen when it does, so most projects actually don\'t need to use it.\r\n\r\n\r\n### Inserting documents\r\nThe native types are `String`, `Number`, `Boolean`, `Date` and `null`. You can also use\r\narrays and subdocuments (objects). If a field is `undefined`, it will not be saved (this is different from \r\nMongoDB which transforms `undefined` in `null`, something I find counter-intuitive).  \r\n\r\nAn `_id` field will be automatically generated by NeDB. It\'s a 16-characters alphanumerical string that cannot be modified once it has been generated. Unlike with MongoDB, you cannot specify it (that shouldn\'t be a problem anyway).\r\n\r\nField names cannot begin by \'$\' or contain a \'.\'.\r\n\r\n```javascript\r\nvar document = { hello: \'world\'\r\n               , n: 5\r\n               , today: new Date()\r\n               , nedbIsAwesome: true\r\n               , notthere: null\r\n               , notToBeSaved: undefined  // Will not be saved\r\n               , fruits: [ \'apple\', \'orange\', \'pear\' ]\r\n               , infos: { name: \'nedb\' }\r\n               };\r\n\r\ndb.insert(document, function (err, newDoc) {   // Callback is optional\r\n  // newDoc is the newly inserted document, including its _id\r\n  // newDoc has no key called notToBeSaved since its value was undefined\r\n});\r\n```\r\n\r\nYou can also bulk-insert an array of documents. This operation is atomic, meaning that if one insert fails due to a unique constraint being violated, all changes are rolled back.\r\n```javascript\r\ndb.insert([{ a: 5 }, { a: 42 }], function (err, newDocs) {\r\n  // Two documents were inserted in the database\r\n  // newDocs is an array with these documents, augmented with their _id\r\n});\r\n\r\n// If there is a unique constraint on field \'a\', this will fail\r\ndb.insert([{ a: 5 }, { a: 42 }, { a: 5 }], function (err) {\r\n  // err is a \'uniqueViolated\' error\r\n  // The database was not modified\r\n});\r\n```\r\n\r\n### Finding documents\r\nUse `find` to look for multiple documents matching you query, or `findOne` to look for one specific document. You can select documents based on field equality or use comparison operators (`$lt`, `$lte`, `$gt`, `$gte`, `$in`, `$nin`, `$ne`). You can also use logical operators `$or`, `$and`, `$not` and `$where`. See below for the syntax.\r\n\r\nYou can use regular expressions in two ways: in basic querying in place of a string, or with the `$regex` operator.\r\n\r\nYou can sort and paginate results using the cursor API (see below).\r\n\r\n#### Basic querying\r\nBasic querying means are looking for documents whose fields match the ones you specify. You can use regular expression to match strings.\r\nYou can use the dot notation to navigate inside nested documents, arrays, arrays of subdocuments and to match a specific element of an array.\r\n\r\n```javascript\r\n// Let\'s say our datastore contains the following collection\r\n// { _id: \'id1\', planet: \'Mars\', system: \'solar\', inhabited: false, satellites: [\'Phobos\', \'Deimos\'] }\r\n// { _id: \'id2\', planet: \'Earth\', system: \'solar\', inhabited: true, humans: { genders: 2, eyes: true } }\r\n// { _id: \'id3\', planet: \'Jupiter\', system: \'solar\', inhabited: false }\r\n// { _id: \'id4\', planet: \'Omicron Persei 8\', system: \'futurama\', inhabited: true, humans: { genders: 7 } }\r\n// { _id: \'id5\', completeData: { planets: [ { name: \'Earth\', number: 3 }, { name: \'Mars\', number: 2 }, { name: \'Pluton\', number: 9 } ] } }\r\n\r\n// Finding all planets in the solar system\r\ndb.find({ system: \'solar\' }, function (err, docs) {\r\n  // docs is an array containing documents Mars, Earth, Jupiter\r\n  // If no document is found, docs is equal to []\r\n});\r\n\r\n// Finding all planets whose name contain the substring \'ar\' using a regular expression\r\ndb.find({ planet: /ar/ }, function (err, docs) {\r\n  // docs contains Mars and Earth\r\n});\r\n\r\n// Finding all inhabited planets in the solar system\r\ndb.find({ system: \'solar\', inhabited: true }, function (err, docs) {\r\n  // docs is an array containing document Earth only\r\n});\r\n\r\n// Use the dot-notation to match fields in subdocuments\r\ndb.find({ "humans.genders": 2 }, function (err, docs) {\r\n  // docs contains Earth\r\n});\r\n\r\n// Use the dot-notation to navigate arrays of subdocuments\r\ndb.find({ "completeData.planets.name": "Mars" }, function (err, docs) {\r\n  // docs contains document 5\r\n});\r\n\r\ndb.find({ "completeData.planets.name": "Jupiter" }, function (err, docs) {\r\n  // docs is empty\r\n});\r\n\r\ndb.find({ "completeData.planets.0.name": "Earth" }, function (err, docs) {\r\n  // docs contains document 5\r\n  // If we had tested against "Mars" docs would be empty because we are matching against a specific array element\r\n});\r\n\r\n\r\n// You can also deep-compare objects. Don\'t confuse this with dot-notation!\r\ndb.find({ humans: { genders: 2 } }, function (err, docs) {\r\n  // docs is empty, because { genders: 2 } is not equal to { genders: 2, eyes: true }\r\n});\r\n\r\n// Find all documents in the collection\r\ndb.find({}, function (err, docs) {\r\n});\r\n\r\n// The same rules apply when you want to only find one document\r\ndb.findOne({ _id: \'id1\' }, function (err, doc) {\r\n  // doc is the document Mars\r\n  // If no document is found, doc is null\r\n});\r\n```\r\n\r\n#### Operators ($lt, $lte, $gt, $gte, $in, $nin, $ne, $exists, $regex)\r\nThe syntax is `{ field: { $op: value } }` where `$op` is any comparison operator:  \r\n\r\n* `$lt`, `$lte`: less than, less than or equal\r\n* `$gt`, `$gte`: greater than, greater than or equal\r\n* `$in`: member of. `value` must be an array of values\r\n* `$ne`, `$nin`: not equal, not a member of\r\n* `$exists`: checks whether the document posses the property `field`. `value` should be true or false\r\n* `$regex`: checks whether a string is matched by the regular expression. Contrary to MongoDB, the use of `$options` with `$regex` is not supported, because it doesn\'t give you more power than regex flags. Basic queries are more readable so only use the `$regex` operator when you need to use another operator with it (see example below)\r\n\r\n```javascript\r\n// $lt, $lte, $gt and $gte work on numbers and strings\r\ndb.find({ "humans.genders": { $gt: 5 } }, function (err, docs) {\r\n  // docs contains Omicron Persei 8, whose humans have more than 5 genders (7).\r\n});\r\n\r\n// When used with strings, lexicographical order is used\r\ndb.find({ planet: { $gt: \'Mercury\' }}, function (err, docs) {\r\n  // docs contains Omicron Persei 8\r\n})\r\n\r\n// Using $in. $nin is used in the same way\r\ndb.find({ planet: { $in: [\'Earth\', \'Jupiter\'] }}, function (err, docs) {\r\n  // docs contains Earth and Jupiter\r\n});\r\n\r\n// Using $exists\r\ndb.find({ satellites: { $exists: true } }, function (err, docs) {\r\n  // docs contains only Mars\r\n});\r\n\r\n// Using $regex with another operator\r\ndb.find({ planet: { $regex: /ar/, $nin: [\'Jupiter\', \'Earth\'] } }, function (err, docs) {\r\n  // docs only contains Mars because Earth was excluded from the match by $nin\r\n});\r\n```\r\n\r\n#### Array fields\r\nWhen a field in a document is an array, NeDB first tries to see if there is an array-specific comparison function (for now there is only `$size`) being used\r\nand tries it first. If there isn\'t, the query is treated as a query on every element and there is a match if at least one element matches.\r\n\r\n```javascript\r\n// Using an array-specific comparison function\r\n// Note: you can\'t use nested comparison functions, e.g. { $size: { $lt: 5 } } will throw an error\r\ndb.find({ satellites: { $size: 2 } }, function (err, docs) {\r\n  // docs contains Mars\r\n});\r\n\r\ndb.find({ satellites: { $size: 1 } }, function (err, docs) {\r\n  // docs is empty\r\n});\r\n\r\n// If a document\'s field is an array, matching it means matching any element of the array\r\ndb.find({ satellites: \'Phobos\' }, function (err, docs) {\r\n  // docs contains Mars. Result would have been the same if query had been { satellites: \'Deimos\' }\r\n});\r\n\r\n// This also works for queries that use comparison operators\r\ndb.find({ satellites: { $lt: \'Amos\' } }, function (err, docs) {\r\n  // docs is empty since Phobos and Deimos are after Amos in lexicographical order\r\n});\r\n\r\n// This also works with the $in and $nin operator\r\ndb.find({ satellites: { $in: [\'Moon\', \'Deimos\'] } }, function (err, docs) {\r\n  // docs contains Mars (the Earth document is not complete!)\r\n});\r\n```\r\n\r\n#### Logical operators $or, $and, $not, $where\r\nYou can combine queries using logical operators:  \r\n\r\n* For `$or` and `$and`, the syntax is `{ $op: [query1, query2, ...] }`.\r\n* For `$not`, the syntax is `{ $not: query }`\r\n* For `$where`, the syntax is `{ $where: function () { /* object is "this", return a boolean */ } }`\r\n\r\n```javascript\r\ndb.find({ $or: [{ planet: \'Earth\' }, { planet: \'Mars\' }] }, function (err, docs) {\r\n  // docs contains Earth and Mars\r\n});\r\n\r\ndb.find({ $not: { planet: \'Earth\' } }, function (err, docs) {\r\n  // docs contains Mars, Jupiter, Omicron Persei 8\r\n});\r\n\r\ndb.find({ $where: function () { return Object.keys(this) > 6; } }, function (err, docs) {\r\n  // docs with more than 6 properties\r\n});\r\n\r\n// You can mix normal queries, comparison queries and logical operators\r\ndb.find({ $or: [{ planet: \'Earth\' }, { planet: \'Mars\' }], inhabited: true }, function (err, docs) {\r\n  // docs contains Earth\r\n});\r\n\r\n```\r\n\r\n#### Sorting and paginating\r\nIf you don\'t specify a callback to `find`, `findOne` or `count`, a `Cursor` object is returned. You can modify the cursor with `sort`, `skip` and `limit` and then execute it with `exec(callback)`.\r\n\r\n```javascript\r\n// Let\'s say the database contains these 4 documents\r\n// doc1 = { _id: \'id1\', planet: \'Mars\', system: \'solar\', inhabited: false, satellites: [\'Phobos\', \'Deimos\'] }\r\n// doc2 = { _id: \'id2\', planet: \'Earth\', system: \'solar\', inhabited: true, humans: { genders: 2, eyes: true } }\r\n// doc3 = { _id: \'id3\', planet: \'Jupiter\', system: \'solar\', inhabited: false }\r\n// doc4 = { _id: \'id4\', planet: \'Omicron Persei 8\', system: \'futurama\', inhabited: true, humans: { genders: 7 } }\r\n\r\n// No query used means all results are returned (before the Cursor modifiers)\r\ndb.find({}).sort({ planet: 1 }).skip(1).limit(2).exec(function (err, docs) {\r\n  // docs is [doc3, doc1]\r\n});\r\n\r\n// You can sort in reverse order like this\r\ndb.find({ system: \'solar\' }).sort({ planet: -1 }).exec(function (err, docs) {\r\n  // docs is [doc1, doc3, doc2]\r\n});\r\n\r\n// You can sort on one field, then another, and so on like this:\r\ndb.find({}).sort({ firstField: 1, secondField: -1 }) ...   // You understand how this works!\r\n```\r\n\r\n\r\n\r\n### Counting documents\r\nYou can use `count` to count documents. It has the same syntax as `find`. For example:\r\n\r\n```javascript\r\n// Count all planets in the solar system\r\ndb.count({ system: \'solar\' }, function (err, count) {\r\n  // count equals to 3\r\n});\r\n\r\n// Count all documents in the datastore\r\ndb.count({}, function (err, count) {\r\n  // count equals to 4\r\n});\r\n```\r\n\r\n\r\n### Updating documents\r\n`db.update(query, update, options, callback)` will update all documents matching `query` according to the `update` rules:  \r\n* `query` is the same kind of finding query you use with `find` and `findOne`\r\n* `update` specifies how the documents should be modified. It is either a new document or a set of modifiers (you cannot use both together, it doesn\'t make sense!)\r\n  * A new document will replace the matched docs\r\n  * The modifiers create the fields they need to modify if they don\'t exist, and you can apply them to subdocs. Available field modifiers are `$set` to change a field\'s value, `$unset` to delete a field and `$inc` to increment a field\'s value. To work on arrays, you have `$push`, `$pop`, `$addToSet`, `$pull`, and the special `$each`. See examples below for the syntax.\r\n* `options` is an object with two possible parameters\r\n  * `multi` (defaults to `false`) which allows the modification of several documents if set to true\r\n  * `upsert` (defaults to `false`) if you want to insert a new document corresponding to the `update` rules if your `query` doesn\'t match anything\r\n* `callback` (optional) signature: `err`, `numReplaced`, `newDoc`\r\n  * `numReplaced` is the number of documents replaced\r\n  * `newDoc` is the created document if the upsert mode was chosen and a document was inserted\r\n\r\n**Note**: you can\'t change a document\'s _id.\r\n\r\n```javascript\r\n// Let\'s use the same example collection as in the "finding document" part\r\n// { _id: \'id1\', planet: \'Mars\', system: \'solar\', inhabited: false }\r\n// { _id: \'id2\', planet: \'Earth\', system: \'solar\', inhabited: true }\r\n// { _id: \'id3\', planet: \'Jupiter\', system: \'solar\', inhabited: false }\r\n// { _id: \'id4\', planet: \'Omicron Persia 8\', system: \'futurama\', inhabited: true }\r\n\r\n// Replace a document by another\r\ndb.update({ planet: \'Jupiter\' }, { planet: \'Pluton\'}, {}, function (err, numReplaced) {\r\n  // numReplaced = 1\r\n  // The doc #3 has been replaced by { _id: \'id3\', planet: \'Pluton\' }\r\n  // Note that the _id is kept unchanged, and the document has been replaced\r\n  // (the \'system\' and inhabited fields are not here anymore)\r\n});\r\n\r\n// Set an existing field\'s value\r\ndb.update({ system: \'solar\' }, { $set: { system: \'solar system\' } }, { multi: true }, function (err, numReplaced) {\r\n  // numReplaced = 3\r\n  // Field \'system\' on Mars, Earth, Jupiter now has value \'solar system\'\r\n});\r\n\r\n// Setting the value of a non-existing field in a subdocument by using the dot-notation\r\ndb.update({ planet: \'Mars\' }, { $set: { "data.satellites": 2, "data.red": true } }, {}, function () {\r\n  // Mars document now is { _id: \'id1\', system: \'solar\', inhabited: false\r\n  //                      , data: { satellites: 2, red: true }\r\n  //                      }\r\n  // Not that to set fields in subdocuments, you HAVE to use dot-notation\r\n  // Using object-notation will just replace the top-level field\r\n  db.update({ planet: \'Mars\' }, { $set: { data: { satellites: 3 } } }, {}, function () {\r\n    // Mars document now is { _id: \'id1\', system: \'solar\', inhabited: false\r\n    //                      , data: { satellites: 3 }\r\n    //                      }\r\n    // You lost the "data.red" field which is probably not the intended behavior\r\n  });\r\n});\r\n\r\n// Deleting a field\r\ndb.update({ planet: \'Mars\' }, { $unset: { planet: true } }, {}, function () {\r\n  // Now the document for Mars doesn\'t contain the planet field\r\n  // You can unset nested fields with the dot notation of course\r\n});\r\n\r\n// Upserting a document\r\ndb.update({ planet: \'Pluton\' }, { planet: \'Pluton\', inhabited: false }, { upsert: true }, function (err, numReplaced, upsert) {\r\n  // numReplaced = 1, upsert = { _id: \'id5\', planet: \'Pluton\', inhabited: false }\r\n  // A new document { _id: \'id5\', planet: \'Pluton\', inhabited: false } has been added to the collection\r\n});\r\n\r\n// If you upsert with a modifier, the upserted doc is the query modified by the modifier\r\n// This is simpler than it sounds :)\r\ndb.update({ planet: \'Pluton\' }, { $inc: { distance: 38 } }, { upsert: true }, function () {\r\n  // A new document { _id: \'id5\', planet: \'Pluton\', distance: 38 } has been added to the collection  \r\n});\r\n\r\n// If we insert a new document { _id: \'id6\', fruits: [\'apple\', \'orange\', \'pear\'] } in the collection,\r\n// let\'s see how we can modify the array field atomically\r\n\r\n// $push inserts new elements at the end of the array\r\ndb.update({ _id: \'id6\' }, { $push: { fruits: \'banana\' } }, {}, function () {\r\n  // Now the fruits array is [\'apple\', \'orange\', \'pear\', \'banana\']\r\n});\r\n\r\n// $pop removes an element from the end (if used with 1) or the front (if used with -1) of the array\r\ndb.update({ _id: \'id6\' }, { $pop: { fruits: 1 } }, {}, function () {\r\n  // Now the fruits array is [\'apple\', \'orange\']\r\n  // With { $pop: { fruits: -1 } }, it would have been [\'orange\', \'pear\']\r\n});\r\n\r\n// $addToSet adds an element to an array only if it isn\'t already in it\r\n// Equality is deep-checked (i.e. $addToSet will not insert an object in an array already containing the same object)\r\n// Note that it doesn\'t check whether the array contained duplicates before or not\r\ndb.update({ _id: \'id6\' }, { $addToSet: { fruits: \'apple\' } }, {}, function () {\r\n  // The fruits array didn\'t change\r\n  // If we had used a fruit not in the array, e.g. \'banana\', it would have been added to the array\r\n});\r\n\r\n// $pull removes all values matching a value or even any NeDB query from the array\r\ndb.update({ _id: \'id6\' }, { $pull: { fruits: \'apple\' } }, {}, function () {\r\n  // Now the fruits array is [\'orange\', \'pear\']\r\n});\r\ndb.update({ _id: \'id6\' }, { $pull: { fruits: $in: [\'apple\', \'pear\'] } }, {}, function () {\r\n  // Now the fruits array is [\'orange\']\r\n});\r\n\r\n\r\n\r\n// $each can be used to $push or $addToSet multiple values at once\r\n// This example works the same way with $addToSet\r\ndb.update({ _id: \'id6\' }, { $push: { fruits: [\'banana\', \'orange\'] } }, {}, function () {\r\n  // Now the fruits array is [\'apple\', \'orange\', \'pear\', \'banana\', \'orange\']\r\n});\r\n```\r\n\r\n### Removing documents\r\n`db.remove(query, options, callback)` will remove all documents matching `query` according to `options`  \r\n* `query` is the same as the ones used for finding and updating\r\n* `options` only one option for now: `multi` which allows the removal of multiple documents if set to true. Default is false\r\n* `callback` is optional, signature: err, numRemoved\r\n\r\n```javascript\r\n// Let\'s use the same example collection as in the "finding document" part\r\n// { _id: \'id1\', planet: \'Mars\', system: \'solar\', inhabited: false }\r\n// { _id: \'id2\', planet: \'Earth\', system: \'solar\', inhabited: true }\r\n// { _id: \'id3\', planet: \'Jupiter\', system: \'solar\', inhabited: false }\r\n// { _id: \'id4\', planet: \'Omicron Persia 8\', system: \'futurama\', inhabited: true }\r\n\r\n// Remove one document from the collection\r\n// options set to {} since the default for multi is false\r\ndb.remove({ _id: \'id2\' }, {}, function (err, numRemoved) {\r\n  // numRemoved = 1\r\n});\r\n\r\n// Remove multiple documents\r\ndb.remove({ system: \'solar\' }, { multi: true }, function (err, numRemoved) {\r\n  // numRemoved = 3\r\n  // All planets from the solar system were removed\r\n});\r\n```\r\n\r\n### Indexing\r\nNeDB supports indexing. It gives a very nice speed boost and can be used to enforce a unique constraint on a field. You can index any field, including fields in nested documents using the dot notation. For now, indexes are only used to speed up basic queries and queries using `$in`, `$lt`, `$lte`, `$gt` and `$gte`.\r\n\r\nTo create an index, use `datastore.ensureIndex(options, cb)`, where callback is optional and get passed an error if any (usually a unique constraint that was violated). `ensureIndex` can be called when you want, even after some data was inserted, though it\'s best to call it at application startup. The options are:  \r\n\r\n* **fieldName** (required): name of the field to index. Use the dot notation to index a field in a nested document.\r\n* **unique** (optional, defaults to `false`): enforce field uniqueness. Note that a unique index will raise an error if you try to index two documents for which the field is not defined.\r\n* **sparse** (optional, defaults to `false`): don\'t index documents for which the field is not defined. Use this option along with "unique" if you want to accept multiple documents for which it is not defined.\r\n\r\nNote: the `_id` is automatically indexed with a unique constraint, no need to call `ensureIndex` on it.\r\n\r\nYou can remove a previously created index with `datastore.removeIndex(fieldName, cb)`.\r\n\r\nIf your datastore is persistent, the indexes you created are persisted in the datafile, when you load the database a second time they are automatically created for you. No need to remove any `ensureIndex` though, if it is called on a database that already has the index, nothing happens.\r\n\r\n```javascript\r\ndb.ensureIndex({ fieldName: \'somefield\' }, function (err) {\r\n  // If there was an error, err is not null\r\n});\r\n\r\n// Using a unique constraint with the index\r\ndb.ensureIndex({ fieldName: \'somefield\', unique: true }, function (err) {\r\n});\r\n\r\n// Using a sparse unique index\r\ndb.ensureIndex({ fieldName: \'somefield\', unique: true, sparse: true }, function (err) {\r\n});\r\n\r\n\r\n// Format of the error message when the unique constraint is not met\r\ndb.insert({ somefield: \'nedb\' }, function (err) {\r\n  // err is null\r\n  db.insert({ somefield: \'nedb\' }, function (err) {\r\n    // err is { errorType: \'uniqueViolated\'\r\n    //        , key: \'name\'\r\n    //        , message: \'Unique constraint violated for key name\' }\r\n  });\r\n});\r\n\r\n// Remove index on field somefield\r\ndb.removeIndex(\'somefield\', function (err) {\r\n});\r\n```\r\n\r\n**Note:** the `ensureIndex` function creates the index synchronously, so it\'s best to use it at application startup. It\'s quite fast so it doesn\'t increase startup time much (35 ms for a collection containing 10,000 documents).\r\n\r\n\r\n## Browser version\r\nAs of v0.8.0, you can use NeDB in the browser! You can find it and its minified version in the repository, in the `browser-version/out` directory. You only need to require `nedb.js` or `nedb.min.js` in your HTML file and the global object `Nedb` can be used right away, with the same API as the server version:\r\n\r\n```\r\n<script src="nedb.min.js"></script>\r\n<script>\r\n  var db = new Nedb();   // Create an in-memory only datastore\r\n  \r\n  db.insert({ planet: \'Earth\' });\r\n  db.insert({ planet: \'Mars\' });\r\n\r\n  db.find({}, function (err, docs) {\r\n    // docs contains the two planets Earth and Mars\r\n  });\r\n</script>\r\n```\r\n\r\nIt has been tested and is compatible with Chrome, Safari, Firefox, IE 10, IE 9. Please open an issue if you need compatibility with IE 8/IE 7, I think it will need some work and am not sure it is needed, since most complex webapplications - the ones that would need NeDB - only work on modern browsers. To launch the tests, simply open the file `browser-version/test/index.html` in a browser and you\'ll see the results of the tests for this browser.\r\n\r\nIf you fork and modify nedb, you can build the browser version from the sources, the build script is `browser-version/build.js`.\r\n\r\n**The browser version is still young!** For now you can only use it as an in-memory database in browser environments, I\'ll implement persistence later.\r\n\r\n\r\n## Performance\r\n### Speed\r\nNeDB is not intended to be a replacement of large-scale databases such as MongoDB, and as such was not designed for speed. That said, it is still pretty fast on the expected datasets, especially if you use indexing. On my machine (3 years old, no SSD), with a collection containing 10,000 documents, with indexing:  \r\n* Insert: **5,950 ops/s**\r\n* Find: **25,440 ops/s**\r\n* Update: **4,490 ops/s**\r\n* Remove: **6,620 ops/s**  \r\n\r\nYou can run the simple benchmarks I use by executing the scripts in the `benchmarks` folder. Run them with the `--help` flag to see how they work.\r\n\r\n### Memory footprint\r\nA copy of the whole database is kept in memory. This is not much on the\r\nexpected kind of datasets (20MB for 10,000 2KB documents). If requested, I\'ll introduce an\r\noption to not use this cache to decrease memory footprint (at the cost\r\nof a lower speed).\r\n\r\n\r\n## Use in other services\r\n* <a href="https://github.com/louischatriot/connect-nedb-session"\r\n  target="_blank">connect-nedb-session</a> is a session store for\r\nConnect and Express, backed by nedb\r\n* If you mostly use NeDB for logging purposes and don\'t want the memory footprint of your application to grow too large, you can use <a href="https://github.com/louischatriot/nedb-logger" target="_blank">NeDB Logger</a> to insert documents in a NeDB-readable database\r\n* If you\'ve outgrown NeDB, switching to MongoDB won\'t be too hard as it is the same API. Use <a href="https://github.com/louischatriot/nedb-to-mongodb" target="_blank">this utility</a> to transfer the data from a NeDB database to a MongoDB collection\r\n\r\n\r\n## Help out!\r\n\r\n\r\n\r\n## License \r\n\r\n(The MIT License)\r\n\r\nCopyright (c) 2013 Louis Chatriot &lt;louis.chatriot@gmail.com&gt;\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining\r\na copy of this software and associated documentation files (the\r\n\'Software\'), to deal in the Software without restriction, including\r\nwithout limitation the rights to use, copy, modify, merge, publish,\r\ndistribute, sublicense, and/or sell copies of the Software, and to\r\npermit persons to whom the Software is furnished to do so, subject to\r\nthe following conditions:\r\n\r\nThe above copyright notice and this permission notice shall be\r\nincluded in all copies or substantial portions of the Software.\r\n\r\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\r\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\r\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\r\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\r\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\r\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\r\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\r\n',
+117 silly resolved     readmeFilename: 'README.md',
+117 silly resolved     bugs: { url: 'https://github.com/louischatriot/nedb/issues' },
+117 silly resolved     _id: 'nedb@0.10.4',
+117 silly resolved     _from: 'nedb@~0.10.4' },
+117 silly resolved   { name: 'express',
+117 silly resolved     description: 'Sinatra inspired web development framework',
+117 silly resolved     version: '3.4.8',
+117 silly resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+117 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+117 silly resolved     dependencies:
+117 silly resolved      { connect: '2.12.0',
+117 silly resolved        commander: '1.3.2',
+117 silly resolved        'range-parser': '0.0.4',
+117 silly resolved        mkdirp: '0.3.5',
+117 silly resolved        cookie: '0.1.0',
+117 silly resolved        'buffer-crc32': '0.2.1',
+117 silly resolved        fresh: '0.2.0',
+117 silly resolved        methods: '0.1.0',
+117 silly resolved        send: '0.1.4',
+117 silly resolved        'cookie-signature': '1.0.1',
+117 silly resolved        'merge-descriptors': '0.0.1',
+117 silly resolved        debug: '>= 0.7.3 < 1' },
+117 silly resolved     devDependencies:
+117 silly resolved      { ejs: '~0.8.4',
+117 silly resolved        mocha: '~1.15.1',
+117 silly resolved        jade: '~0.30.0',
+117 silly resolved        hjs: '~0.0.6',
+117 silly resolved        stylus: '~0.40.0',
+117 silly resolved        should: '~2.1.1',
+117 silly resolved        'connect-redis': '~1.4.5',
+117 silly resolved        marked: '0.2.10',
+117 silly resolved        supertest: '~0.8.1' },
+117 silly resolved     keywords:
+117 silly resolved      [ 'express',
+117 silly resolved        'framework',
+117 silly resolved        'sinatra',
+117 silly resolved        'web',
+117 silly resolved        'rest',
+117 silly resolved        'restful',
+117 silly resolved        'router',
+117 silly resolved        'app',
+117 silly resolved        'api' ],
+117 silly resolved     repository: { type: 'git', url: 'git://github.com/visionmedia/express' },
+117 silly resolved     main: 'index',
+117 silly resolved     bin: { express: './bin/express' },
+117 silly resolved     scripts: { prepublish: 'npm prune', test: 'make test' },
+117 silly resolved     engines: { node: '>= 0.8.0' },
+117 silly resolved     license: 'MIT',
+117 silly resolved     readme: '[![express logo](http://f.cl.ly/items/0V2S1n0K1i3y1c122g04/Screen%20Shot%202012-04-11%20at%209.59.42%20AM.png)](http://expressjs.com/)\n\n  Fast, unopinionated, minimalist web framework for [node](http://nodejs.org).\n\n  [![Build Status](https://secure.travis-ci.org/visionmedia/express.png)](http://travis-ci.org/visionmedia/express) [![Gittip](http://img.shields.io/gittip/visionmedia.png)](https://www.gittip.com/visionmedia/)\n\n```js\nvar express = require(\'express\');\nvar app = express();\n\napp.get(\'/\', function(req, res){\n  res.send(\'Hello World\');\n});\n\napp.listen(3000);\n```\n\n## Installation\n\n    $ npm install -g express\n\n## Quick Start\n\n The quickest way to get started with express is to utilize the executable `express(1)` to generate an application as shown below:\n\n Create the app:\n\n    $ npm install -g express\n    $ express /tmp/foo && cd /tmp/foo\n\n Install dependencies:\n\n    $ npm install\n\n Start the server:\n\n    $ node app\n\n## Features\n\n  * Built on [Connect](http://github.com/senchalabs/connect)\n  * Robust routing\n  * HTTP helpers (redirection, caching, etc)\n  * View system supporting 14+ template engines\n  * Content negotiation\n  * Focus on high performance\n  * Environment based configuration\n  * Executable for generating applications quickly\n  * High test coverage\n\n## Philosophy\n\n  The Express philosophy is to provide small, robust tooling for HTTP servers, making\n  it a great solution for single page applications, web sites, hybrids, or public\n  HTTP APIs.\n\n  Built on Connect, you can use _only_ what you need, and nothing more. Applications\n  can be as big or as small as you like, even a single file. Express does\n  not force you to use any specific ORM or template engine. With support for over\n  14 template engines via [Consolidate.js](http://github.com/visionmedia/consolidate.js),\n  you can quickly craft your perfect framework.\n\n## More Information\n\n  * [Website and Documentation](http://expressjs.com/) stored at [visionmedia/expressjs.com](https://github.com/visionmedia/expressjs.com)\n  * Join #express on freenode\n  * [Google Group](http://groups.google.com/group/express-js) for discussion\n  * Follow [tjholowaychuk](http://twitter.com/tjholowaychuk) on twitter for updates\n  * Visit the [Wiki](http://github.com/visionmedia/express/wiki)\n  * [Русскоязычная документация](http://jsman.ru/express/)\n  * Run express examples [online](https://runnable.com/express)\n\n## Viewing Examples\n\nClone the Express repo, then install the dev dependencies to install all the example / test suite dependencies:\n\n    $ git clone git://github.com/visionmedia/express.git --depth 1\n    $ cd express\n    $ npm install\n\nThen run whichever tests you want:\n\n    $ node examples/content-negotiation\n\nYou can also view live examples here:\n\n<a href="https://runnable.com/express" target="_blank"><img src="https://runnable.com/external/styles/assets/runnablebtn.png" style="width:67px;height:25px;"></a>\n\n## Running Tests\n\nTo run the test suite, first invoke the following command within the repo, installing the development dependencies:\n\n    $ npm install\n\nThen run the tests:\n\n    $ make test\n\n## Contributors\n\n  https://github.com/visionmedia/express/graphs/contributors\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2009-2012 TJ Holowaychuk &lt;tj@vision-media.ca&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\'Software\'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n',
+117 silly resolved     readmeFilename: 'Readme.md',
+117 silly resolved     bugs: { url: 'https://github.com/visionmedia/express/issues' },
+117 silly resolved     _id: 'express@3.4.8',
+117 silly resolved     _from: 'express@~3.4.8' },
+117 silly resolved   { name: 'gulp',
+117 silly resolved     description: 'The streaming build system',
+117 silly resolved     version: '3.5.6',
+117 silly resolved     homepage: 'http://gulpjs.com',
+117 silly resolved     repository: { type: 'git', url: 'gulpjs/gulp' },
+117 silly resolved     author:
+117 silly resolved      { name: 'Fractal',
+117 silly resolved        email: 'contact@wearefractal.com',
+117 silly resolved        url: 'http://wearefractal.com/' },
+117 silly resolved     tags: [ 'build', 'stream', 'system', 'make', 'tool', 'asset', 'pipeline' ],
+117 silly resolved     files: [ 'index.js', 'lib', 'bin', 'completion' ],
+117 silly resolved     bin: { gulp: './bin/gulp.js' },
+117 silly resolved     dependencies:
+117 silly resolved      { 'gulp-util': '^2.2.0',
+117 silly resolved        orchestrator: '^0.3.0',
+117 silly resolved        'pretty-hrtime': '^0.2.0',
+117 silly resolved        'vinyl-fs': '^0.1.0',
+117 silly resolved        semver: '^2.2.1',
+117 silly resolved        archy: '^0.0.2',
+117 silly resolved        deprecated: '^0.0.1',
+117 silly resolved        liftoff: '^0.9.3',
+117 silly resolved        chalk: '^0.4.0' },
+117 silly resolved     devDependencies:
+117 silly resolved      { mocha: '^1.17.0',
+117 silly resolved        'mocha-lcov-reporter': '^0.0.1',
+117 silly resolved        coveralls: '^2.7.0',
+117 silly resolved        istanbul: '^0.2.3',
+117 silly resolved        should: '^3.1.0',
+117 silly resolved        rimraf: '^2.2.5',
+117 silly resolved        q: '^1.0.0',
+117 silly resolved        jshint: '^2.4.1',
+117 silly resolved        'graceful-fs': '^2.0.1',
+117 silly resolved        'gulp-jshint': '^1.4.0',
+117 silly resolved        mkdirp: '^0.3.5' },
+117 silly resolved     scripts:
+117 silly resolved      { test: 'node gulpfile.js && mocha --reporter spec',
+117 silly resolved        coveralls: 'istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage' },
+117 silly resolved     engineStrict: true,
+117 silly resolved     engines: { node: '>= 0.9' },
+117 silly resolved     licenses: [ [Object] ],
+117 silly resolved     readme: '<p align="center">\n  <a href="http://gulpjs.com">\n    <img height="194" width="98" src="https://raw.github.com/gulpjs/artwork/master/gulp.png"/>\n  </a>\n</p>\n\n# gulp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Dependency Status][daviddm-url]][daviddm-image]\n> The streaming build system\n\n## Like what we do?\n\n[Support us via gittip](https://www.gittip.com/WeAreFractal/)\n\n## Documentation\n\nFor a Getting started guide, API docs, recipes, making a plugin, etc. see the [documentation page](/docs/README.md)!\n\n## Sample gulpfile\n\nThis file is just a quick sample to give you a taste of what gulp does.\n\n```javascript\nvar gulp = require(\'gulp\');\n\nvar coffee = require(\'gulp-coffee\');\nvar concat = require(\'gulp-concat\');\nvar uglify = require(\'gulp-uglify\');\nvar imagemin = require(\'gulp-imagemin\');\n\nvar paths = {\n  scripts: [\'client/js/**/*.coffee\', \'!client/external/**/*.coffee\'],\n  images: \'client/img/**/*\'\n};\n\ngulp.task(\'scripts\', function() {\n  // Minify and copy all JavaScript (except vendor scripts)\n  return gulp.src(paths.scripts)\n    .pipe(coffee())\n    .pipe(uglify())\n    .pipe(concat(\'all.min.js\'))\n    .pipe(gulp.dest(\'build/js\'));\n});\n\n// Copy all static images\ngulp.task(\'images\', function() {\n return gulp.src(paths.images)\n    // Pass in options to the task\n    .pipe(imagemin({optimizationLevel: 5}))\n    .pipe(gulp.dest(\'build/img\'));\n});\n\n// Rerun the task when a file changes\ngulp.task(\'watch\', function() {\n  gulp.watch(paths.scripts, [\'scripts\']);\n  gulp.watch(paths.images, [\'images\']);\n});\n\n// The default task (called when you run `gulp` from cli)\ngulp.task(\'default\', [\'scripts\', \'images\', \'watch\']);\n\n```\n\n## Incremental Builds\n\nWe recommend these plugins:\n\n- [gulp-changed](https://github.com/sindresorhus/gulp-changed)\n- [gulp-cached](https://github.com/wearefractal/gulp-cached)\n\n## Want to contribute?\n\nAnyone can help make this project better - check out the [Contributing guide](/CONTRIBUTING.md)!\n\n\n[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/wearefractal/gulp/trend.png)](https://bitdeli.com/free "Bitdeli Badge")\n\n[npm-url]: https://npmjs.org/package/gulp\n[npm-image]: https://badge.fury.io/js/gulp.png\n[travis-url]: https://travis-ci.org/gulpjs/gulp\n[travis-image]: https://travis-ci.org/gulpjs/gulp.png?branch=master\n[coveralls-url]: https://coveralls.io/r/gulpjs/gulp\n[coveralls-image]: https://coveralls.io/repos/gulpjs/gulp/badge.png\n[depstat-url]: https://david-dm.org/gulpjs/gulp\n[depstat-image]: https://david-dm.org/gulpjs/gulp.png\n[daviddm-url]: https://david-dm.org/gulpjs/gulp.png?theme=shields.io\n[daviddm-image]: https://david-dm.org/gulpjs/gulp\n',
+117 silly resolved     readmeFilename: 'README.md',
+117 silly resolved     _id: 'gulp@3.5.6',
+117 silly resolved     _from: 'gulp@~3' } ]
+118 info install nedb@0.10.4 into /home/laurence/Documents/Code/pimeariver
+119 info install express@3.4.8 into /home/laurence/Documents/Code/pimeariver
+120 info install gulp@3.5.6 into /home/laurence/Documents/Code/pimeariver
+121 info installOne nedb@0.10.4
+122 info installOne express@3.4.8
+123 info installOne gulp@3.5.6
+124 verbose from cache /home/laurence/.npm/gulp/3.5.6/package/package.json
+125 info /home/laurence/Documents/Code/pimeariver/node_modules/gulp unbuild
+126 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/gulp/package.json
+127 verbose from cache /home/laurence/.npm/nedb/0.10.4/package/package.json
+128 info /home/laurence/Documents/Code/pimeariver/node_modules/nedb unbuild
+129 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/nedb/package.json
+130 verbose from cache /home/laurence/.npm/express/3.4.8/package/package.json
+131 info /home/laurence/Documents/Code/pimeariver/node_modules/express unbuild
+132 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/express/package.json
+133 verbose tar unpack /home/laurence/.npm/gulp/3.5.6/package.tgz
+134 silly lockFile f628021e-ode-pimeariver-node-modules-gulp /home/laurence/Documents/Code/pimeariver/node_modules/gulp
+135 verbose lock /home/laurence/Documents/Code/pimeariver/node_modules/gulp /home/laurence/.npm/f628021e-ode-pimeariver-node-modules-gulp.lock
+136 silly lockFile eb5a9444-rence-npm-gulp-3-5-6-package-tgz /home/laurence/.npm/gulp/3.5.6/package.tgz
+137 verbose lock /home/laurence/.npm/gulp/3.5.6/package.tgz /home/laurence/.npm/eb5a9444-rence-npm-gulp-3-5-6-package-tgz.lock
+138 silly gunzTarPerm modes [ '755', '644' ]
+139 silly gunzTarPerm extractEntry package.json
+140 silly gunzTarPerm extractEntry README.md
+141 silly gunzTarPerm extractEntry index.js
+142 silly gunzTarPerm extractEntry bin/gulp.js
+143 silly gunzTarPerm extractEntry completion/README.md
+144 silly gunzTarPerm extractEntry completion/bash
+145 silly gunzTarPerm extractEntry completion/zsh
+146 silly gunzTarPerm extractEntry lib/completion.js
+147 silly gunzTarPerm extractEntry lib/taskTree.js
+148 verbose tar unpack /home/laurence/.npm/nedb/0.10.4/package.tgz
+149 silly lockFile 64b96761-ode-pimeariver-node-modules-nedb /home/laurence/Documents/Code/pimeariver/node_modules/nedb
+150 verbose lock /home/laurence/Documents/Code/pimeariver/node_modules/nedb /home/laurence/.npm/64b96761-ode-pimeariver-node-modules-nedb.lock
+151 silly lockFile 52d332ab-ence-npm-nedb-0-10-4-package-tgz /home/laurence/.npm/nedb/0.10.4/package.tgz
+152 verbose lock /home/laurence/.npm/nedb/0.10.4/package.tgz /home/laurence/.npm/52d332ab-ence-npm-nedb-0-10-4-package-tgz.lock
+153 silly gunzTarPerm modes [ '755', '644' ]
+154 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/gulp/package.json
+155 silly gunzTarPerm extractEntry package.json
+156 silly gunzTarPerm extractEntry .npmignore
+157 silly gunzTarPerm extractEntry README.md
+158 silly lockFile f628021e-ode-pimeariver-node-modules-gulp /home/laurence/Documents/Code/pimeariver/node_modules/gulp
+159 silly lockFile f628021e-ode-pimeariver-node-modules-gulp /home/laurence/Documents/Code/pimeariver/node_modules/gulp
+160 silly lockFile eb5a9444-rence-npm-gulp-3-5-6-package-tgz /home/laurence/.npm/gulp/3.5.6/package.tgz
+161 silly lockFile eb5a9444-rence-npm-gulp-3-5-6-package-tgz /home/laurence/.npm/gulp/3.5.6/package.tgz
+162 verbose tar unpack /home/laurence/.npm/express/3.4.8/package.tgz
+163 silly lockFile 1e53141c--pimeariver-node-modules-express /home/laurence/Documents/Code/pimeariver/node_modules/express
+164 verbose lock /home/laurence/Documents/Code/pimeariver/node_modules/express /home/laurence/.npm/1e53141c--pimeariver-node-modules-express.lock
+165 silly lockFile 4379f2f0-ce-npm-express-3-4-8-package-tgz /home/laurence/.npm/express/3.4.8/package.tgz
+166 verbose lock /home/laurence/.npm/express/3.4.8/package.tgz /home/laurence/.npm/4379f2f0-ce-npm-express-3-4-8-package-tgz.lock
+167 info preinstall gulp@3.5.6
+168 silly gunzTarPerm extractEntry index.js
+169 silly gunzTarPerm modes [ '755', '644' ]
+170 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/gulp/package.json
+171 verbose readDependencies using package.json deps
+172 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/gulp/package.json
+173 verbose readDependencies using package.json deps
+174 verbose cache add [ 'pretty-hrtime@^0.2.0', null ]
+175 verbose cache add name=undefined spec="pretty-hrtime@^0.2.0" args=["pretty-hrtime@^0.2.0",null]
+176 verbose parsed url { protocol: null,
+176 verbose parsed url   slashes: null,
+176 verbose parsed url   auth: null,
+176 verbose parsed url   host: null,
+176 verbose parsed url   port: null,
+176 verbose parsed url   hostname: null,
+176 verbose parsed url   hash: null,
+176 verbose parsed url   search: null,
+176 verbose parsed url   query: null,
+176 verbose parsed url   pathname: 'pretty-hrtime@%5E0.2.0',
+176 verbose parsed url   path: 'pretty-hrtime@%5E0.2.0',
+176 verbose parsed url   href: 'pretty-hrtime@%5E0.2.0' }
+177 verbose cache add name="pretty-hrtime" spec="^0.2.0" args=["pretty-hrtime","^0.2.0"]
+178 verbose parsed url { protocol: null,
+178 verbose parsed url   slashes: null,
+178 verbose parsed url   auth: null,
+178 verbose parsed url   host: null,
+178 verbose parsed url   port: null,
+178 verbose parsed url   hostname: null,
+178 verbose parsed url   hash: null,
+178 verbose parsed url   search: null,
+178 verbose parsed url   query: null,
+178 verbose parsed url   pathname: '%5E0.2.0',
+178 verbose parsed url   path: '%5E0.2.0',
+178 verbose parsed url   href: '%5E0.2.0' }
+179 verbose addNamed [ 'pretty-hrtime', '^0.2.0' ]
+180 verbose addNamed [ null, null ]
+181 silly lockFile 3ac7556f-pretty-hrtime-0-2-0 pretty-hrtime@^0.2.0
+182 verbose lock pretty-hrtime@^0.2.0 /home/laurence/.npm/3ac7556f-pretty-hrtime-0-2-0.lock
+183 verbose cache add [ 'vinyl-fs@^0.1.0', null ]
+184 verbose cache add name=undefined spec="vinyl-fs@^0.1.0" args=["vinyl-fs@^0.1.0",null]
+185 verbose parsed url { protocol: null,
+185 verbose parsed url   slashes: null,
+185 verbose parsed url   auth: null,
+185 verbose parsed url   host: null,
+185 verbose parsed url   port: null,
+185 verbose parsed url   hostname: null,
+185 verbose parsed url   hash: null,
+185 verbose parsed url   search: null,
+185 verbose parsed url   query: null,
+185 verbose parsed url   pathname: 'vinyl-fs@%5E0.1.0',
+185 verbose parsed url   path: 'vinyl-fs@%5E0.1.0',
+185 verbose parsed url   href: 'vinyl-fs@%5E0.1.0' }
+186 verbose cache add name="vinyl-fs" spec="^0.1.0" args=["vinyl-fs","^0.1.0"]
+187 verbose parsed url { protocol: null,
+187 verbose parsed url   slashes: null,
+187 verbose parsed url   auth: null,
+187 verbose parsed url   host: null,
+187 verbose parsed url   port: null,
+187 verbose parsed url   hostname: null,
+187 verbose parsed url   hash: null,
+187 verbose parsed url   search: null,
+187 verbose parsed url   query: null,
+187 verbose parsed url   pathname: '%5E0.1.0',
+187 verbose parsed url   path: '%5E0.1.0',
+187 verbose parsed url   href: '%5E0.1.0' }
+188 verbose addNamed [ 'vinyl-fs', '^0.1.0' ]
+189 verbose addNamed [ null, null ]
+190 silly lockFile 5c12a853-vinyl-fs-0-1-0 vinyl-fs@^0.1.0
+191 verbose lock vinyl-fs@^0.1.0 /home/laurence/.npm/5c12a853-vinyl-fs-0-1-0.lock
+192 info addNameTag [ 'pretty-hrtime', '^0.2.0' ]
+193 verbose cache add [ 'semver@^2.2.1', null ]
+194 verbose cache add name=undefined spec="semver@^2.2.1" args=["semver@^2.2.1",null]
+195 verbose parsed url { protocol: null,
+195 verbose parsed url   slashes: null,
+195 verbose parsed url   auth: null,
+195 verbose parsed url   host: null,
+195 verbose parsed url   port: null,
+195 verbose parsed url   hostname: null,
+195 verbose parsed url   hash: null,
+195 verbose parsed url   search: null,
+195 verbose parsed url   query: null,
+195 verbose parsed url   pathname: 'semver@%5E2.2.1',
+195 verbose parsed url   path: 'semver@%5E2.2.1',
+195 verbose parsed url   href: 'semver@%5E2.2.1' }
+196 verbose cache add name="semver" spec="^2.2.1" args=["semver","^2.2.1"]
+197 verbose parsed url { protocol: null,
+197 verbose parsed url   slashes: null,
+197 verbose parsed url   auth: null,
+197 verbose parsed url   host: null,
+197 verbose parsed url   port: null,
+197 verbose parsed url   hostname: null,
+197 verbose parsed url   hash: null,
+197 verbose parsed url   search: null,
+197 verbose parsed url   query: null,
+197 verbose parsed url   pathname: '%5E2.2.1',
+197 verbose parsed url   path: '%5E2.2.1',
+197 verbose parsed url   href: '%5E2.2.1' }
+198 verbose addNamed [ 'semver', '^2.2.1' ]
+199 verbose addNamed [ null, null ]
+200 silly lockFile d8627689-semver-2-2-1 semver@^2.2.1
+201 verbose lock semver@^2.2.1 /home/laurence/.npm/d8627689-semver-2-2-1.lock
+202 info addNameTag [ 'vinyl-fs', '^0.1.0' ]
+203 silly gunzTarPerm extractEntry package.json
+204 verbose cache add [ 'archy@^0.0.2', null ]
+205 verbose cache add name=undefined spec="archy@^0.0.2" args=["archy@^0.0.2",null]
+206 verbose parsed url { protocol: null,
+206 verbose parsed url   slashes: null,
+206 verbose parsed url   auth: null,
+206 verbose parsed url   host: null,
+206 verbose parsed url   port: null,
+206 verbose parsed url   hostname: null,
+206 verbose parsed url   hash: null,
+206 verbose parsed url   search: null,
+206 verbose parsed url   query: null,
+206 verbose parsed url   pathname: 'archy@%5E0.0.2',
+206 verbose parsed url   path: 'archy@%5E0.0.2',
+206 verbose parsed url   href: 'archy@%5E0.0.2' }
+207 verbose cache add name="archy" spec="^0.0.2" args=["archy","^0.0.2"]
+208 verbose parsed url { protocol: null,
+208 verbose parsed url   slashes: null,
+208 verbose parsed url   auth: null,
+208 verbose parsed url   host: null,
+208 verbose parsed url   port: null,
+208 verbose parsed url   hostname: null,
+208 verbose parsed url   hash: null,
+208 verbose parsed url   search: null,
+208 verbose parsed url   query: null,
+208 verbose parsed url   pathname: '%5E0.0.2',
+208 verbose parsed url   path: '%5E0.0.2',
+208 verbose parsed url   href: '%5E0.0.2' }
+209 verbose addNamed [ 'archy', '^0.0.2' ]
+210 verbose addNamed [ null, null ]
+211 silly lockFile bdbf708d-archy-0-0-2 archy@^0.0.2
+212 verbose lock archy@^0.0.2 /home/laurence/.npm/bdbf708d-archy-0-0-2.lock
+213 info addNameTag [ 'semver', '^2.2.1' ]
+214 silly gunzTarPerm extractEntry benchmarks/commonUtilities.js
+215 silly gunzTarPerm extractEntry benchmarks/ensureIndex.js
+216 verbose cache add [ 'deprecated@^0.0.1', null ]
+217 verbose cache add name=undefined spec="deprecated@^0.0.1" args=["deprecated@^0.0.1",null]
+218 verbose parsed url { protocol: null,
+218 verbose parsed url   slashes: null,
+218 verbose parsed url   auth: null,
+218 verbose parsed url   host: null,
+218 verbose parsed url   port: null,
+218 verbose parsed url   hostname: null,
+218 verbose parsed url   hash: null,
+218 verbose parsed url   search: null,
+218 verbose parsed url   query: null,
+218 verbose parsed url   pathname: 'deprecated@%5E0.0.1',
+218 verbose parsed url   path: 'deprecated@%5E0.0.1',
+218 verbose parsed url   href: 'deprecated@%5E0.0.1' }
+219 verbose cache add name="deprecated" spec="^0.0.1" args=["deprecated","^0.0.1"]
+220 verbose parsed url { protocol: null,
+220 verbose parsed url   slashes: null,
+220 verbose parsed url   auth: null,
+220 verbose parsed url   host: null,
+220 verbose parsed url   port: null,
+220 verbose parsed url   hostname: null,
+220 verbose parsed url   hash: null,
+220 verbose parsed url   search: null,
+220 verbose parsed url   query: null,
+220 verbose parsed url   pathname: '%5E0.0.1',
+220 verbose parsed url   path: '%5E0.0.1',
+220 verbose parsed url   href: '%5E0.0.1' }
+221 verbose addNamed [ 'deprecated', '^0.0.1' ]
+222 verbose addNamed [ null, null ]
+223 silly lockFile 0e32a569-deprecated-0-0-1 deprecated@^0.0.1
+224 verbose lock deprecated@^0.0.1 /home/laurence/.npm/0e32a569-deprecated-0-0-1.lock
+225 info addNameTag [ 'archy', '^0.0.2' ]
+226 verbose cache add [ 'liftoff@^0.9.3', null ]
+227 verbose cache add name=undefined spec="liftoff@^0.9.3" args=["liftoff@^0.9.3",null]
+228 verbose parsed url { protocol: null,
+228 verbose parsed url   slashes: null,
+228 verbose parsed url   auth: null,
+228 verbose parsed url   host: null,
+228 verbose parsed url   port: null,
+228 verbose parsed url   hostname: null,
+228 verbose parsed url   hash: null,
+228 verbose parsed url   search: null,
+228 verbose parsed url   query: null,
+228 verbose parsed url   pathname: 'liftoff@%5E0.9.3',
+228 verbose parsed url   path: 'liftoff@%5E0.9.3',
+228 verbose parsed url   href: 'liftoff@%5E0.9.3' }
+229 verbose cache add name="liftoff" spec="^0.9.3" args=["liftoff","^0.9.3"]
+230 verbose parsed url { protocol: null,
+230 verbose parsed url   slashes: null,
+230 verbose parsed url   auth: null,
+230 verbose parsed url   host: null,
+230 verbose parsed url   port: null,
+230 verbose parsed url   hostname: null,
+230 verbose parsed url   hash: null,
+230 verbose parsed url   search: null,
+230 verbose parsed url   query: null,
+230 verbose parsed url   pathname: '%5E0.9.3',
+230 verbose parsed url   path: '%5E0.9.3',
+230 verbose parsed url   href: '%5E0.9.3' }
+231 verbose addNamed [ 'liftoff', '^0.9.3' ]
+232 verbose addNamed [ null, null ]
+233 silly lockFile e16e48d9-liftoff-0-9-3 liftoff@^0.9.3
+234 verbose lock liftoff@^0.9.3 /home/laurence/.npm/e16e48d9-liftoff-0-9-3.lock
+235 info addNameTag [ 'deprecated', '^0.0.1' ]
+236 verbose cache add [ 'chalk@^0.4.0', null ]
+237 verbose cache add name=undefined spec="chalk@^0.4.0" args=["chalk@^0.4.0",null]
+238 verbose parsed url { protocol: null,
+238 verbose parsed url   slashes: null,
+238 verbose parsed url   auth: null,
+238 verbose parsed url   host: null,
+238 verbose parsed url   port: null,
+238 verbose parsed url   hostname: null,
+238 verbose parsed url   hash: null,
+238 verbose parsed url   search: null,
+238 verbose parsed url   query: null,
+238 verbose parsed url   pathname: 'chalk@%5E0.4.0',
+238 verbose parsed url   path: 'chalk@%5E0.4.0',
+238 verbose parsed url   href: 'chalk@%5E0.4.0' }
+239 verbose cache add name="chalk" spec="^0.4.0" args=["chalk","^0.4.0"]
+240 verbose parsed url { protocol: null,
+240 verbose parsed url   slashes: null,
+240 verbose parsed url   auth: null,
+240 verbose parsed url   host: null,
+240 verbose parsed url   port: null,
+240 verbose parsed url   hostname: null,
+240 verbose parsed url   hash: null,
+240 verbose parsed url   search: null,
+240 verbose parsed url   query: null,
+240 verbose parsed url   pathname: '%5E0.4.0',
+240 verbose parsed url   path: '%5E0.4.0',
+240 verbose parsed url   href: '%5E0.4.0' }
+241 verbose addNamed [ 'chalk', '^0.4.0' ]
+242 verbose addNamed [ null, null ]
+243 silly lockFile b2f4396d-chalk-0-4-0 chalk@^0.4.0
+244 verbose lock chalk@^0.4.0 /home/laurence/.npm/b2f4396d-chalk-0-4-0.lock
+245 info addNameTag [ 'liftoff', '^0.9.3' ]
+246 verbose url raw pretty-hrtime
+247 verbose url resolving [ 'https://registry.npmjs.org/', './pretty-hrtime' ]
+248 verbose url resolved https://registry.npmjs.org/pretty-hrtime
+249 info trying registry request attempt 1 at 11:03:51
+250 verbose etag "8KFYZUMKB71DLVZY63HEZLOWQ"
+251 http GET https://registry.npmjs.org/pretty-hrtime
+252 silly gunzTarPerm extractEntry .npmignore
+253 silly gunzTarPerm extractEntry LICENSE
+254 verbose cache add [ 'gulp-util@^2.2.0', null ]
+255 verbose cache add name=undefined spec="gulp-util@^2.2.0" args=["gulp-util@^2.2.0",null]
+256 verbose parsed url { protocol: null,
+256 verbose parsed url   slashes: null,
+256 verbose parsed url   auth: null,
+256 verbose parsed url   host: null,
+256 verbose parsed url   port: null,
+256 verbose parsed url   hostname: null,
+256 verbose parsed url   hash: null,
+256 verbose parsed url   search: null,
+256 verbose parsed url   query: null,
+256 verbose parsed url   pathname: 'gulp-util@%5E2.2.0',
+256 verbose parsed url   path: 'gulp-util@%5E2.2.0',
+256 verbose parsed url   href: 'gulp-util@%5E2.2.0' }
+257 verbose cache add name="gulp-util" spec="^2.2.0" args=["gulp-util","^2.2.0"]
+258 verbose parsed url { protocol: null,
+258 verbose parsed url   slashes: null,
+258 verbose parsed url   auth: null,
+258 verbose parsed url   host: null,
+258 verbose parsed url   port: null,
+258 verbose parsed url   hostname: null,
+258 verbose parsed url   hash: null,
+258 verbose parsed url   search: null,
+258 verbose parsed url   query: null,
+258 verbose parsed url   pathname: '%5E2.2.0',
+258 verbose parsed url   path: '%5E2.2.0',
+258 verbose parsed url   href: '%5E2.2.0' }
+259 verbose addNamed [ 'gulp-util', '^2.2.0' ]
+260 verbose addNamed [ null, null ]
+261 silly lockFile b0a108b6-gulp-util-2-2-0 gulp-util@^2.2.0
+262 verbose lock gulp-util@^2.2.0 /home/laurence/.npm/b0a108b6-gulp-util-2-2-0.lock
+263 verbose cache add [ 'orchestrator@^0.3.0', null ]
+264 verbose cache add name=undefined spec="orchestrator@^0.3.0" args=["orchestrator@^0.3.0",null]
+265 verbose parsed url { protocol: null,
+265 verbose parsed url   slashes: null,
+265 verbose parsed url   auth: null,
+265 verbose parsed url   host: null,
+265 verbose parsed url   port: null,
+265 verbose parsed url   hostname: null,
+265 verbose parsed url   hash: null,
+265 verbose parsed url   search: null,
+265 verbose parsed url   query: null,
+265 verbose parsed url   pathname: 'orchestrator@%5E0.3.0',
+265 verbose parsed url   path: 'orchestrator@%5E0.3.0',
+265 verbose parsed url   href: 'orchestrator@%5E0.3.0' }
+266 verbose cache add name="orchestrator" spec="^0.3.0" args=["orchestrator","^0.3.0"]
+267 verbose parsed url { protocol: null,
+267 verbose parsed url   slashes: null,
+267 verbose parsed url   auth: null,
+267 verbose parsed url   host: null,
+267 verbose parsed url   port: null,
+267 verbose parsed url   hostname: null,
+267 verbose parsed url   hash: null,
+267 verbose parsed url   search: null,
+267 verbose parsed url   query: null,
+267 verbose parsed url   pathname: '%5E0.3.0',
+267 verbose parsed url   path: '%5E0.3.0',
+267 verbose parsed url   href: '%5E0.3.0' }
+268 verbose addNamed [ 'orchestrator', '^0.3.0' ]
+269 verbose addNamed [ null, null ]
+270 silly lockFile 74d9c599-orchestrator-0-3-0 orchestrator@^0.3.0
+271 verbose lock orchestrator@^0.3.0 /home/laurence/.npm/74d9c599-orchestrator-0-3-0.lock
+272 info addNameTag [ 'chalk', '^0.4.0' ]
+273 verbose url raw vinyl-fs
+274 verbose url resolving [ 'https://registry.npmjs.org/', './vinyl-fs' ]
+275 verbose url resolved https://registry.npmjs.org/vinyl-fs
+276 info trying registry request attempt 1 at 11:03:51
+277 verbose etag "3F6HLGF0IHPJ9EKD6A49PLXLK"
+278 http GET https://registry.npmjs.org/vinyl-fs
+279 info addNameTag [ 'gulp-util', '^2.2.0' ]
+280 info addNameTag [ 'orchestrator', '^0.3.0' ]
+281 verbose url raw semver
+282 verbose url resolving [ 'https://registry.npmjs.org/', './semver' ]
+283 verbose url resolved https://registry.npmjs.org/semver
+284 info trying registry request attempt 1 at 11:03:51
+285 verbose etag "1P01DE8ZPG9FJ5YOXFEW1CXWT"
+286 http GET https://registry.npmjs.org/semver
+287 verbose url raw archy
+288 verbose url resolving [ 'https://registry.npmjs.org/', './archy' ]
+289 verbose url resolved https://registry.npmjs.org/archy
+290 info trying registry request attempt 1 at 11:03:51
+291 verbose etag "B4ZVBUUOU9B4F4EKPBB4CRZYQ"
+292 http GET https://registry.npmjs.org/archy
+293 verbose url raw deprecated
+294 verbose url resolving [ 'https://registry.npmjs.org/', './deprecated' ]
+295 verbose url resolved https://registry.npmjs.org/deprecated
+296 info trying registry request attempt 1 at 11:03:51
+297 verbose etag "DTMETKBYP512KWFX5N8KSY5HB"
+298 http GET https://registry.npmjs.org/deprecated
+299 verbose url raw liftoff
+300 verbose url resolving [ 'https://registry.npmjs.org/', './liftoff' ]
+301 verbose url resolved https://registry.npmjs.org/liftoff
+302 info trying registry request attempt 1 at 11:03:51
+303 verbose etag "7I9T0808PCNHXRUQHQTRAOHW2"
+304 http GET https://registry.npmjs.org/liftoff
+305 verbose url raw chalk
+306 verbose url resolving [ 'https://registry.npmjs.org/', './chalk' ]
+307 verbose url resolved https://registry.npmjs.org/chalk
+308 info trying registry request attempt 1 at 11:03:51
+309 verbose etag "B66SUSU877RWTD5A56HHZ08N8"
+310 http GET https://registry.npmjs.org/chalk
+311 verbose url raw gulp-util
+312 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-util' ]
+313 verbose url resolved https://registry.npmjs.org/gulp-util
+314 info trying registry request attempt 1 at 11:03:51
+315 verbose etag "3JN641VJABLQCL7F915BHLWH4"
+316 http GET https://registry.npmjs.org/gulp-util
+317 verbose url raw orchestrator
+318 verbose url resolving [ 'https://registry.npmjs.org/', './orchestrator' ]
+319 verbose url resolved https://registry.npmjs.org/orchestrator
+320 info trying registry request attempt 1 at 11:03:51
+321 verbose etag "83ZK044DVLFYF83Q96WS7G1DB"
+322 http GET https://registry.npmjs.org/orchestrator
+323 silly gunzTarPerm extractEntry index.js
+324 silly gunzTarPerm extractEntry History.md
+325 silly gunzTarPerm extractEntry Makefile
+326 silly gunzTarPerm extractEntry .travis.yml
+327 silly gunzTarPerm extractEntry benchmarks/middleware.js
+328 silly gunzTarPerm extractEntry benchmarks/Makefile
+329 silly gunzTarPerm extractEntry benchmarks/run
+330 silly gunzTarPerm extractEntry benchmarks/find.js
+331 silly gunzTarPerm extractEntry benchmarks/findOne.js
+332 silly gunzTarPerm extractEntry benchmarks/findWithIn.js
+333 silly gunzTarPerm extractEntry benchmarks/insert.js
+334 silly gunzTarPerm extractEntry benchmarks/loadDatabase.js
+335 silly gunzTarPerm extractEntry benchmarks/remove.js
+336 silly gunzTarPerm extractEntry benchmarks/update.js
+337 silly gunzTarPerm extractEntry browser-version/package.json
+338 silly gunzTarPerm extractEntry browser-version/build.js
+339 silly gunzTarPerm extractEntry browser-version/browser-specific/lib/customUtils.js
+340 silly gunzTarPerm extractEntry bin/express
+341 silly gunzTarPerm extractEntry lib/application.js
+342 silly gunzTarPerm extractEntry browser-version/browser-specific/lib/persistence.js
+343 silly gunzTarPerm extractEntry browser-version/out/nedb.js
+344 silly gunzTarPerm extractEntry lib/express.js
+345 silly gunzTarPerm extractEntry lib/middleware.js
+346 silly gunzTarPerm extractEntry browser-version/out/nedb.min.js
+347 silly gunzTarPerm extractEntry lib/request.js
+348 silly gunzTarPerm extractEntry lib/response.js
+349 silly gunzTarPerm extractEntry browser-version/test/mocha.js
+350 silly gunzTarPerm extractEntry lib/utils.js
+351 silly gunzTarPerm extractEntry lib/view.js
+352 silly gunzTarPerm extractEntry browser-version/test/nedb-browser.js
+353 silly gunzTarPerm extractEntry lib/router/index.js
+354 silly gunzTarPerm extractEntry lib/router/route.js
+355 silly gunzTarPerm extractEntry Readme.md
+356 silly gunzTarPerm extractEntry browser-version/test/index.html
+357 silly gunzTarPerm extractEntry browser-version/test/mocha.css
+358 silly gunzTarPerm extractEntry lib/cursor.js
+359 silly gunzTarPerm extractEntry lib/customUtils.js
+360 silly gunzTarPerm extractEntry lib/datastore.js
+361 silly gunzTarPerm extractEntry lib/executor.js
+362 silly gunzTarPerm extractEntry lib/indexes.js
+363 silly gunzTarPerm extractEntry lib/model.js
+364 silly gunzTarPerm extractEntry lib/persistence.js
+365 silly gunzTarPerm extractEntry test/cursor.test.js
+366 silly gunzTarPerm extractEntry test/customUtil.test.js
+367 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/express/package.json
+368 silly lockFile 1e53141c--pimeariver-node-modules-express /home/laurence/Documents/Code/pimeariver/node_modules/express
+369 silly lockFile 1e53141c--pimeariver-node-modules-express /home/laurence/Documents/Code/pimeariver/node_modules/express
+370 silly lockFile 4379f2f0-ce-npm-express-3-4-8-package-tgz /home/laurence/.npm/express/3.4.8/package.tgz
+371 silly lockFile 4379f2f0-ce-npm-express-3-4-8-package-tgz /home/laurence/.npm/express/3.4.8/package.tgz
+372 info preinstall express@3.4.8
+373 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/express/package.json
+374 verbose readDependencies using package.json deps
+375 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/express/package.json
+376 verbose readDependencies using package.json deps
+377 verbose cache add [ 'connect@2.12.0', null ]
+378 verbose cache add name=undefined spec="connect@2.12.0" args=["connect@2.12.0",null]
+379 verbose parsed url { protocol: null,
+379 verbose parsed url   slashes: null,
+379 verbose parsed url   auth: null,
+379 verbose parsed url   host: null,
+379 verbose parsed url   port: null,
+379 verbose parsed url   hostname: null,
+379 verbose parsed url   hash: null,
+379 verbose parsed url   search: null,
+379 verbose parsed url   query: null,
+379 verbose parsed url   pathname: 'connect@2.12.0',
+379 verbose parsed url   path: 'connect@2.12.0',
+379 verbose parsed url   href: 'connect@2.12.0' }
+380 verbose cache add name="connect" spec="2.12.0" args=["connect","2.12.0"]
+381 verbose parsed url { protocol: null,
+381 verbose parsed url   slashes: null,
+381 verbose parsed url   auth: null,
+381 verbose parsed url   host: null,
+381 verbose parsed url   port: null,
+381 verbose parsed url   hostname: null,
+381 verbose parsed url   hash: null,
+381 verbose parsed url   search: null,
+381 verbose parsed url   query: null,
+381 verbose parsed url   pathname: '2.12.0',
+381 verbose parsed url   path: '2.12.0',
+381 verbose parsed url   href: '2.12.0' }
+382 verbose addNamed [ 'connect', '2.12.0' ]
+383 verbose addNamed [ '2.12.0', '2.12.0' ]
+384 silly lockFile a4bed1c7-connect-2-12-0 connect@2.12.0
+385 verbose lock connect@2.12.0 /home/laurence/.npm/a4bed1c7-connect-2-12-0.lock
+386 verbose cache add [ 'commander@1.3.2', null ]
+387 verbose cache add name=undefined spec="commander@1.3.2" args=["commander@1.3.2",null]
+388 verbose parsed url { protocol: null,
+388 verbose parsed url   slashes: null,
+388 verbose parsed url   auth: null,
+388 verbose parsed url   host: null,
+388 verbose parsed url   port: null,
+388 verbose parsed url   hostname: null,
+388 verbose parsed url   hash: null,
+388 verbose parsed url   search: null,
+388 verbose parsed url   query: null,
+388 verbose parsed url   pathname: 'commander@1.3.2',
+388 verbose parsed url   path: 'commander@1.3.2',
+388 verbose parsed url   href: 'commander@1.3.2' }
+389 verbose cache add name="commander" spec="1.3.2" args=["commander","1.3.2"]
+390 verbose parsed url { protocol: null,
+390 verbose parsed url   slashes: null,
+390 verbose parsed url   auth: null,
+390 verbose parsed url   host: null,
+390 verbose parsed url   port: null,
+390 verbose parsed url   hostname: null,
+390 verbose parsed url   hash: null,
+390 verbose parsed url   search: null,
+390 verbose parsed url   query: null,
+390 verbose parsed url   pathname: '1.3.2',
+390 verbose parsed url   path: '1.3.2',
+390 verbose parsed url   href: '1.3.2' }
+391 verbose addNamed [ 'commander', '1.3.2' ]
+392 verbose addNamed [ '1.3.2', '1.3.2' ]
+393 silly lockFile 2016e061-commander-1-3-2 commander@1.3.2
+394 verbose lock commander@1.3.2 /home/laurence/.npm/2016e061-commander-1-3-2.lock
+395 verbose cache add [ 'range-parser@0.0.4', null ]
+396 verbose cache add name=undefined spec="range-parser@0.0.4" args=["range-parser@0.0.4",null]
+397 verbose parsed url { protocol: null,
+397 verbose parsed url   slashes: null,
+397 verbose parsed url   auth: null,
+397 verbose parsed url   host: null,
+397 verbose parsed url   port: null,
+397 verbose parsed url   hostname: null,
+397 verbose parsed url   hash: null,
+397 verbose parsed url   search: null,
+397 verbose parsed url   query: null,
+397 verbose parsed url   pathname: 'range-parser@0.0.4',
+397 verbose parsed url   path: 'range-parser@0.0.4',
+397 verbose parsed url   href: 'range-parser@0.0.4' }
+398 verbose cache add name="range-parser" spec="0.0.4" args=["range-parser","0.0.4"]
+399 verbose parsed url { protocol: null,
+399 verbose parsed url   slashes: null,
+399 verbose parsed url   auth: null,
+399 verbose parsed url   host: null,
+399 verbose parsed url   port: null,
+399 verbose parsed url   hostname: null,
+399 verbose parsed url   hash: null,
+399 verbose parsed url   search: null,
+399 verbose parsed url   query: null,
+399 verbose parsed url   pathname: '0.0.4',
+399 verbose parsed url   path: '0.0.4',
+399 verbose parsed url   href: '0.0.4' }
+400 verbose addNamed [ 'range-parser', '0.0.4' ]
+401 verbose addNamed [ '0.0.4', '0.0.4' ]
+402 silly lockFile 0760c556-range-parser-0-0-4 range-parser@0.0.4
+403 verbose lock range-parser@0.0.4 /home/laurence/.npm/0760c556-range-parser-0-0-4.lock
+404 verbose cache add [ 'mkdirp@0.3.5', null ]
+405 verbose cache add name=undefined spec="mkdirp@0.3.5" args=["mkdirp@0.3.5",null]
+406 verbose parsed url { protocol: null,
+406 verbose parsed url   slashes: null,
+406 verbose parsed url   auth: null,
+406 verbose parsed url   host: null,
+406 verbose parsed url   port: null,
+406 verbose parsed url   hostname: null,
+406 verbose parsed url   hash: null,
+406 verbose parsed url   search: null,
+406 verbose parsed url   query: null,
+406 verbose parsed url   pathname: 'mkdirp@0.3.5',
+406 verbose parsed url   path: 'mkdirp@0.3.5',
+406 verbose parsed url   href: 'mkdirp@0.3.5' }
+407 verbose cache add name="mkdirp" spec="0.3.5" args=["mkdirp","0.3.5"]
+408 verbose parsed url { protocol: null,
+408 verbose parsed url   slashes: null,
+408 verbose parsed url   auth: null,
+408 verbose parsed url   host: null,
+408 verbose parsed url   port: null,
+408 verbose parsed url   hostname: null,
+408 verbose parsed url   hash: null,
+408 verbose parsed url   search: null,
+408 verbose parsed url   query: null,
+408 verbose parsed url   pathname: '0.3.5',
+408 verbose parsed url   path: '0.3.5',
+408 verbose parsed url   href: '0.3.5' }
+409 verbose addNamed [ 'mkdirp', '0.3.5' ]
+410 verbose addNamed [ '0.3.5', '0.3.5' ]
+411 silly lockFile 67d2df2a-mkdirp-0-3-5 mkdirp@0.3.5
+412 verbose lock mkdirp@0.3.5 /home/laurence/.npm/67d2df2a-mkdirp-0-3-5.lock
+413 verbose cache add [ 'cookie@0.1.0', null ]
+414 verbose cache add name=undefined spec="cookie@0.1.0" args=["cookie@0.1.0",null]
+415 verbose parsed url { protocol: null,
+415 verbose parsed url   slashes: null,
+415 verbose parsed url   auth: null,
+415 verbose parsed url   host: null,
+415 verbose parsed url   port: null,
+415 verbose parsed url   hostname: null,
+415 verbose parsed url   hash: null,
+415 verbose parsed url   search: null,
+415 verbose parsed url   query: null,
+415 verbose parsed url   pathname: 'cookie@0.1.0',
+415 verbose parsed url   path: 'cookie@0.1.0',
+415 verbose parsed url   href: 'cookie@0.1.0' }
+416 verbose cache add name="cookie" spec="0.1.0" args=["cookie","0.1.0"]
+417 verbose parsed url { protocol: null,
+417 verbose parsed url   slashes: null,
+417 verbose parsed url   auth: null,
+417 verbose parsed url   host: null,
+417 verbose parsed url   port: null,
+417 verbose parsed url   hostname: null,
+417 verbose parsed url   hash: null,
+417 verbose parsed url   search: null,
+417 verbose parsed url   query: null,
+417 verbose parsed url   pathname: '0.1.0',
+417 verbose parsed url   path: '0.1.0',
+417 verbose parsed url   href: '0.1.0' }
+418 verbose addNamed [ 'cookie', '0.1.0' ]
+419 verbose addNamed [ '0.1.0', '0.1.0' ]
+420 silly lockFile b55e145e-cookie-0-1-0 cookie@0.1.0
+421 verbose lock cookie@0.1.0 /home/laurence/.npm/b55e145e-cookie-0-1-0.lock
+422 verbose cache add [ 'buffer-crc32@0.2.1', null ]
+423 verbose cache add name=undefined spec="buffer-crc32@0.2.1" args=["buffer-crc32@0.2.1",null]
+424 verbose parsed url { protocol: null,
+424 verbose parsed url   slashes: null,
+424 verbose parsed url   auth: null,
+424 verbose parsed url   host: null,
+424 verbose parsed url   port: null,
+424 verbose parsed url   hostname: null,
+424 verbose parsed url   hash: null,
+424 verbose parsed url   search: null,
+424 verbose parsed url   query: null,
+424 verbose parsed url   pathname: 'buffer-crc32@0.2.1',
+424 verbose parsed url   path: 'buffer-crc32@0.2.1',
+424 verbose parsed url   href: 'buffer-crc32@0.2.1' }
+425 verbose cache add name="buffer-crc32" spec="0.2.1" args=["buffer-crc32","0.2.1"]
+426 verbose parsed url { protocol: null,
+426 verbose parsed url   slashes: null,
+426 verbose parsed url   auth: null,
+426 verbose parsed url   host: null,
+426 verbose parsed url   port: null,
+426 verbose parsed url   hostname: null,
+426 verbose parsed url   hash: null,
+426 verbose parsed url   search: null,
+426 verbose parsed url   query: null,
+426 verbose parsed url   pathname: '0.2.1',
+426 verbose parsed url   path: '0.2.1',
+426 verbose parsed url   href: '0.2.1' }
+427 verbose addNamed [ 'buffer-crc32', '0.2.1' ]
+428 verbose addNamed [ '0.2.1', '0.2.1' ]
+429 silly lockFile 057d0d26-buffer-crc32-0-2-1 buffer-crc32@0.2.1
+430 verbose lock buffer-crc32@0.2.1 /home/laurence/.npm/057d0d26-buffer-crc32-0-2-1.lock
+431 verbose cache add [ 'fresh@0.2.0', null ]
+432 verbose cache add name=undefined spec="fresh@0.2.0" args=["fresh@0.2.0",null]
+433 verbose parsed url { protocol: null,
+433 verbose parsed url   slashes: null,
+433 verbose parsed url   auth: null,
+433 verbose parsed url   host: null,
+433 verbose parsed url   port: null,
+433 verbose parsed url   hostname: null,
+433 verbose parsed url   hash: null,
+433 verbose parsed url   search: null,
+433 verbose parsed url   query: null,
+433 verbose parsed url   pathname: 'fresh@0.2.0',
+433 verbose parsed url   path: 'fresh@0.2.0',
+433 verbose parsed url   href: 'fresh@0.2.0' }
+434 verbose cache add name="fresh" spec="0.2.0" args=["fresh","0.2.0"]
+435 verbose parsed url { protocol: null,
+435 verbose parsed url   slashes: null,
+435 verbose parsed url   auth: null,
+435 verbose parsed url   host: null,
+435 verbose parsed url   port: null,
+435 verbose parsed url   hostname: null,
+435 verbose parsed url   hash: null,
+435 verbose parsed url   search: null,
+435 verbose parsed url   query: null,
+435 verbose parsed url   pathname: '0.2.0',
+435 verbose parsed url   path: '0.2.0',
+435 verbose parsed url   href: '0.2.0' }
+436 verbose addNamed [ 'fresh', '0.2.0' ]
+437 verbose addNamed [ '0.2.0', '0.2.0' ]
+438 silly lockFile 1a4cf0d3-fresh-0-2-0 fresh@0.2.0
+439 verbose lock fresh@0.2.0 /home/laurence/.npm/1a4cf0d3-fresh-0-2-0.lock
+440 verbose cache add [ 'methods@0.1.0', null ]
+441 verbose cache add name=undefined spec="methods@0.1.0" args=["methods@0.1.0",null]
+442 verbose parsed url { protocol: null,
+442 verbose parsed url   slashes: null,
+442 verbose parsed url   auth: null,
+442 verbose parsed url   host: null,
+442 verbose parsed url   port: null,
+442 verbose parsed url   hostname: null,
+442 verbose parsed url   hash: null,
+442 verbose parsed url   search: null,
+442 verbose parsed url   query: null,
+442 verbose parsed url   pathname: 'methods@0.1.0',
+442 verbose parsed url   path: 'methods@0.1.0',
+442 verbose parsed url   href: 'methods@0.1.0' }
+443 verbose cache add name="methods" spec="0.1.0" args=["methods","0.1.0"]
+444 verbose parsed url { protocol: null,
+444 verbose parsed url   slashes: null,
+444 verbose parsed url   auth: null,
+444 verbose parsed url   host: null,
+444 verbose parsed url   port: null,
+444 verbose parsed url   hostname: null,
+444 verbose parsed url   hash: null,
+444 verbose parsed url   search: null,
+444 verbose parsed url   query: null,
+444 verbose parsed url   pathname: '0.1.0',
+444 verbose parsed url   path: '0.1.0',
+444 verbose parsed url   href: '0.1.0' }
+445 verbose addNamed [ 'methods', '0.1.0' ]
+446 verbose addNamed [ '0.1.0', '0.1.0' ]
+447 silly lockFile 81f018b6-methods-0-1-0 methods@0.1.0
+448 verbose lock methods@0.1.0 /home/laurence/.npm/81f018b6-methods-0-1-0.lock
+449 verbose cache add [ 'send@0.1.4', null ]
+450 verbose cache add name=undefined spec="send@0.1.4" args=["send@0.1.4",null]
+451 verbose parsed url { protocol: null,
+451 verbose parsed url   slashes: null,
+451 verbose parsed url   auth: null,
+451 verbose parsed url   host: null,
+451 verbose parsed url   port: null,
+451 verbose parsed url   hostname: null,
+451 verbose parsed url   hash: null,
+451 verbose parsed url   search: null,
+451 verbose parsed url   query: null,
+451 verbose parsed url   pathname: 'send@0.1.4',
+451 verbose parsed url   path: 'send@0.1.4',
+451 verbose parsed url   href: 'send@0.1.4' }
+452 verbose cache add name="send" spec="0.1.4" args=["send","0.1.4"]
+453 verbose parsed url { protocol: null,
+453 verbose parsed url   slashes: null,
+453 verbose parsed url   auth: null,
+453 verbose parsed url   host: null,
+453 verbose parsed url   port: null,
+453 verbose parsed url   hostname: null,
+453 verbose parsed url   hash: null,
+453 verbose parsed url   search: null,
+453 verbose parsed url   query: null,
+453 verbose parsed url   pathname: '0.1.4',
+453 verbose parsed url   path: '0.1.4',
+453 verbose parsed url   href: '0.1.4' }
+454 verbose addNamed [ 'send', '0.1.4' ]
+455 verbose addNamed [ '0.1.4', '0.1.4' ]
+456 silly lockFile 555fd08a-send-0-1-4 send@0.1.4
+457 verbose lock send@0.1.4 /home/laurence/.npm/555fd08a-send-0-1-4.lock
+458 verbose cache add [ 'cookie-signature@1.0.1', null ]
+459 verbose cache add name=undefined spec="cookie-signature@1.0.1" args=["cookie-signature@1.0.1",null]
+460 verbose parsed url { protocol: null,
+460 verbose parsed url   slashes: null,
+460 verbose parsed url   auth: null,
+460 verbose parsed url   host: null,
+460 verbose parsed url   port: null,
+460 verbose parsed url   hostname: null,
+460 verbose parsed url   hash: null,
+460 verbose parsed url   search: null,
+460 verbose parsed url   query: null,
+460 verbose parsed url   pathname: 'cookie-signature@1.0.1',
+460 verbose parsed url   path: 'cookie-signature@1.0.1',
+460 verbose parsed url   href: 'cookie-signature@1.0.1' }
+461 verbose cache add name="cookie-signature" spec="1.0.1" args=["cookie-signature","1.0.1"]
+462 verbose parsed url { protocol: null,
+462 verbose parsed url   slashes: null,
+462 verbose parsed url   auth: null,
+462 verbose parsed url   host: null,
+462 verbose parsed url   port: null,
+462 verbose parsed url   hostname: null,
+462 verbose parsed url   hash: null,
+462 verbose parsed url   search: null,
+462 verbose parsed url   query: null,
+462 verbose parsed url   pathname: '1.0.1',
+462 verbose parsed url   path: '1.0.1',
+462 verbose parsed url   href: '1.0.1' }
+463 verbose addNamed [ 'cookie-signature', '1.0.1' ]
+464 verbose addNamed [ '1.0.1', '1.0.1' ]
+465 silly lockFile d4a1eba1-cookie-signature-1-0-1 cookie-signature@1.0.1
+466 verbose lock cookie-signature@1.0.1 /home/laurence/.npm/d4a1eba1-cookie-signature-1-0-1.lock
+467 verbose cache add [ 'merge-descriptors@0.0.1', null ]
+468 verbose cache add name=undefined spec="merge-descriptors@0.0.1" args=["merge-descriptors@0.0.1",null]
+469 verbose parsed url { protocol: null,
+469 verbose parsed url   slashes: null,
+469 verbose parsed url   auth: null,
+469 verbose parsed url   host: null,
+469 verbose parsed url   port: null,
+469 verbose parsed url   hostname: null,
+469 verbose parsed url   hash: null,
+469 verbose parsed url   search: null,
+469 verbose parsed url   query: null,
+469 verbose parsed url   pathname: 'merge-descriptors@0.0.1',
+469 verbose parsed url   path: 'merge-descriptors@0.0.1',
+469 verbose parsed url   href: 'merge-descriptors@0.0.1' }
+470 verbose cache add name="merge-descriptors" spec="0.0.1" args=["merge-descriptors","0.0.1"]
+471 verbose parsed url { protocol: null,
+471 verbose parsed url   slashes: null,
+471 verbose parsed url   auth: null,
+471 verbose parsed url   host: null,
+471 verbose parsed url   port: null,
+471 verbose parsed url   hostname: null,
+471 verbose parsed url   hash: null,
+471 verbose parsed url   search: null,
+471 verbose parsed url   query: null,
+471 verbose parsed url   pathname: '0.0.1',
+471 verbose parsed url   path: '0.0.1',
+471 verbose parsed url   href: '0.0.1' }
+472 verbose addNamed [ 'merge-descriptors', '0.0.1' ]
+473 verbose addNamed [ '0.0.1', '0.0.1' ]
+474 silly lockFile 5220b296-merge-descriptors-0-0-1 merge-descriptors@0.0.1
+475 verbose lock merge-descriptors@0.0.1 /home/laurence/.npm/5220b296-merge-descriptors-0-0-1.lock
+476 verbose cache add [ 'debug@>= 0.7.3 < 1', null ]
+477 verbose cache add name=undefined spec="debug@>= 0.7.3 < 1" args=["debug@>= 0.7.3 < 1",null]
+478 verbose parsed url { protocol: null,
+478 verbose parsed url   slashes: null,
+478 verbose parsed url   auth: null,
+478 verbose parsed url   host: null,
+478 verbose parsed url   port: null,
+478 verbose parsed url   hostname: null,
+478 verbose parsed url   hash: null,
+478 verbose parsed url   search: null,
+478 verbose parsed url   query: null,
+478 verbose parsed url   pathname: 'debug@%3E=%200.7.3%20%3C%201',
+478 verbose parsed url   path: 'debug@%3E=%200.7.3%20%3C%201',
+478 verbose parsed url   href: 'debug@%3E=%200.7.3%20%3C%201' }
+479 verbose cache add name="debug" spec=">= 0.7.3 < 1" args=["debug",">= 0.7.3 < 1"]
+480 verbose parsed url { protocol: null,
+480 verbose parsed url   slashes: null,
+480 verbose parsed url   auth: null,
+480 verbose parsed url   host: null,
+480 verbose parsed url   port: null,
+480 verbose parsed url   hostname: null,
+480 verbose parsed url   hash: null,
+480 verbose parsed url   search: null,
+480 verbose parsed url   query: null,
+480 verbose parsed url   pathname: '%3E=%200.7.3%20%3C%201',
+480 verbose parsed url   path: '%3E=%200.7.3%20%3C%201',
+480 verbose parsed url   href: '%3E=%200.7.3%20%3C%201' }
+481 verbose addNamed [ 'debug', '>= 0.7.3 < 1' ]
+482 verbose addNamed [ null, '>=0.7.3 <1.0.0-' ]
+483 silly lockFile a781479f-debug-0-7-3-1 debug@>= 0.7.3 < 1
+484 verbose lock debug@>= 0.7.3 < 1 /home/laurence/.npm/a781479f-debug-0-7-3-1.lock
+485 silly addNameRange { name: 'debug', range: '>=0.7.3 <1.0.0-', hasData: false }
+486 verbose url raw connect/2.12.0
+487 verbose url resolving [ 'https://registry.npmjs.org/', './connect/2.12.0' ]
+488 verbose url resolved https://registry.npmjs.org/connect/2.12.0
+489 info trying registry request attempt 1 at 11:03:51
+490 verbose etag "CI4M1QOG4JUW06DV3CGZMQIL4"
+491 http GET https://registry.npmjs.org/connect/2.12.0
+492 verbose url raw commander/1.3.2
+493 verbose url resolving [ 'https://registry.npmjs.org/', './commander/1.3.2' ]
+494 verbose url resolved https://registry.npmjs.org/commander/1.3.2
+495 info trying registry request attempt 1 at 11:03:51
+496 verbose etag "9WVRZBZ6DH3TIU9F9UWGCVKFK"
+497 http GET https://registry.npmjs.org/commander/1.3.2
+498 verbose url raw range-parser/0.0.4
+499 verbose url resolving [ 'https://registry.npmjs.org/', './range-parser/0.0.4' ]
+500 verbose url resolved https://registry.npmjs.org/range-parser/0.0.4
+501 info trying registry request attempt 1 at 11:03:51
+502 verbose etag "D9RP9ACBJJ5Z0JXIRGO5SS9ZL"
+503 http GET https://registry.npmjs.org/range-parser/0.0.4
+504 verbose url raw mkdirp/0.3.5
+505 verbose url resolving [ 'https://registry.npmjs.org/', './mkdirp/0.3.5' ]
+506 verbose url resolved https://registry.npmjs.org/mkdirp/0.3.5
+507 info trying registry request attempt 1 at 11:03:51
+508 verbose etag "BCGRNVY5Y0HPXJNO7IQQLO9YA"
+509 http GET https://registry.npmjs.org/mkdirp/0.3.5
+510 verbose url raw cookie/0.1.0
+511 verbose url resolving [ 'https://registry.npmjs.org/', './cookie/0.1.0' ]
+512 verbose url resolved https://registry.npmjs.org/cookie/0.1.0
+513 info trying registry request attempt 1 at 11:03:51
+514 verbose etag "EH8FXT0F3XG3RUYCIMSRRJLSM"
+515 http GET https://registry.npmjs.org/cookie/0.1.0
+516 verbose url raw buffer-crc32/0.2.1
+517 verbose url resolving [ 'https://registry.npmjs.org/', './buffer-crc32/0.2.1' ]
+518 verbose url resolved https://registry.npmjs.org/buffer-crc32/0.2.1
+519 info trying registry request attempt 1 at 11:03:51
+520 verbose etag "CNL6BIE3QMFG3IFJ6YONWU0YU"
+521 http GET https://registry.npmjs.org/buffer-crc32/0.2.1
+522 verbose url raw fresh/0.2.0
+523 verbose url resolving [ 'https://registry.npmjs.org/', './fresh/0.2.0' ]
+524 verbose url resolved https://registry.npmjs.org/fresh/0.2.0
+525 info trying registry request attempt 1 at 11:03:51
+526 verbose etag "9E0AK6NGP711RKL0XR98JCGVD"
+527 http GET https://registry.npmjs.org/fresh/0.2.0
+528 verbose url raw methods/0.1.0
+529 verbose url resolving [ 'https://registry.npmjs.org/', './methods/0.1.0' ]
+530 verbose url resolved https://registry.npmjs.org/methods/0.1.0
+531 info trying registry request attempt 1 at 11:03:51
+532 verbose etag "6APMFC5X7H2FLK4DM8JIDYRTP"
+533 http GET https://registry.npmjs.org/methods/0.1.0
+534 verbose url raw send/0.1.4
+535 verbose url resolving [ 'https://registry.npmjs.org/', './send/0.1.4' ]
+536 verbose url resolved https://registry.npmjs.org/send/0.1.4
+537 info trying registry request attempt 1 at 11:03:51
+538 verbose etag "DIQQ0LNUNWR5K9J6QV3BLDPHT"
+539 http GET https://registry.npmjs.org/send/0.1.4
+540 verbose url raw cookie-signature/1.0.1
+541 verbose url resolving [ 'https://registry.npmjs.org/', './cookie-signature/1.0.1' ]
+542 verbose url resolved https://registry.npmjs.org/cookie-signature/1.0.1
+543 info trying registry request attempt 1 at 11:03:51
+544 verbose etag "2Y9AKHZ9S729HOUA8NXW95HQG"
+545 http GET https://registry.npmjs.org/cookie-signature/1.0.1
+546 verbose url raw merge-descriptors/0.0.1
+547 verbose url resolving [ 'https://registry.npmjs.org/', './merge-descriptors/0.0.1' ]
+548 verbose url resolved https://registry.npmjs.org/merge-descriptors/0.0.1
+549 info trying registry request attempt 1 at 11:03:51
+550 verbose etag "9PN5ENTJ5XQZSWMQRQQ4LOB43"
+551 http GET https://registry.npmjs.org/merge-descriptors/0.0.1
+552 verbose url raw debug
+553 verbose url resolving [ 'https://registry.npmjs.org/', './debug' ]
+554 verbose url resolved https://registry.npmjs.org/debug
+555 info trying registry request attempt 1 at 11:03:51
+556 verbose etag "2S4D9TUHX23FL0E3OWJEDXYI4"
+557 http GET https://registry.npmjs.org/debug
+558 silly gunzTarPerm extractEntry test/db.test.js
+559 silly gunzTarPerm extractEntry test/executor.test.js
+560 silly gunzTarPerm extractEntry test/indexes.test.js
+561 silly gunzTarPerm extractEntry test/model.test.js
+562 silly gunzTarPerm extractEntry test/persistence.test.js
+563 silly gunzTarPerm extractEntry test/mocha.opts
+564 silly gunzTarPerm extractEntry test_lac/loadAndCrash.test.js
+565 verbose read json /home/laurence/Documents/Code/pimeariver/node_modules/nedb/package.json
+566 silly lockFile 64b96761-ode-pimeariver-node-modules-nedb /home/laurence/Documents/Code/pimeariver/node_modules/nedb
+567 silly lockFile 64b96761-ode-pimeariver-node-modules-nedb /home/laurence/Documents/Code/pimeariver/node_modules/nedb
+568 silly lockFile 52d332ab-ence-npm-nedb-0-10-4-package-tgz /home/laurence/.npm/nedb/0.10.4/package.tgz
+569 silly lockFile 52d332ab-ence-npm-nedb-0-10-4-package-tgz /home/laurence/.npm/nedb/0.10.4/package.tgz
+570 info preinstall nedb@0.10.4
+571 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/nedb/package.json
+572 verbose readDependencies using package.json deps
+573 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/nedb/package.json
+574 verbose readDependencies using package.json deps
+575 verbose cache add [ 'async@0.2.10', null ]
+576 verbose cache add name=undefined spec="async@0.2.10" args=["async@0.2.10",null]
+577 verbose parsed url { protocol: null,
+577 verbose parsed url   slashes: null,
+577 verbose parsed url   auth: null,
+577 verbose parsed url   host: null,
+577 verbose parsed url   port: null,
+577 verbose parsed url   hostname: null,
+577 verbose parsed url   hash: null,
+577 verbose parsed url   search: null,
+577 verbose parsed url   query: null,
+577 verbose parsed url   pathname: 'async@0.2.10',
+577 verbose parsed url   path: 'async@0.2.10',
+577 verbose parsed url   href: 'async@0.2.10' }
+578 verbose cache add name="async" spec="0.2.10" args=["async","0.2.10"]
+579 verbose parsed url { protocol: null,
+579 verbose parsed url   slashes: null,
+579 verbose parsed url   auth: null,
+579 verbose parsed url   host: null,
+579 verbose parsed url   port: null,
+579 verbose parsed url   hostname: null,
+579 verbose parsed url   hash: null,
+579 verbose parsed url   search: null,
+579 verbose parsed url   query: null,
+579 verbose parsed url   pathname: '0.2.10',
+579 verbose parsed url   path: '0.2.10',
+579 verbose parsed url   href: '0.2.10' }
+580 verbose addNamed [ 'async', '0.2.10' ]
+581 verbose addNamed [ '0.2.10', '0.2.10' ]
+582 silly lockFile 098b530d-async-0-2-10 async@0.2.10
+583 verbose lock async@0.2.10 /home/laurence/.npm/098b530d-async-0-2-10.lock
+584 verbose cache add [ 'underscore@~1.4.4', null ]
+585 verbose cache add name=undefined spec="underscore@~1.4.4" args=["underscore@~1.4.4",null]
+586 verbose parsed url { protocol: null,
+586 verbose parsed url   slashes: null,
+586 verbose parsed url   auth: null,
+586 verbose parsed url   host: null,
+586 verbose parsed url   port: null,
+586 verbose parsed url   hostname: null,
+586 verbose parsed url   hash: null,
+586 verbose parsed url   search: null,
+586 verbose parsed url   query: null,
+586 verbose parsed url   pathname: 'underscore@~1.4.4',
+586 verbose parsed url   path: 'underscore@~1.4.4',
+586 verbose parsed url   href: 'underscore@~1.4.4' }
+587 verbose cache add name="underscore" spec="~1.4.4" args=["underscore","~1.4.4"]
+588 verbose parsed url { protocol: null,
+588 verbose parsed url   slashes: null,
+588 verbose parsed url   auth: null,
+588 verbose parsed url   host: null,
+588 verbose parsed url   port: null,
+588 verbose parsed url   hostname: null,
+588 verbose parsed url   hash: null,
+588 verbose parsed url   search: null,
+588 verbose parsed url   query: null,
+588 verbose parsed url   pathname: '~1.4.4',
+588 verbose parsed url   path: '~1.4.4',
+588 verbose parsed url   href: '~1.4.4' }
+589 verbose addNamed [ 'underscore', '~1.4.4' ]
+590 verbose addNamed [ null, '>=1.4.4- <1.5.0-' ]
+591 silly lockFile 286a8917-underscore-1-4-4 underscore@~1.4.4
+592 verbose lock underscore@~1.4.4 /home/laurence/.npm/286a8917-underscore-1-4-4.lock
+593 verbose cache add [ 'binary-search-tree@0.2.3', null ]
+594 verbose cache add name=undefined spec="binary-search-tree@0.2.3" args=["binary-search-tree@0.2.3",null]
+595 verbose parsed url { protocol: null,
+595 verbose parsed url   slashes: null,
+595 verbose parsed url   auth: null,
+595 verbose parsed url   host: null,
+595 verbose parsed url   port: null,
+595 verbose parsed url   hostname: null,
+595 verbose parsed url   hash: null,
+595 verbose parsed url   search: null,
+595 verbose parsed url   query: null,
+595 verbose parsed url   pathname: 'binary-search-tree@0.2.3',
+595 verbose parsed url   path: 'binary-search-tree@0.2.3',
+595 verbose parsed url   href: 'binary-search-tree@0.2.3' }
+596 verbose cache add name="binary-search-tree" spec="0.2.3" args=["binary-search-tree","0.2.3"]
+597 verbose parsed url { protocol: null,
+597 verbose parsed url   slashes: null,
+597 verbose parsed url   auth: null,
+597 verbose parsed url   host: null,
+597 verbose parsed url   port: null,
+597 verbose parsed url   hostname: null,
+597 verbose parsed url   hash: null,
+597 verbose parsed url   search: null,
+597 verbose parsed url   query: null,
+597 verbose parsed url   pathname: '0.2.3',
+597 verbose parsed url   path: '0.2.3',
+597 verbose parsed url   href: '0.2.3' }
+598 verbose addNamed [ 'binary-search-tree', '0.2.3' ]
+599 verbose addNamed [ '0.2.3', '0.2.3' ]
+600 silly lockFile dcac6ac1-binary-search-tree-0-2-3 binary-search-tree@0.2.3
+601 verbose lock binary-search-tree@0.2.3 /home/laurence/.npm/dcac6ac1-binary-search-tree-0-2-3.lock
+602 silly addNameRange { name: 'underscore', range: '>=1.4.4- <1.5.0-', hasData: false }
+603 verbose cache add [ 'mkdirp@~0.3.5', null ]
+604 verbose cache add name=undefined spec="mkdirp@~0.3.5" args=["mkdirp@~0.3.5",null]
+605 verbose parsed url { protocol: null,
+605 verbose parsed url   slashes: null,
+605 verbose parsed url   auth: null,
+605 verbose parsed url   host: null,
+605 verbose parsed url   port: null,
+605 verbose parsed url   hostname: null,
+605 verbose parsed url   hash: null,
+605 verbose parsed url   search: null,
+605 verbose parsed url   query: null,
+605 verbose parsed url   pathname: 'mkdirp@~0.3.5',
+605 verbose parsed url   path: 'mkdirp@~0.3.5',
+605 verbose parsed url   href: 'mkdirp@~0.3.5' }
+606 verbose cache add name="mkdirp" spec="~0.3.5" args=["mkdirp","~0.3.5"]
+607 verbose parsed url { protocol: null,
+607 verbose parsed url   slashes: null,
+607 verbose parsed url   auth: null,
+607 verbose parsed url   host: null,
+607 verbose parsed url   port: null,
+607 verbose parsed url   hostname: null,
+607 verbose parsed url   hash: null,
+607 verbose parsed url   search: null,
+607 verbose parsed url   query: null,
+607 verbose parsed url   pathname: '~0.3.5',
+607 verbose parsed url   path: '~0.3.5',
+607 verbose parsed url   href: '~0.3.5' }
+608 verbose addNamed [ 'mkdirp', '~0.3.5' ]
+609 verbose addNamed [ null, '>=0.3.5- <0.4.0-' ]
+610 silly lockFile c3f0fe9b-mkdirp-0-3-5 mkdirp@~0.3.5
+611 verbose lock mkdirp@~0.3.5 /home/laurence/.npm/c3f0fe9b-mkdirp-0-3-5.lock
+612 verbose url raw async/0.2.10
+613 verbose url resolving [ 'https://registry.npmjs.org/', './async/0.2.10' ]
+614 verbose url resolved https://registry.npmjs.org/async/0.2.10
+615 info trying registry request attempt 1 at 11:03:51
+616 verbose etag "32JZ741CHWD2RWWQAS0SHXFX5"
+617 http GET https://registry.npmjs.org/async/0.2.10
+618 verbose url raw underscore
+619 verbose url resolving [ 'https://registry.npmjs.org/', './underscore' ]
+620 verbose url resolved https://registry.npmjs.org/underscore
+621 info trying registry request attempt 1 at 11:03:51
+622 verbose etag "DQAXEIFXFDJR1W481TQQNO4W8"
+623 http GET https://registry.npmjs.org/underscore
+624 verbose url raw binary-search-tree/0.2.3
+625 verbose url resolving [ 'https://registry.npmjs.org/', './binary-search-tree/0.2.3' ]
+626 verbose url resolved https://registry.npmjs.org/binary-search-tree/0.2.3
+627 info trying registry request attempt 1 at 11:03:51
+628 verbose etag "356CRFHK5IYWPNXZGEGFDOIM7"
+629 http GET https://registry.npmjs.org/binary-search-tree/0.2.3
+630 silly addNameRange { name: 'mkdirp', range: '>=0.3.5- <0.4.0-', hasData: false }
+631 verbose url raw mkdirp
+632 verbose url resolving [ 'https://registry.npmjs.org/', './mkdirp' ]
+633 verbose url resolved https://registry.npmjs.org/mkdirp
+634 info trying registry request attempt 1 at 11:03:51
+635 verbose etag "BCGRNVY5Y0HPXJNO7IQQLO9YA"
+636 http GET https://registry.npmjs.org/mkdirp
+637 http 304 https://registry.npmjs.org/semver
+638 silly registry.get cb [ 304,
+638 silly registry.get   { date: 'Sat, 15 Mar 2014 11:03:51 GMT',
+638 silly registry.get     server: 'Apache',
+638 silly registry.get     via: '1.1 varnish',
+638 silly registry.get     'last-modified': 'Sat, 15 Mar 2014 11:03:51 GMT',
+638 silly registry.get     'cache-control': 'max-age=1',
+638 silly registry.get     etag: '"1P01DE8ZPG9FJ5YOXFEW1CXWT"',
+638 silly registry.get     'x-served-by': 'cache-lcy1134-LCY',
+638 silly registry.get     'x-cache': 'HIT',
+638 silly registry.get     'x-cache-hits': '1',
+638 silly registry.get     'x-timer': 'S1394881431.582674503,VS0,VE78',
+638 silly registry.get     vary: 'Accept',
+638 silly registry.get     'content-length': '0',
+638 silly registry.get     'keep-alive': 'timeout=10, max=50',
+638 silly registry.get     connection: 'Keep-Alive' } ]
+639 verbose etag semver from cache
+640 http 304 https://registry.npmjs.org/deprecated
+641 silly registry.get cb [ 304,
+641 silly registry.get   { date: 'Sat, 15 Mar 2014 11:03:51 GMT',
+641 silly registry.get     server: 'Apache',
+641 silly registry.get     via: '1.1 varnish',
+641 silly registry.get     'last-modified': 'Sat, 15 Mar 2014 11:03:51 GMT',
+641 silly registry.get     'cache-control': 'max-age=1',
+641 silly registry.get     etag: '"DTMETKBYP512KWFX5N8KSY5HB"',
+641 silly registry.get     'x-served-by': 'cache-lcy1120-LCY',
+641 silly registry.get     'x-cache': 'MISS',
+641 silly registry.get     'x-cache-hits': '0',
+641 silly registry.get     'x-timer': 'S1394881431.582577944,VS0,VE79',
+641 silly registry.get     vary: 'Accept',
+641 silly registry.get     'content-length': '0',
+641 silly registry.get     'keep-alive': 'timeout=10, max=50',
+641 silly registry.get     connection: 'Keep-Alive' } ]
+642 verbose etag deprecated from cache
+643 silly lockFile 0e32a569-deprecated-0-0-1 deprecated@^0.0.1
+644 silly lockFile 0e32a569-deprecated-0-0-1 deprecated@^0.0.1
+645 silly lockFile d8627689-semver-2-2-1 semver@^2.2.1
+646 silly lockFile d8627689-semver-2-2-1 semver@^2.2.1
+647 verbose about to build /home/laurence/Documents/Code/pimeariver/node_modules/gulp
+648 info /home/laurence/Documents/Code/pimeariver/node_modules/gulp unbuild
+649 verbose from cache /home/laurence/Documents/Code/pimeariver/node_modules/gulp/package.json
+650 info preuninstall gulp@3.5.6
+651 info uninstall gulp@3.5.6
+652 verbose true,/home/laurence/Documents/Code/pimeariver/node_modules,/home/laurence/Documents/Code/pimeariver/node_modules unbuild gulp@3.5.6
+653 verbose /home/laurence/Documents/Code/pimeariver/node_modules/.bin,[object Object] binRoot
+654 info postuninstall gulp@3.5.6
+655 error Error: No compatible version found: deprecated@'^0.0.1'
+655 error Valid install targets:
+655 error ["0.0.1"]
+655 error     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:709:10)
+655 error     at /usr/local/lib/node_modules/npm/lib/cache.js:631:10
+655 error     at saved (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
+655 error     at Object.oncomplete (fs.js:94:15)
+656 error If you need help, you may report this log at:
+656 error     <http://github.com/isaacs/npm/issues>
+656 error or email it to:
+656 error     <npm-@googlegroups.com>
+657 error System Linux 3.11.0-18-generic
+658 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+659 error cwd /home/laurence/Documents/Code/pimeariver
+660 error node -v v0.11.3-pre
+661 error npm -v 1.2.23
+662 verbose exit [ 1, true ]

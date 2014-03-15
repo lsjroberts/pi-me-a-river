@@ -1,0 +1,26 @@
+mixin form(action, method)
+    form(action= action, method= method)
+        if block
+            block
+        else
+            p no form provided
+
+mixin field(name, type)
+    -var unslugify = function(input) {
+    -   return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase().replace(/[-|_](.)/g, function(match, group1) {
+    -       return ' ' + group1.toUpperCase();
+    -   });
+    -}
+
+    unless type
+        case name
+            when "password"
+                - type= "password"
+            when "password_confirmation"
+                - type= "password"
+            default
+                - type= "text"
+
+    div.field
+        label= unslugify(name)
+        input(type= type, name= name)
