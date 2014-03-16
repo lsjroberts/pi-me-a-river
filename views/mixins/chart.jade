@@ -17,3 +17,35 @@ mixin bulletChart()
 
             return chart;
         });
+
+mixin scatterChart()
+    svg(id= id, width= width, height= height)
+    script.
+        nv.addGraph(function() {
+            var chart = nv.models.scatterChart()
+                .forceX([0])
+                .forceY([0,7]);
+
+            d3.select('#!{id}')
+                .datum(!{data})
+                .call(chart);
+
+            return chart;
+        });
+
+mixin discreteBarChart()
+    svg(id= id, width= width, height= height)
+    script.
+        nv.addGraph(function() {
+            var chart = nv.models.discreteBarChart()
+                .x(function(d) { return d.label })
+                .y(function(d) { return d.value })
+                .tooltips(false)
+                .transitionDuration(350);
+
+            d3.select('#!{id}')
+                .datum(!{data})
+                .call(chart);
+
+            return chart;
+        });

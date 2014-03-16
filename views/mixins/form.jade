@@ -5,22 +5,25 @@ mixin form(action, method)
         else
             p no form provided
 
-mixin field(name, type)
+mixin field()
     -var unslugify = function(input) {
     -   return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase().replace(/[-|_](.)/g, function(match, group1) {
     -       return ' ' + group1.toUpperCase();
     -   });
     -}
 
-    unless type
-        case name
+    unless attributes.type
+        case attributes.name
             when "password"
-                - type= "password"
+                - attributes.type= "password"
             when "password_confirmation"
-                - type= "password"
+                - attributes.type= "password"
             default
-                - type= "text"
+                - attributes.type= "text"
+
+    unless attributes.label
+        - attributes.label= unslugify(attributes.name)
 
     div.field
-        label= unslugify(name)
-        input(type= type, name= name)
+        label= attributes.label
+        input(type= attributes.type, name= attributes.name, value= attributes.value)

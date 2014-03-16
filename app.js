@@ -43,6 +43,8 @@ var RiverCreate = function(data) {
 
     river.realLength = data.real_length;
 
+    river.countries = data.countries;
+
     river.source = {
         latitude: data.source_lat,
         longitude: data.source_lng
@@ -85,7 +87,15 @@ app.get('/', function(req, res) {
         minLength = 999999;
         maxLength = 0;
 
-        chartData = [];
+        scatterChartData = [{
+            key: 'Rivers',
+            values: []
+        }];
+
+        barChartData = {}
+        for (var b=0.0; b<6.3; b+=0.1) {
+            barChartData[b.toFixed(1)] = 0;
+        }
 
         for (var i=0; i<rivers.length; i++) {
             rivers[i] = new River(rivers[i]);
@@ -109,10 +119,30 @@ app.get('/', function(req, res) {
             if (rivers[i].realLength > maxLength) {
                 maxLength = rivers[i].realLength;
             }
+
+            scatterChartData[0].values.push({
+                x: rivers[i].realLength,
+                y: rivers[i].sinuosity
+            })
+
+            barChartData[rivers[i].sinuosity.toFixed(1)]++;
         }
 
         averageSinuosity = totals.sinuosity / rivers.length;
         averageLength = totals.realLength / rivers.length;
+
+        barChartDataValues = [];
+        for (var key in barChartData) {
+            barChartDataValues.push({
+                label: key,
+                value: barChartData[key]
+            });
+        }
+
+        barChartData = [{
+            key: 'Rivers',
+            values: barChartDataValues
+        }];
 
         res.render('index.jade', {
             rivers: rivers,
@@ -121,7 +151,9 @@ app.get('/', function(req, res) {
             maxSinuosity: maxSinuosity,
             averageLength: averageLength,
             minLength: minLength,
-            maxLength: maxLength
+            maxLength: maxLength,
+            scatterChartData: JSON.stringify(scatterChartData),
+            barChartData: JSON.stringify(barChartData)
         });
     });
 });
@@ -137,41 +169,40 @@ app.post('/river', function(req, res) {
 
 // river.show
 app.get('/river/:id', function(req, res) {
-    river = db.rivers.find({
-        _id: req.id
-    });
+    db.rivers.findOne({
+        _id: req.params.id
+    }, function(e, river) {
+        if (null == river) {
+            res.render('error/404.jade');
+            return;
+        }
 
-    res.render('river/show.jade', {
-        river: river
+        res.render('river/show.jade', {
+            river: river
+        });
     });
 });
 
 // river.edit
 app.post('/river/:id', function(req, res) {
-    // data = {
-    //     real_length: req.body.real_length
-    // }
+    river = RiverCreate(req.body);
 
-    // data.source_lat = req.body.source_lat;
-    // data.source_lng = req.body.source_lng;
-    // data.mouth_lat = req.body.mouth_lat;
-    // data.mouth_lng = req.body.mouth_lng;
+    db.rivers.update({
+        _id: req.params.id
+    }, river, {}, function() {
+        db.rivers.findOne({
+            _id: req.params.id
+        }, function(e, river) {
+            if (null == river) {
+                res.render('error/404.jade');
+                return;
+            }
 
-    // if (req.body.crow_length) {
-    //     data.crow_length = req.body.crow_length;
-    // } else {
-    //     data.crow_length = haversine({
-    //         latitude: data.source_lat,
-    //         longitude: data.source_lng
-    //     }, {
-    //         latitude: data.mouth_lat,
-    //         longitude: data.mouth_lng
-    //     });
-    // }
-
-    // river = db.rivers.update({
-    //     slug: slug
-    // }, data);
+            res.render('river/show.jade', {
+                river: river
+            });
+        });
+    });
 });
 
 app.listen(8000);

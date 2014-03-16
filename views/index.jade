@@ -4,59 +4,81 @@ include mixins/form
 include mixins/chart
 
 block content
-    header.hero
-        h1 Pi Me A River
+    header.hero.small-12.large-12.columns
+        h1 Pi me a River
+        h2= averageSinuosity
 
-    div.row
-        div.small-12.large-6.columns
-            p
-                a(href="http://www.youtube.com/watch?v=TUErNWBOkUM") Numberphile
+    div.small-12.large-6.columns
+        p
+            iframe(
+                width="100%",
+                height="500",
+                src="//www.youtube.com/embed/TUErNWBOkUM"
+                frameborder="0"
+                allowfullscreen="true"
+            )
 
-        div.small-12.large-6.columns
-            +form("river", "post")
-                +field("name")
-                +field("real_length")
+    div.small-12.large-6.columns
+        +form("river", "post")
+            +field(name="name")
+            +field(name="countries", label="Country / countries (comma separated)")
+            +field(name="real_length", label="Length (km)")
+            +field(name="source_lat", label="Source latitude (decimal format)")
+            +field(name="source_lng", label="Source longitude (decimal format)")
+            +field(name="mouth_lat", label="Mouth latitude (decimal format)")
+            +field(name="mouth_lng", label="Mouth longitude (decimal format)")
 
-                p either
-                +field("crow_length")
+            input(type="submit", value="Add your river").button
 
-                p or
-                +field("source_lat")
-                +field("source_lng")
-                +field("mouth_lat")
-                +field("mouth_lng")
+    div.small-12.large-12.column.chart-container
+        h2 Mean Sinuosity
+        h3= averageSinuosity
 
-                input(type="submit", value="Add your river").button
+    div.small-12.large-12.column.chart-container
+        h2 Sinuosity Distribution
 
-    div.row
-        div.small-12.large-12.columns
-            h2 Is it Pi?
-            h3 Average Sinuosity: #{averageSinuosity}
+        +discreteBarChart(
+            id= "sinuosity-distribution-discrete-bar-chart",
+            data= barChartData,
+            height= "500px"
+        )
 
-        div.small-12.large-12.columns
-            //- canvas(id="sinuosity-chart", width="400", height="400", data-chart="#{chartData}")
+    div.small-12.large-12.column.chart-container
+        h2 Length vs Sinuosity
+
+        +scatterChart(
+            id= "sinuosity-length-scatter-chart",
+            data= scatterChartData,
+            height= "500px"
+        )
 
     div.small-12.large-12.columns
+        h2 Rivers
+
         each river in rivers
-                div.small-12.large-12.columns
-                    h2
-                        a(href="/river/#{river._id}")= river.name
-                div.small-12.large-6.columns
-                    +bulletChart(
-                        id= river.name.toLowerCase().replace(/ /g, '-')+"-sinuosity",
-                        title= river.name+" Sinuosity",
-                        ranges= [minSinuosity,averageSinuosity,maxSinuosity],
-                        measures= [river.sinuosity],
-                        measureLabels= ['"Sinuosity"'],
-                        markers= [3.1415],
-                        markerLabels= ['"Pi"']
-                    )
-                div.small-12.large-6.columns
-                    +bulletChart(
-                        id= river.name.toLowerCase().replace(/ /g, '-')+"-length",
-                        title= river.name+" Length",
-                        ranges= [minLength,averageLength,maxLength],
-                        measures= [river.realLength],
-                        measureLabels= ['"Length"'],
-                        markers= []
-                    )
+            div.small-12.large-12.columns
+                h3
+                    a(href="/river/#{river._id}")= river.name
+                p= river.countries
+
+            div.small-12.large-6.columns.chart-container(style="height:80px")
+                +bulletChart(
+                    id= river.name.toLowerCase().replace(/ /g, '-')+"-sinuosity",
+                    title= river.name+" Sinuosity",
+                    ranges= [minSinuosity,averageSinuosity,maxSinuosity],
+                    measures= [river.sinuosity],
+                    measureLabels= ['"Sinuosity"'],
+                    markers= [3.14159265359],
+                    markerLabels= ['"Pi"']
+                )
+
+            div.small-12.large-6.columns.chart-container(style="height:60px")
+                +bulletChart(
+                    id= river.name.toLowerCase().replace(/ /g, '-')+"-length",
+                    title= river.name+" Length",
+                    ranges= [minLength,averageLength,maxLength],
+                    measures= [river.realLength],
+                    measureLabels= ['"Length"'],
+                    markers= [river.crowLength],
+                    markerLabels= ['"Direct Length"']
+                )

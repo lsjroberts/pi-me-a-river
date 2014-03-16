@@ -16,7 +16,7 @@ gulp.task('styles-clean', function() {
 });
 
 gulp.task('styles', ['styles-clean'], function() {
-    return gulp.src(['assets/styles/**/*.sass', 'assets/styles/**/*.css'])
+    return gulp.src(['assets/styles/vendor/**/*.css', 'assets/styles/*.sass', 'assets/styles/**/*.css'])
         .pipe(sass({ style: 'compressed' }))
         .pipe(autoprefixer('last 2 versions'))
         .pipe(concat('combined.css'))

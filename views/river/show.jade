@@ -1,5 +1,46 @@
 extends ../layouts/master
 
+include ../mixins/form
+include ../mixins/chart
+
 block content
-    header
-        h1 Nile
+    div.small-12.large-12.columns
+        p
+            a(href="/") back to all
+
+    header.small-12.large-12.columns
+        h1= river.name
+
+    div.small-12.large-6.columns.chart-container(style="height:80px")
+        +bulletChart(
+            id= river.name.toLowerCase().replace(/ /g, '-')+"-sinuosity",
+            title= river.name+" Sinuosity",
+            ranges= [minSinuosity,averageSinuosity,maxSinuosity],
+            measures= [river.sinuosity],
+            measureLabels= ['"Sinuosity"'],
+            markers= [3.14159265359],
+            markerLabels= ['"Pi"']
+        )
+
+    div.small-12.large-6.columns.chart-container(style="height:60px")
+        +bulletChart(
+            id= river.name.toLowerCase().replace(/ /g, '-')+"-length",
+            title= river.name+" Length",
+            ranges= [minLength,averageLength,maxLength],
+            measures= [river.realLength],
+            measureLabels= ['"Length"'],
+            markers= [river.crowLength],
+            markerLabels= ['"Direct Length"']
+        )
+
+    div.small-12.large-12.columns
+        +form("/river/"+river._id, "post")
+            +field(name="name", value=river.name)
+            +field(name="countries", label="Country / countries (comma separated)", value=river.countries)
+            +field(name="real_length", label="Length (km)", value=river.realLength)
+            +field(name="source_lat", label="Source latitude (decimal format)", value=river.source.latitude)
+            +field(name="source_lng", label="Source longitude (decimal format)", value=river.source.longitude)
+            +field(name="mouth_lat", label="Mouth latitude (decimal format)", value=river.mouth.latitude)
+            +field(name="mouth_lng", label="Mouth longitude (decimal format)", value=river.mouth.longitude)
+
+            input(type="submit", value="Update river").button
