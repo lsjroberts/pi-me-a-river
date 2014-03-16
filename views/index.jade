@@ -1,6 +1,7 @@
 extends layouts/master
 
 include mixins/form
+include mixins/chart
 
 block content
     header.hero
@@ -32,15 +33,30 @@ block content
             h2 Is it Pi?
             h3 Average Sinuosity: #{averageSinuosity}
 
-    div.row
         div.small-12.large-12.columns
-            each river in rivers
-                div.row
-                    div.small-12.large-6.columns
-                        h2
-                            a(href="/river/#{river._id}")= river.name
-                        p Real Length #{river.realLength} km
-                        p Crow Length #{river.crowLength} km
-                        p Sinuosity #{river.sinuosity}
-                    div.small-12.large-6.columns
-                        p some graphs
+            //- canvas(id="sinuosity-chart", width="400", height="400", data-chart="#{chartData}")
+
+    div.small-12.large-12.columns
+        each river in rivers
+                div.small-12.large-12.columns
+                    h2
+                        a(href="/river/#{river._id}")= river.name
+                div.small-12.large-6.columns
+                    +bulletChart(
+                        id= river.name.toLowerCase().replace(/ /g, '-')+"-sinuosity",
+                        title= river.name+" Sinuosity",
+                        ranges= [minSinuosity,averageSinuosity,maxSinuosity],
+                        measures= [river.sinuosity],
+                        measureLabels= ['"Sinuosity"'],
+                        markers= [3.1415],
+                        markerLabels= ['"Pi"']
+                    )
+                div.small-12.large-6.columns
+                    +bulletChart(
+                        id= river.name.toLowerCase().replace(/ /g, '-')+"-length",
+                        title= river.name+" Length",
+                        ranges= [minLength,averageLength,maxLength],
+                        measures= [river.realLength],
+                        measureLabels= ['"Length"'],
+                        markers= []
+                    )

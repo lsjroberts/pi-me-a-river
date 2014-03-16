@@ -1,0 +1,19 @@
+mixin bulletChart()
+    svg(id= id)
+    script.
+        nv.addGraph(function() {
+            var chart = nv.models.bulletChart();
+            d3.select('#!{id}')
+                .datum({
+                    "title": "!{title}",
+                    "ranges": [!{ranges}],
+                    "measures": [!{measures}],
+                    "measureLabels": [!{measureLabels}],
+                    "markers": [!{markers}],
+                    "markerLabels": [!{markerLabels}]
+                })
+                .transition().duration(1000)
+                .call(chart);
+
+            return chart;
+        });

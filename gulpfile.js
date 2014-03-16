@@ -25,12 +25,24 @@ gulp.task('styles', ['styles-clean'], function() {
         .pipe(notify({ message: 'styles built' }));
 });
 
-gulp.task('app', function() {
-    return gulp.src(['app/**/*.coffee'])
-        .pipe(concat('combined.coffee'))
-        .pipe(coffee())
-        .pipe(gulp.dest('build/scripts'))
-        .pipe(notify({message: 'app built'}));
+gulp.task('scripts-clean', function() {
+    return gulp.src('build/scripts/**/*.js')
+        .pipe(rimraf());
 });
 
-gulp.task('default', ['app', 'styles']);
+gulp.task('scripts', ['scripts-clean'], function() {
+    return gulp.src(['assets/scripts/vendor/**/*.js', 'assets/scripts/**/*.js'])
+        .pipe(concat('combined.js'))
+        .pipe(gulp.dest('build/scripts'))
+        .pipe(notify({ message: 'scripts built' }));
+});
+
+// gulp.task('app', function() {
+//     return gulp.src(['app/**/*.coffee'])
+//         .pipe(concat('combined.coffee'))
+//         .pipe(coffee())
+//         .pipe(gulp.dest('build/scripts'))
+//         .pipe(notify({message: 'app built'}));
+// });
+
+gulp.task('default', ['scripts', 'styles']);

@@ -67,28 +67,61 @@ var RiverCreate = function(data) {
 app.use('/styles', express.static(__dirname + '/build/styles'));
 app.use('/scripts', express.static(__dirname + '/build/scripts'));
 
+//chartColors = ['76BFCA', '7FBBC4', '87B6BD', '90B2B7', '99AEB1', 'A1A9AB',
+//    'AAA5A4', 'B2A09E', 'BB9C98', 'C49892', 'CC938B', 'D58F85'];
+// chartColors = ['76BFCA', '87B6BD', '99AEB1', 'AAA5A4', 'BB9C98', 'CC938B', 'D58F85'];
+// chartColorStep = Math.PI / (chartColors.length * 1.0);
+
 // index
 app.get('/', function(req, res) {
-    db.rivers.find({}, function(e, rivers) {
+    db.rivers.find({}).sort({ realLength: -1 }).exec(function(e, rivers) {
         totals = {
             realLength: 0,
             crowLength: 0,
             sinuosity: 0
         }
+        minSinuosity = 999;
+        maxSinuosity = 0;
+        minLength = 999999;
+        maxLength = 0;
+
+        chartData = [];
 
         for (var i=0; i<rivers.length; i++) {
             rivers[i] = new River(rivers[i]);
 
-            totals.realLength += rivers[i].realLength;
-            totals.crowLength += rivers[i].crowLength;
-            totals.sinuosity  += rivers[i].sinuosity;
+            totals.realLength += (1.0 * rivers[i].realLength);
+            totals.crowLength += (1.0 * rivers[i].crowLength);
+            totals.sinuosity  += (1.0 * rivers[i].sinuosity);
+
+            if (rivers[i].sinuosity < minSinuosity) {
+                minSinuosity = rivers[i].sinuosity;
+            }
+
+            if (rivers[i].sinuosity > maxSinuosity) {
+                maxSinuosity = rivers[i].sinuosity;
+            }
+
+            if (rivers[i].realLength < minLength) {
+                minLength = rivers[i].realLength;
+            }
+
+            if (rivers[i].realLength > maxLength) {
+                maxLength = rivers[i].realLength;
+            }
         }
 
         averageSinuosity = totals.sinuosity / rivers.length;
+        averageLength = totals.realLength / rivers.length;
 
         res.render('index.jade', {
             rivers: rivers,
-            averageSinuosity: averageSinuosity
+            averageSinuosity: averageSinuosity,
+            minSinuosity: minSinuosity,
+            maxSinuosity: maxSinuosity,
+            averageLength: averageLength,
+            minLength: minLength,
+            maxLength: maxLength
         });
     });
 });
