@@ -4,10 +4,6 @@ html
         title pi me a river
         link(rel="stylesheet", href="/styles/combined.css")
         script(src="/scripts/combined.js")
-
-    body
-        block content
-
         script.
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-18813637-2']);
@@ -18,3 +14,6 @@ html
                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
+
+    body
+        block content
