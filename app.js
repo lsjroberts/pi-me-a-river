@@ -28,6 +28,10 @@ var River = (function() {
         for (var key in data) {
             this[key] = data[key];
         }
+
+        this.realLength *= 1.0;
+        this.crowLength *= 1.0;
+        this.sinuosity  *= 1.0;
     }
 
     River.prototype.getCrowLength = function() {
@@ -42,21 +46,21 @@ var RiverCreate = function(data) {
 
     river.name = data.name;
 
-    river.realLength = data.real_length;
+    river.realLength = data.real_length * 1.0;
 
     river.countries = data.countries;
 
     river.source = {
-        latitude: data.source_lat,
-        longitude: data.source_lng
+        latitude: data.source_lat * 1.0,
+        longitude: data.source_lng * 1.0
     };
     river.mouth = {
-        latitude: data.mouth_lat,
-        longitude: data.mouth_lng
+        latitude: data.mouth_lat * 1.0,
+        longitude: data.mouth_lng * 1.0
     };
 
     if (data.crow_length) {
-        river.crowLength = data.crow_length;
+        river.crowLength = data.crow_length * 1.0;
     } else {
         river.crowLength = haversine(river.source, river.mouth);
     }
@@ -101,9 +105,9 @@ app.get('/', function(req, res) {
         for (var i=0; i<rivers.length; i++) {
             rivers[i] = new River(rivers[i]);
 
-            totals.realLength += (1.0 * rivers[i].realLength);
-            totals.crowLength += (1.0 * rivers[i].crowLength);
-            totals.sinuosity  += (1.0 * rivers[i].sinuosity);
+            totals.realLength += rivers[i].realLength;
+            totals.crowLength += rivers[i].crowLength;
+            totals.sinuosity  += rivers[i].sinuosity;
 
             if (rivers[i].sinuosity < minSinuosity) {
                 minSinuosity = rivers[i].sinuosity;
@@ -144,6 +148,13 @@ app.get('/', function(req, res) {
             key: 'Rivers',
             values: barChartDataValues
         }];
+
+        console.log({averageSinuosity: averageSinuosity,
+            minSinuosity: minSinuosity,
+            maxSinuosity: maxSinuosity,
+            averageLength: averageLength,
+            minLength: minLength,
+            maxLength: maxLength});
 
         res.render('index.jade', {
             rivers: rivers,
