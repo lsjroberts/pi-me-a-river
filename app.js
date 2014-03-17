@@ -1,7 +1,9 @@
 var express = require('express');
 var app = express();
-var datastore = require('nedb');
 var haversine = require('haversine');
+
+var Datastore = require('nedb');
+var Stats = require('fast-stats').Stats;
 
 // config
 app.configure(function() {
@@ -16,9 +18,9 @@ app.engine('jade', require('jade').__express)
 
 // datastore
 var db = {};
-db.rivers = new datastore({
-    // filename: 'storage/database/rivers.table',
-    filename: '/var/www/pimeariver.com/storage/database/rivers.table',
+db.rivers = new Datastore({
+    filename: 'storage/database/rivers.table',
+    // filename: '/var/www/pimeariver.com/storage/database/rivers.table',
     autoload: true
 });
 
@@ -98,32 +100,20 @@ app.get('/', function(req, res) {
         }];
 
         barChartData = {}
-        for (var b=0.0; b<6.3; b+=0.1) {
+        for (var b=0.0; b<9.6; b+=0.1) {
             barChartData[b.toFixed(1)] = 0;
         }
+
+        var statsSinuosity = new Stats(),
+            statsRealLength = new Stats(),
+            statsCrowLength = new Stats();
 
         for (var i=0; i<rivers.length; i++) {
             rivers[i] = new River(rivers[i]);
 
-            totals.realLength += rivers[i].realLength;
-            totals.crowLength += rivers[i].crowLength;
-            totals.sinuosity  += rivers[i].sinuosity;
-
-            if (rivers[i].sinuosity < minSinuosity) {
-                minSinuosity = rivers[i].sinuosity;
-            }
-
-            if (rivers[i].sinuosity > maxSinuosity) {
-                maxSinuosity = rivers[i].sinuosity;
-            }
-
-            if (rivers[i].realLength < minLength) {
-                minLength = rivers[i].realLength;
-            }
-
-            if (rivers[i].realLength > maxLength) {
-                maxLength = rivers[i].realLength;
-            }
+            statsSinuosity.push(rivers[i].sinuosity);
+            statsRealLength.push(rivers[i].realLength);
+            statsCrowLength.push(rivers[i].crowLength);
 
             scatterChartData[0].values.push({
                 x: rivers[i].realLength,
@@ -132,9 +122,6 @@ app.get('/', function(req, res) {
 
             barChartData[rivers[i].sinuosity.toFixed(1)]++;
         }
-
-        averageSinuosity = totals.sinuosity / rivers.length;
-        averageLength = totals.realLength / rivers.length;
 
         barChartDataValues = [];
         for (var key in barChartData) {
@@ -149,21 +136,11 @@ app.get('/', function(req, res) {
             values: barChartDataValues
         }];
 
-        console.log({averageSinuosity: averageSinuosity,
-            minSinuosity: minSinuosity,
-            maxSinuosity: maxSinuosity,
-            averageLength: averageLength,
-            minLength: minLength,
-            maxLength: maxLength});
-
         res.render('index.jade', {
             rivers: rivers,
-            averageSinuosity: averageSinuosity,
-            minSinuosity: minSinuosity,
-            maxSinuosity: maxSinuosity,
-            averageLength: averageLength,
-            minLength: minLength,
-            maxLength: maxLength,
+            statsSinuosity: statsSinuosity,
+            statsRealLength: statsRealLength,
+            statsCrowLength: statsCrowLength,
             scatterChartData: JSON.stringify(scatterChartData),
             barChartData: JSON.stringify(barChartData)
         });
