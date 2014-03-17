@@ -41,6 +41,7 @@ mixin discreteBarChart()
                 .x(function(d) { return d.label })
                 .y(function(d) { return d.value })
                 .tooltips(false)
+                .staggerLabels(true)
                 .transitionDuration(350);
 
             d3.select('#!{id}')
