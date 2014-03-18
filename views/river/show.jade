@@ -44,3 +44,9 @@ block content
             +field(name="mouth_lng", label="Mouth longitude (decimal format)", value=river.mouth.longitude)
 
             input(type="submit", value="Update river").button
+
+        +form("/river/"+river._id+"/delete", "post")
+            button.secondary(
+                type="submit",
+                onclick="return confirm('Are you sure?');"
+            ) Delete

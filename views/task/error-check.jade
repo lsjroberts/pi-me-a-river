@@ -1,0 +1,25 @@
+extends ../layouts/master
+
+block content
+    div.row
+        h1 Error Checks
+        hr
+
+    each error in broken
+        div.row
+            h4= error.river.name
+            h5= error.reason
+
+            p= "Source: " + error.river.source.latitude + "," + error.river.source.longitude
+            p= "Mouth: " + error.river.mouth.latitude + "," + error.river.mouth.longitude
+            p= "Real Length: " + error.river.realLength
+            p= "Crow Length: " + error.river.crowLength
+
+            p
+                a.button(href="/river/" + error.river._id) Edit
+                a.button.secondary(
+                    href="/river/" + error.river._id + "/delete",
+                    onclick="return confirm('Are you sure?');"
+                ) Delete
+
+            hr

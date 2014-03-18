@@ -179,18 +179,59 @@ app.post('/river/:id', function(req, res) {
     db.rivers.update({
         _id: req.params.id
     }, river, {}, function() {
-        db.rivers.findOne({
-            _id: req.params.id
-        }, function(e, river) {
-            if (null == river) {
-                res.render('error/404.jade');
-                return;
+        res.redirect('/river/'+req.params.id);
+    });
+});
+
+// river.delete
+app.get('/river/:id/delete', function(req, res) {
+    db.rivers.remove({
+        _id: req.params.id
+    }, {}, function(e, numRemoved) {
+        res.redirect('/');
+    });
+});
+
+app.get('/task/error-check', function(req, res) {
+    db.rivers.find({}, function(e, rivers) {
+        broken = [];
+
+        for (var i=0; i<rivers.length; i++) {
+            river = new River(rivers[i]);
+
+            if (river.source.latitude == 0 ||
+                river.source.longitude == 0 ||
+                river.mouth.latitude == 0 ||
+                river.mouth.longitude == 0
+            ) {
+                broken.push({
+                    river: river,
+                    error: 'lnglat'
+                });
             }
 
-            res.render('river/show.jade', {
-                river: river
-            });
-        });
+            if (typeof river.realLength != "number" ||
+                river.realLength < 0
+            ) {
+                broken.push({
+                    river: river,
+                    error: 'realLength'
+                });
+            }
+
+            if (typeof river.crowLength != "number" ||
+                river.crowLength < 0
+            ) {
+                broken.push({
+                    river: river,
+                    error: 'crowLength'
+                });
+            }
+        }
+
+        res.render('task/error-check', {
+            broken: broken
+        })
     });
 });
 
