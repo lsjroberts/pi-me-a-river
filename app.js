@@ -184,7 +184,7 @@ app.post('/river/:id', function(req, res) {
 });
 
 // river.delete
-app.get('/river/:id/delete', function(req, res) {
+app.post('/river/:id/delete', function(req, res) {
     db.rivers.remove({
         _id: req.params.id
     }, {}, function(e, numRemoved) {

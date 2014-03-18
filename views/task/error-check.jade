@@ -17,8 +17,10 @@ block content
 
             p
                 a.button(href="/river/" + error.river._id) Edit
-                a.button.secondary(
-                    href="/river/" + error.river._id + "/delete",
+
+            +form("/river/"+river._id+"/delete", "post")
+                button.secondary(
+                    type="submit",
                     onclick="return confirm('Are you sure?');"
                 ) Delete
 
