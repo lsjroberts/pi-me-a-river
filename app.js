@@ -138,6 +138,12 @@ app.get('/', function(req, res) {
 
         res.render('index.jade', {
             rivers: rivers,
+            pagination: { // @todo: set this up to use a query thing
+                items: rivers.slice(0,10),
+                current_page: 1,
+                per_page: 10,
+                num_pages: Math.ceil(rivers.length / 10.0)
+            },
             statsSinuosity: statsSinuosity,
             statsRealLength: statsRealLength,
             statsCrowLength: statsCrowLength,
