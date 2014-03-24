@@ -13,7 +13,7 @@ block content
 
     div.small-12.large-6.columns.chart-container(style="height:80px")
         +bulletChart(
-            id= river._id+"-sinuosity",
+            id= "sinuosity-"+river._id,
             title= river.name+" Sinuosity",
             ranges= [minSinuosity,averageSinuosity,maxSinuosity],
             measures= [river.sinuosity],
@@ -24,7 +24,7 @@ block content
 
     div.small-12.large-6.columns.chart-container(style="height:60px")
         +bulletChart(
-            id= river._id+"-length",
+            id= "length-"+river._id,
             title= river.name+" Length",
             ranges= [minLength,averageLength,maxLength],
             measures= [river.realLength],
