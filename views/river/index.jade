@@ -1,0 +1,29 @@
+p Showing page #{pagination.current_page} of #{pagination.num_pages} pages
+
+each pagination.items in rivers
+    div.small-12.large-12.columns
+        h3
+            a(href="/river/#{river._id}")= river.name
+        p= river.countries
+
+    div.small-12.large-6.columns.chart-container(style="height:80px")
+        +bulletChart(
+            id= river.name.toLowerCase().replace(/ /g, '-')+"-sinuosity",
+            title= river.name+" Sinuosity",
+            ranges= [statsSinuosity.range()[0],statsSinuosity.amean(),statsSinuosity.range()[1]],
+            measures= [river.sinuosity],
+            measureLabels= ['"Sinuosity"'],
+            markers= [3.14159265359],
+            markerLabels= ['"Pi"']
+        )
+
+    div.small-12.large-6.columns.chart-container(style="height:60px")
+        +bulletChart(
+            id= river.name.toLowerCase().replace(/ /g, '-')+"-length",
+            title= river.name+" Length",
+            ranges= [statsRealLength.range()[0],statsRealLength.amean(),statsRealLength.range()[1]],
+            measures= [river.realLength],
+            measureLabels= ['"Length"'],
+            markers= [river.crowLength],
+            markerLabels= ['"Direct Length"']
+        )
