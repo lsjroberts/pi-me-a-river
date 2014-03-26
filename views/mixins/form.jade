@@ -25,5 +25,20 @@ mixin field()
         - attributes.label= unslugify(attributes.name)
 
     div.field
-        label= attributes.label
-        input(type= attributes.type, name= attributes.name, value= attributes.value)
+        if attributes.error
+            label.error= attributes.label
+            input(
+                type= attributes.type,
+                name= attributes.name,
+                value= attributes.value,
+                placeholder= attributes.placeholder
+            ).error
+            small.error= attributes.error.msg
+        else
+            label= attributes.label
+            input(
+                type= attributes.type,
+                name= attributes.name,
+                value= attributes.value,
+                placeholder= attributes.placeholder
+            )
