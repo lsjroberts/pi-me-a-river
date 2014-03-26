@@ -35,13 +35,38 @@ block content
 
     div.small-12.large-12.columns
         +form("/river/"+river._id, "post")
-            +field(name="name", value=river.name)
-            +field(name="countries", label="Country / countries (comma separated)", value=river.countries)
-            +field(name="real_length", label="Length (km)", value=river.realLength)
-            +field(name="source_lat", label="Source latitude (decimal format)", value=river.source.latitude)
-            +field(name="source_lng", label="Source longitude (decimal format)", value=river.source.longitude)
-            +field(name="mouth_lat", label="Mouth latitude (decimal format)", value=river.mouth.latitude)
-            +field(name="mouth_lng", label="Mouth longitude (decimal format)", value=river.mouth.longitude)
+            +field(name="name", label="River name", placeholder="e.g. Amazon"
+                error=(riverUpdateErrors ? riverUpdateErrors.name : false),
+                value=(riverUpdateData ? riverUpdateData.name : river.name)
+            )
+            +field(name="countries", label="Country / countries (comma separated)", placeholder="e.g. Brazil, Peru, Columbia"
+                error=(riverUpdateErrors ? riverUpdateErrors.countries : false),
+                value=(riverUpdateData ? riverUpdateData.countries : river.countries)
+            )
+            +field(name="real_length", label="Length (km)", placeholder="e.g. 6992"
+                error=(riverUpdateErrors ? riverUpdateErrors.real_length : false),
+                value=(riverUpdateData ? riverUpdateData.real_length : river.realLength)
+            )
+            +field(name="source_lat", label="Source latitude (decimal format)", placeholder="e.g. -15.518056"
+                error=(riverUpdateErrors ? riverUpdateErrors.source_lat : false),
+                value=(riverUpdateData ? riverUpdateData.source_lat : river.source.latitude)
+            )
+            +field(name="source_lng", label="Source longitude (decimal format)", placeholder="e.g. -71.765278"
+                error=(riverUpdateErrors ? riverUpdateErrors.source_lng : false),
+                value=(riverUpdateData ? riverUpdateData.source_lng : river.source.longitude)
+            )
+            +field(name="mouth_lat", label="Mouth latitude (decimal format)", placeholder="e.g. -0.166667"
+                error=(riverUpdateErrors ? riverUpdateErrors.mouth_lat : false),
+                value=(riverUpdateData ? riverUpdateData.mouth_lat : river.mouth.latitude)
+            )
+            +field(name="mouth_lng", label="Mouth longitude (decimal format)", placeholder="e.g. -49.0"
+                error=(riverUpdateErrors ? riverUpdateErrors.mouth_lng : false),
+                value=(riverUpdateData ? riverUpdateData.mouth_lng : river.mouth.longitude)
+            )
+            +field(name="comments", type="textarea", label="Any comments regarding the accuracy of the data etc (optional)", placeholder="e.g. The source of this river is under debate"
+                error=(riverUpdateErrors ? riverUpdateErrors.comments : false),
+                value=(riverUpdateData ? riverUpdateData.comments : river.comments)
+            )
 
             input(type="submit", value="Update river").button
 

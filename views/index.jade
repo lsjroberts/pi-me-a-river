@@ -56,6 +56,11 @@ block content
                 error=(riverCreateErrors ? riverCreateErrors.mouth_lng : false),
                 value=(riverCreateData ? riverCreateData.mouth_lng : false)
             )
+            +field(name="comments", type="textarea" label="Any comments regarding the accuracy of the data etc (optional)", placeholder="e.g. The source of this river is under debate"
+                error=(riverCreateErrors ? riverCreateErrors.comments : false),
+                value=(riverCreateData ? riverCreateData.comment : false)
+            )
+
 
             input(type="submit", value="Add your river").button
 

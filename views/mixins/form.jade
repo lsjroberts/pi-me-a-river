@@ -27,18 +27,30 @@ mixin field()
     div.field
         if attributes.error
             label.error= attributes.label
-            input(
-                type= attributes.type,
-                name= attributes.name,
-                value= attributes.value,
-                placeholder= attributes.placeholder
-            ).error
+            if attributes.type == "textarea"
+                textarea(
+                    name= attributes.name,
+                    placeholder= attributes.placeholder
+                ).error= (attributes.value ? attributes.value : '')
+            else
+                input(
+                    type= attributes.type,
+                    name= attributes.name,
+                    value= attributes.value,
+                    placeholder= attributes.placeholder
+                ).error
             small.error= attributes.error.msg
         else
             label= attributes.label
-            input(
-                type= attributes.type,
-                name= attributes.name,
-                value= attributes.value,
-                placeholder= attributes.placeholder
-            )
+            if attributes.type == "textarea"
+                textarea(
+                    name= attributes.name,
+                    placeholder= attributes.placeholder
+                ).error= (attributes.value ? attributes.value : '')
+            else
+                input(
+                    type= attributes.type,
+                    name= attributes.name,
+                    value= attributes.value,
+                    placeholder= attributes.placeholder
+                )
