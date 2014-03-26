@@ -19,14 +19,43 @@ block content
             )
 
     div.small-12.large-6.columns
+        h3 Add your river
+
+        ul
+            li Please check if your river has already been recorded before finding the data and adding it here.
+            li Please use the common anglicised name for the river, e.g. "Rhine" not "Rhein".
+            li Remember to use the decimal format for latitude and longitude.
+            li And also use a decimal point not a decimal comma e.g. 3.14 not 3,14
+
         +form("river", "post")
-            +field(name="name")
-            +field(name="countries", label="Country / countries (comma separated)")
-            +field(name="real_length", label="Length (km)")
-            +field(name="source_lat", label="Source latitude (decimal format)")
-            +field(name="source_lng", label="Source longitude (decimal format)")
-            +field(name="mouth_lat", label="Mouth latitude (decimal format)")
-            +field(name="mouth_lng", label="Mouth longitude (decimal format)")
+            +field(name="name", label="River name", placeholder="e.g. Amazon"
+                error=(riverCreateErrors ? riverCreateErrors.name : false),
+                value=(riverCreateData ? riverCreateData.name : false)
+            )
+            +field(name="countries", label="Country / countries (comma separated)", placeholder="e.g. Brazil, Peru, Columbia"
+                error=(riverCreateErrors ? riverCreateErrors.countries : false),
+                value=(riverCreateData ? riverCreateData.countries : false)
+            )
+            +field(name="real_length", label="Length (km)", placeholder="e.g. 6992"
+                error=(riverCreateErrors ? riverCreateErrors.real_length : false),
+                value=(riverCreateData ? riverCreateData.real_length : false)
+            )
+            +field(name="source_lat", label="Source latitude (decimal format)", placeholder="e.g. -15.518056"
+                error=(riverCreateErrors ? riverCreateErrors.source_lat : false),
+                value=(riverCreateData ? riverCreateData.source_lat : false)
+            )
+            +field(name="source_lng", label="Source longitude (decimal format)", placeholder="e.g. -71.765278"
+                error=(riverCreateErrors ? riverCreateErrors.source_lng : false),
+                value=(riverCreateData ? riverCreateData.source_lng : false)
+            )
+            +field(name="mouth_lat", label="Mouth latitude (decimal format)", placeholder="e.g. -0.166667"
+                error=(riverCreateErrors ? riverCreateErrors.mouth_lat : false),
+                value=(riverCreateData ? riverCreateData.mouth_lat : false)
+            )
+            +field(name="mouth_lng", label="Mouth longitude (decimal format)", placeholder="e.g. -49.0"
+                error=(riverCreateErrors ? riverCreateErrors.mouth_lng : false),
+                value=(riverCreateData ? riverCreateData.mouth_lng : false)
+            )
 
             input(type="submit", value="Add your river").button
 

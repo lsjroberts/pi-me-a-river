@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var haversine = require('haversine');
+var expressValidator = require('express-validator');
 
 var Datastore = require('nedb');
 var Stats = require('fast-stats').Stats;
@@ -13,8 +14,11 @@ app.configure(function() {
 
 app.use(express.json());
 app.use(express.urlencoded());
-
+app.use(expressValidator());
+app.use(express.cookieParser());
+app.use(express.session({secret: 'put-some-config-file-secret-here'}));
 app.engine('jade', require('jade').__express)
+
 
 // datastore
 var db = {};
@@ -71,6 +75,16 @@ var RiverCreate = function(data) {
 
     return river;
 }
+
+// add custom validation rules
+expressValidator.validator.extend('riverExists', function(str, rivers) {
+    for (i in rivers) {
+        if (rivers[i].name == str) {
+            return false;
+        }
+    }
+    return true;
+});
 
 // static assets
 app.use('/styles', express.static(__dirname + '/build/styles'));
@@ -136,8 +150,16 @@ app.get('/', function(req, res) {
             values: barChartDataValues
         }];
 
+        riverCreateErrors = req.session.riverCreateErrors;
+        riverCreateData   = req.session.riverCreateData;
+
+        req.session.riverCreateErrors = null;
+        req.session.riverCreateData   = null;
+
         res.render('index.jade', {
             rivers: rivers,
+            riverCreateErrors: riverCreateErrors,
+            riverCreateData: riverCreateData,
             statsSinuosity: statsSinuosity,
             statsRealLength: statsRealLength,
             statsCrowLength: statsCrowLength,
@@ -149,11 +171,35 @@ app.get('/', function(req, res) {
 
 // river.store
 app.post('/river', function(req, res) {
-    river = RiverCreate(req.body);
+    db.rivers.find({}, function(e, rivers) {
+        req.body.name = expressValidator.validator.trim(req.body.name);
+        req.body.countries = expressValidator.validator.trim(req.body.countries);
 
-    db.rivers.insert(river);
+        req.assert('name', 'River already exists').riverExists(rivers);
+        req.assert('name', 'River name is required').notEmpty()
 
-    res.redirect('/');
+        req.assert('countries', 'Country / countries is required').notEmpty();
+
+        req.assert('real_length', 'Length must be a number').isNumeric();
+        req.assert('real_length', 'Length is required').notEmpty();
+
+        req.assert('source_lat', 'Source latitude must be a decimal').isFloat();
+        req.assert('source_lng', 'Source longitude must be a decimal').isFloat();
+        req.assert('mouth_lat', 'Mouth latitude must be a decimal').isFloat();
+        req.assert('mouth_lng', 'Mouth longitude must be a decimal').isFloat();
+
+        var errors = req.validationErrors(true);
+        if (! errors) {
+            river = RiverCreate(req.body);
+            db.rivers.insert(river);
+        }
+        else {
+            req.session.riverCreateErrors = errors;
+            req.session.riverCreateData   = req.body;
+        }
+
+        res.redirect('/');
+    });
 });
 
 // river.show
