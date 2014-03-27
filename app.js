@@ -247,6 +247,8 @@ app.post('/river/:id', function(req, res) {
 
     var errors = req.validationErrors(true);
     if (! errors) {
+        river = RiverCreate(req.body);
+
         db.rivers.update({
             _id: req.params.id
         }, river, {}, function() {
