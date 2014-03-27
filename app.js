@@ -73,6 +73,8 @@ var RiverCreate = function(data) {
 
     river.sinuosity = river.realLength / river.crowLength;
 
+    river.comments = data.comments;
+
     return river;
 }
 
@@ -228,38 +230,35 @@ app.get('/river/:id', function(req, res) {
 
 // river.edit
 app.post('/river/:id', function(req, res) {
-    db.rivers.find({}, function(e, rivers) {
-        req.body.name = expressValidator.validator.trim(req.body.name);
-        req.body.countries = expressValidator.validator.trim(req.body.countries);
+    req.body.name = expressValidator.validator.trim(req.body.name);
+    req.body.countries = expressValidator.validator.trim(req.body.countries);
 
-        req.assert('name', 'River already exists').riverExists(rivers);
-        req.assert('name', 'River name is required').notEmpty()
+    req.assert('name', 'River name is required').notEmpty()
 
-        req.assert('countries', 'Country / countries is required').notEmpty();
+    req.assert('countries', 'Country / countries is required').notEmpty();
 
-        req.assert('real_length', 'Length must be a number').isNumeric();
-        req.assert('real_length', 'Length is required').notEmpty();
+    req.assert('real_length', 'Length must be a number').isNumeric();
+    req.assert('real_length', 'Length is required').notEmpty();
 
-        req.assert('source_lat', 'Source latitude must be a decimal').isFloat();
-        req.assert('source_lng', 'Source longitude must be a decimal').isFloat();
-        req.assert('mouth_lat', 'Mouth latitude must be a decimal').isFloat();
-        req.assert('mouth_lng', 'Mouth longitude must be a decimal').isFloat();
+    req.assert('source_lat', 'Source latitude must be a decimal').isFloat();
+    req.assert('source_lng', 'Source longitude must be a decimal').isFloat();
+    req.assert('mouth_lat', 'Mouth latitude must be a decimal').isFloat();
+    req.assert('mouth_lng', 'Mouth longitude must be a decimal').isFloat();
 
-        var errors = req.validationErrors(true);
-        if (! errors) {
-            db.rivers.update({
-                _id: req.params.id
-            }, river, {}, function() {
-                res.redirect('/river/'+req.params.id);
-            });
-        }
-        else {
-            req.session.riverUpdateErrors = errors;
-            req.session.riverUpdateData   = req.body;
-        }
+    var errors = req.validationErrors(true);
+    if (! errors) {
+        db.rivers.update({
+            _id: req.params.id
+        }, river, {}, function() {
+            res.redirect('/river/'+req.params.id);
+        });
+    }
+    else {
+        req.session.riverUpdateErrors = errors;
+        req.session.riverUpdateData   = req.body;
+    }
 
-        res.redirect('/river/'+req.params.id);
-    });
+    res.redirect('/river/'+req.params.id);
 });
 
 // river.delete
