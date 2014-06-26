@@ -110,15 +110,19 @@ app.get('/', function(req, res) {
         minLength = 999999;
         maxLength = 0;
 
-        scatterChartData = [{
+        lengthVsSinuosityChartData = [{
             key: 'Rivers',
-            values: []
+            values: [],
+            slope: 0,
+            intercept: Math.PI
         }];
 
-        barChartData = {}
+        distributionChartData = {}
         for (var b=0.0; b<9.6; b+=0.1) {
-            barChartData[b.toFixed(1)] = 0;
+            distributionChartData[b.toFixed(1)] = 0;
         }
+
+        averagedData = {};
 
         var statsSinuosity = new Stats(),
             statsRealLength = new Stats(),
@@ -131,25 +135,25 @@ app.get('/', function(req, res) {
             statsRealLength.push(rivers[i].realLength);
             statsCrowLength.push(rivers[i].crowLength);
 
-            scatterChartData[0].values.push({
+            lengthVsSinuosityChartData[0].values.push({
                 x: rivers[i].realLength,
                 y: rivers[i].sinuosity
-            })
+            });
 
-            barChartData[rivers[i].sinuosity.toFixed(1)]++;
+            distributionChartData[rivers[i].sinuosity.toFixed(1)]++;
         }
 
-        barChartDataValues = [];
-        for (var key in barChartData) {
-            barChartDataValues.push({
+        distributionChartDataValues = [];
+        for (var key in distributionChartData) {
+            distributionChartDataValues.push({
                 label: key,
-                value: barChartData[key]
+                value: distributionChartData[key]
             });
         }
 
-        barChartData = [{
+        distributionChartData = [{
             key: 'Rivers',
-            values: barChartDataValues
+            values: distributionChartDataValues
         }];
 
         riverCreateErrors = req.session.riverCreateErrors;
@@ -165,8 +169,8 @@ app.get('/', function(req, res) {
             statsSinuosity: statsSinuosity,
             statsRealLength: statsRealLength,
             statsCrowLength: statsCrowLength,
-            scatterChartData: JSON.stringify(scatterChartData),
-            barChartData: JSON.stringify(barChartData)
+            lengthVsSinuosityChartData: JSON.stringify(lengthVsSinuosityChartData),
+            distributionChartData: JSON.stringify(distributionChartData)
         });
     });
 });

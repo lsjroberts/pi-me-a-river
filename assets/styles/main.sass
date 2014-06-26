@@ -1,19 +1,54 @@
+$blue: #5ab2c8
+$orange: #cb853a
+
+body, h1, h2, h3, h4, h5, h6, p, li
+    font-family: 'Arvo', serif
+    font-size: 18px
+    line-height: 1.8em
+
+h1
+    font-size: 2.4em
+
+h2
+    font-size: 2em
+
+h3
+    font-size: 1.6em
+
+h4
+    font-size: 1.4em
+
+a
+    text-decoration: underline
+    color: $orange
+
+    &:hover
+        color: darken($orange, 10%)
+
+textarea, input, input[type="text"]
+    padding: .6em .6em
+    font-family: 'Arvo', serif
+    font-size: 18px
+
+.wrapper
+    width: 95%
+    margin: 0 auto
+
 .hero
     margin: 0 0 100px 0
     padding: 20px 0 30px
     text-align: center
-    color: #fff
-    background: #76BFCA
+    color: $blue
 
     h1
         margin: 0 0 20px 0
         font-size: 60px
-        color: #fff
+        color: $blue
 
     h2
         margin: 0
         font-size: 30px
-        color: #fff
+        color: $blue
 
 .chart-container
     position: static !important

@@ -6,20 +6,82 @@ include mixins/chart
 block content
     header.hero.small-12.large-12.columns
         h1 Pi me a River
-        h2= statsSinuosity.amean()
+        h2 Is the average sinuosity of the world's rivers equal to &pi;?
 
-    div.small-12.large-6.columns
+    div.small-12.large-6.column
+        h2 What is this?
         p
-            iframe(
-                width="100%",
-                height="500",
-                src="//www.youtube.com/embed/TUErNWBOkUM"
-                frameborder="0"
-                allowfullscreen="true"
+            | There is a <a href="http://raaf.org/pdfs/meandering_river.pdf">hypothesis</a> that the average sinuosity of the
+            | world's rivers should be equal to &pi; (#{Math.PI.toFixed(6)}). Numberphile produced a
+            | <a href="https://www.youtube.com/watch?v=TUErNWBOkUM&channel=numberphile">video</a> discussing the idea
+            | and stated that there didn't seem to be any recorded data to actually check to see if it is true. This
+            | project aims to solve that.
+
+        p
+            | Sinuosity is the ratio of the river's length to the straight-line distance between it's source and mouth.
+            | For example, the Amazon is 6992.0km long and has a direct straight-line distance of 1881.29km, giving it a
+            | sinuosity of 6992.0 / 1881.29 = 3.72, slightly more than &pi;.
+
+        h2 Notes on accuracy
+        p
+            | This data has been crowd sourced and so is potentially guesswork and estimations. It is often difficult to
+            | find the exact source of a river, and indeed many rivers have multiple sources that are debated. Furthermore
+            | some named rivers are tributaries to larger rivers and different lengths are given depending on how you look
+            | at the data.
+
+        h2 Results
+        p
+            | With <strong>#{rivers.length}</strong> rivers the average
+            | sinuosity is <strong>#{statsSinuosity.amean().toFixed(6)}</strong>,
+            | with a standard deviation of <strong>#{statsSinuosity.stddev().toFixed(6)}</strong>.
+        p
+            | This is a difference of <strong>#{Math.abs((statsSinuosity.amean() - Math.PI).toFixed(6))}</strong> from &pi;,
+            | or an error of <strong>#{Math.abs(((statsSinuosity.amean() - Math.PI) / Math.PI).toFixed(6))}%</strong>.
+
+        h3 Distribution
+        div.chart-container
+            +discreteBarChart(
+                id= "sinuosity-distribution-discrete-bar-chart",
+                data= distributionChartData,
+                height= "200px",
+                tooltip= function(key, x, y, e, graph) {
+                    return '<h3>Sinuosity: ' + x + '</h3>' +
+                           '<p>Rivers: ' + y + '</p>';
+                }
             )
 
-    div.small-12.large-6.columns
-        h3 Add your river
+        h3 Length vs Sinuosity
+        div.chart-container
+            +scatterPlusLineChart(
+                id= "length-vs-sinuosity-scatter-chart",
+                data= lengthVsSinuosityChartData,
+                height= "400px",
+                tooltip= function(key, x, y, date) {
+                    return '';
+                },
+                tooltipX= function(key, x, y) {
+                    return 'Length: ' + x;
+                },
+                tooltipY= function(key, x, y) {
+                    return 'Sinuosity: ' + y;
+                }
+            )
+
+        h2 Code
+
+        p
+            | The code for this project is available at <a href="https://github.com/lsjroberts/pi-me-a-river">github</a>.
+            | If you are interested in getting involved, either just submit your local river to the right or contribute
+            | and discuss via github.
+
+        h4 Todo
+
+        p
+            | I intend to continue updating the site with some interface improvements and potentially importing a massive
+            | set of data on rivers to improve the accuracy of the results.
+
+    div.small-12.large-6.column
+        h2 Add your river
 
         ul
             li Please check if your river has already been recorded before finding the data and adding it here.
@@ -61,43 +123,15 @@ block content
                 value=(riverCreateData ? riverCreateData.comment : false)
             )
 
+            br
 
             input(type="submit", value="Add your river").button
 
-    div.small-12.large-12.column.chart-container
-        h2 Note on accuracy
-        p It is worth pointing out that much of this data is approximate or based on guesswork.
 
-        h2 Sinuosity
+    div.small-12.large-12.column
+        hr
 
-        h3 Arithmetic Mean
-        p= statsSinuosity.amean()
-
-        h3 Standard Deviation
-        p= statsSinuosity.stddev()
-
-        h4 Count of rivers
-        p= rivers.length
-
-    div.small-12.large-12.column.chart-container
-        h3 Distribution
-
-        +discreteBarChart(
-            id= "sinuosity-distribution-discrete-bar-chart",
-            data= barChartData,
-            height= "500px"
-        )
-
-    div.small-12.large-12.column.chart-container
-        h3 Length vs Sinuosity
-
-        +scatterChart(
-            id= "sinuosity-length-scatter-chart",
-            data= scatterChartData,
-            height= "500px"
-        )
-
-    div.small-12.large-12.columns
+    div.small-12.large-12.column
         h2 Rivers
 
         each river in rivers
@@ -109,7 +143,7 @@ block content
             div.small-12.large-6.columns.chart-container(style="height:80px")
                 +bulletChart(
                     id= "sinousity-"+river._id,
-                    title= river.name+" Sinuosity",
+                    title= "Sinuosity",
                     ranges= [statsSinuosity.range()[0],statsSinuosity.amean(),statsSinuosity.range()[1]],
                     measures= [river.sinuosity],
                     measureLabels= ['"Sinuosity"'],
@@ -120,7 +154,7 @@ block content
             div.small-12.large-6.columns.chart-container(style="height:60px")
                 +bulletChart(
                     id= "length-"+river._id,
-                    title= river.name+" Length",
+                    title= "Length",
                     ranges= [statsRealLength.range()[0],statsRealLength.amean(),statsRealLength.range()[1]],
                     measures= [river.realLength],
                     measureLabels= ['"Length"'],
