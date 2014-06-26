@@ -23,8 +23,8 @@ app.engine('jade', require('jade').__express)
 // datastore
 var db = {};
 db.rivers = new Datastore({
-    filename: 'storage/database/rivers.table',
-    // filename: '/var/www/pimeariver.com/storage/database/rivers.table',
+    // filename: 'storage/database/rivers.table',
+    filename: '/var/www/pimeariver.com/storage/database/rivers.table',
     autoload: true
 });
 
