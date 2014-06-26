@@ -100,16 +100,6 @@ app.use('/scripts', express.static(__dirname + '/build/scripts'));
 // index
 app.get('/', function(req, res) {
     db.rivers.find({}).sort({ realLength: -1 }).exec(function(e, rivers) {
-        totals = {
-            realLength: 0,
-            crowLength: 0,
-            sinuosity: 0
-        }
-        minSinuosity = 999;
-        maxSinuosity = 0;
-        minLength = 999999;
-        maxLength = 0;
-
         lengthVsSinuosityChartData = [{
             key: 'Rivers',
             values: [],
@@ -218,16 +208,30 @@ app.get('/river/:id', function(req, res) {
             return;
         }
 
-        riverUpdateErrors = req.session.riverUpdateErrors;
-        riverUpdateData   = req.session.riverUpdateData;
+        db.rivers.find({}, function(e, rivers) {
+            var statsSinuosity = new Stats(),
+                statsRealLength = new Stats();
 
-        req.session.riverUpdateErrors = null;
-        req.session.riverUpdateData   = null;
+            for (var i=0; i<rivers.length; i++) {
+                rivers[i] = new River(rivers[i]);
 
-        res.render('river/show.jade', {
-            river: river,
-            riverUpdateErrors: riverUpdateErrors,
-            riverUpdateData: riverUpdateData
+                statsSinuosity.push(rivers[i].sinuosity);
+                statsRealLength.push(rivers[i].realLength);
+            }
+
+            riverUpdateErrors = req.session.riverUpdateErrors;
+            riverUpdateData   = req.session.riverUpdateData;
+
+            req.session.riverUpdateErrors = null;
+            req.session.riverUpdateData   = null;
+
+            res.render('river/show.jade', {
+                river: river,
+                riverUpdateErrors: riverUpdateErrors,
+                riverUpdateData: riverUpdateData,
+                statsSinuosity: statsSinuosity,
+                statsRealLength: statsRealLength
+            });
         });
     });
 });

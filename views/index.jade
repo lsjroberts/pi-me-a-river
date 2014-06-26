@@ -134,30 +134,14 @@ block content
     div.small-12.large-12.column
         h2 Rivers
 
-        each river in rivers
-            div.small-12.large-12.columns
-                h3
+        ol
+            each river in rivers
+                li
                     a(href="/river/#{river._id}")= river.name
-                p= river.countries
-
-            div.small-12.large-6.columns.chart-container(style="height:80px")
-                +bulletChart(
-                    id= "sinousity-"+river._id,
-                    title= "Sinuosity",
-                    ranges= [statsSinuosity.range()[0],statsSinuosity.amean(),statsSinuosity.range()[1]],
-                    measures= [river.sinuosity],
-                    measureLabels= ['"Sinuosity"'],
-                    markers= [3.14159265359],
-                    markerLabels= ['"Pi"']
-                )
-
-            div.small-12.large-6.columns.chart-container(style="height:60px")
-                +bulletChart(
-                    id= "length-"+river._id,
-                    title= "Length",
-                    ranges= [statsRealLength.range()[0],statsRealLength.amean(),statsRealLength.range()[1]],
-                    measures= [river.realLength],
-                    measureLabels= ['"Length"'],
-                    markers= [river.crowLength],
-                    markerLabels= ['"Direct Length"']
-                )
+                    |  <small>(#{river.countries})</small>
+                    //
+                        ul
+                            li Sinuosity: #{river.sinuosity.toFixed(6)}
+                            li Length: #{river.realLength}
+                            li Direct: #{river.crowLength.toFixed(6)}
+                            li #{river.countries}

@@ -11,27 +11,29 @@ block content
     header.small-12.large-12.columns
         h1= river.name
 
-    div.small-12.large-6.columns.chart-container(style="height:80px")
-        +bulletChart(
-            id= "sinuosity-"+river._id,
-            title= river.name+" Sinuosity",
-            ranges= [minSinuosity,averageSinuosity,maxSinuosity],
-            measures= [river.sinuosity],
-            measureLabels= ['"Sinuosity"'],
-            markers= [3.14159265359],
-            markerLabels= ['"Pi"']
-        )
+    p= maxSinuosity
 
-    div.small-12.large-6.columns.chart-container(style="height:60px")
-        +bulletChart(
-            id= "length-"+river._id,
-            title= river.name+" Length",
-            ranges= [minLength,averageLength,maxLength],
-            measures= [river.realLength],
-            measureLabels= ['"Length"'],
-            markers= [river.crowLength],
-            markerLabels= ['"Direct Length"']
-        )
+    div.small-12.large-6.columns.chart-container(style="height:80px")
+            +bulletChart(
+                id= "sinousity-"+river._id,
+                title= "Sinuosity",
+                ranges= [statsSinuosity.range()[0],statsSinuosity.amean(),statsSinuosity.range()[1]],
+                measures= [river.sinuosity],
+                measureLabels= ['"Sinuosity"'],
+                markers= [3.14159265359],
+                markerLabels= ['"Pi"']
+            )
+
+        div.small-12.large-6.columns.chart-container(style="height:60px")
+            +bulletChart(
+                id= "length-"+river._id,
+                title= "Length",
+                ranges= [statsRealLength.range()[0],statsRealLength.amean(),statsRealLength.range()[1]],
+                measures= [river.realLength],
+                measureLabels= ['"Length"'],
+                markers= [river.crowLength],
+                markerLabels= ['"Direct Length"']
+            )
 
     div.small-12.large-12.columns
         +form("/river/"+river._id, "post")
