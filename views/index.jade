@@ -36,7 +36,7 @@ block content
             | with a standard deviation of <strong>#{statsSinuosity.stddev().toFixed(6)}</strong>.
         p
             | This is a difference of <strong>#{Math.abs((statsSinuosity.amean() - Math.PI).toFixed(6))}</strong> from &pi;,
-            | or an error of <strong>#{Math.abs(((100 * (statsSinuosity.amean() - Math.PI)) / Math.PI).toFixed(6)))}%</strong>.
+            | or an error of <strong>#{Math.abs(((100 * (statsSinuosity.amean() - Math.PI)) / Math.PI).toFixed(6))}%</strong>.
 
         h3 Distribution
         div.chart-container
