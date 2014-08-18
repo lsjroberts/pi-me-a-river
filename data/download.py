@@ -8,8 +8,8 @@ baseUrl = "http://overpass-api.de/api/interpreter?data="
 basePath = os.path.dirname(os.path.realpath(__file__)) + "/files/s_{south}_w_{west}_n_{north}_e_{east}.geojson"
 
 dataTemplate  = "[out:json][timeout:900];("
-dataTemplate += "node['waterway'='river']({south},{west},{north},{east});"
-dataTemplate += "way['waterway'='river']({south},{west},{north},{east});"
+dataTemplate += "node['waterway'={waterway}]({south},{west},{north},{east});"
+dataTemplate += "way['waterway'={waterway}]]({south},{west},{north},{east});"
 dataTemplate += "relation['waterway'='river']({south},{west},{north},{east});"
 dataTemplate += ");out body;>;out skel qt;"
 
@@ -35,7 +35,7 @@ for lat in range(-180,180,latStep):
     for lon in range(-90,90,lonStep):
         batch += 1
         url = baseUrl + dataTemplate.format(
-            south=lon, north=lon+lonStep, west=lat, east=lat+latStep
+            waterway="riverbank", south=lon, north=lon+lonStep, west=lat, east=lat+latStep
         )
         filePath = basePath.format(
             south=lon, north=lon+lonStep, west=lat, east=lat+latStep
