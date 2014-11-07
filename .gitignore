@@ -1,5 +1,7 @@
 .sass-cache
+.DS_Store
 npm-debug.log
 /node_modules
 /storage
 !/storage/database/.gitkeep
+/data
