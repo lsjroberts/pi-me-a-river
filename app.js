@@ -328,17 +328,16 @@ app.get('/task/recalculate-lengths', function(req, res) {
         var changed = [];
 
         for (var i=0; i<rivers.length; i++) {
-            var river = rivers[i],
+            var river = new River(rivers[i]),
                 oldCrowLength = river.crowLength;
 
-            river.crowLength = haversine(river.source, river.mouth, {unit: 'km'});
+            river.crowLength = river.getCrowLength();
+            river.sinuosity = river.realLength / river.crowLength;
 
             changed.push({
                 oldCrowLength: oldCrowLength,
                 river: river
             });
-
-            river = RiverCreate(req.body);
 
             db.rivers.update({
                 _id: river._id
