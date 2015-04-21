@@ -4,5 +4,5 @@ npm-debug.log
 /node_modules
 /storage
 !/storage/database/.gitkeep
-/data/files
-/data/shapefiles
+/data/open-street-map
+/data/ordnance-survey
