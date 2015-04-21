@@ -23,8 +23,8 @@ app.engine('jade', require('jade').__express)
 // datastore
 var db = {};
 db.rivers = new Datastore({
-    // filename: 'storage/database/rivers.table',
-    filename: '/var/www/pimeariver.com/storage/database/rivers.table',
+    filename: 'storage/database/rivers.table',
+    // filename: '/var/www/pimeariver.com/storage/database/rivers.table',
     autoload: true
 });
 
@@ -41,7 +41,7 @@ var River = (function() {
     }
 
     River.prototype.getCrowLength = function() {
-        return haversine(this.source, this.mouth);
+        return haversine(this.source, this.mouth, {unit: 'km'});
     };
 
     return River;
@@ -68,7 +68,7 @@ var RiverCreate = function(data) {
     if (data.crow_length) {
         river.crowLength = data.crow_length * 1.0;
     } else {
-        river.crowLength = haversine(river.source, river.mouth);
+        river.crowLength = haversine(river.source, river.mouth, {unit: 'km'});
     }
 
     river.sinuosity = river.realLength / river.crowLength;
@@ -260,7 +260,7 @@ app.post('/river/:id', function(req, res) {
         db.rivers.update({
             _id: req.params.id
         }, river, {}, function() {
-            res.redirect('/river/'+req.params.id);
+            // res.redirect('/river/'+req.params.id);
         });
     }
     else {
@@ -320,6 +320,35 @@ app.get('/task/error-check', function(req, res) {
         res.render('task/error-check', {
             broken: broken
         })
+    });
+});
+
+app.get('/task/recalculate-lengths', function(req, res) {
+    db.rivers.find({}, function(e, rivers) {
+        var changed = [];
+
+        for (var i=0; i<rivers.length; i++) {
+            var river = new River(rivers[i]),
+                oldCrowLength = river.crowLength;
+
+            river.crowLength = river.getCrowLength();
+            river.sinuosity = river.realLength / river.crowLength;
+
+            changed.push({
+                oldCrowLength: oldCrowLength,
+                river: river
+            });
+
+            db.rivers.update({
+                _id: river._id
+            }, river, {}, function() {
+
+            });
+        }
+
+        res.render('task/recalculate-lengths', {
+            changed: changed
+        });
     });
 });
 

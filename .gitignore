@@ -5,3 +5,4 @@ npm-debug.log
 /storage
 !/storage/database/.gitkeep
 /data/files
+/data/shapefiles
