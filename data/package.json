@@ -1,0 +1,19 @@
+{
+  "name": "pi-me-a-river--fetch",
+  "version": "0.0.0",
+  "description": "Data fetcher for Pi Me A River",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/lsjroberts/pi-me-a-river"
+  },
+  "author": "Laurence Roberts",
+  "license": "MIT",
+  "dependencies": {
+    "shapefile": "^0.3.0",
+    "sqlite3": "^3.0.9"
+  }
+}
