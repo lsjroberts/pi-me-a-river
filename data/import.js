@@ -1,41 +1,39 @@
 var
   // Config
-  path = process.cwd() + '/../raw/natural-earth-data/ne_10m_rivers_lake_centerlines.shp',
+  paths = {
+    shapefile: process.cwd() + '/../raw/natural-earth-data/ne_10m_rivers_lake_centerlines.shp',
+    db: process.cwd() + '/storage/db.sqlite'
+  },
 
   // Dependencies
   shapefile = require('shapefile'),
+  sqlite3 = require('sqlite3'),
 
   // Variables
-  reader = shapefile.reader(path),
-  rivers = {};
+  db = new sqlite3.Database(paths.db);
 
-reader.readHeader(function(err, header) {
-  if (err) throw err;
 
-  console.log('header', header);
+importShapefile(path);
 
-  readNextRecord();
-});
 
-function readNextRecord() {
+function importShapefile(path) {
+  var reader = shapefile.reader(path)
+
+  reader.readHeader(function(err, header) {
+    if (err) throw err;
+    readNextRecord(reader);
+  });
+}
+
+function readNextRecord(reader) {
   reader.readRecord(function(err, record) {
     if (err) throw err;
 
     if (record === shapefile.end) {
-      console.log(rivers);
-      console.log(Object.keys(rivers).length);
       return reader.close();
     }
 
-    // console.log('record', record);
-
-    var feature = transformRecord(record);
-
-    if (rivers[record.properties.rivernum]) {
-      rivers[record.properties.rivernum].push(feature);
-    } else {
-      rivers[record.properties.rivernum] = [feature];
-    }
+    createFeature(transformRecord(record));
 
     setImmediate(readNextRecord);
   });
@@ -47,4 +45,8 @@ function transformRecord(record) {
     type: record.properties.featurecla,
     scalerank: record.properties.scalerank
   };
+}
+
+function createFeature(feature) {
+
 }
