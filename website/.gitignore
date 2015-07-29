@@ -1,3 +1,6 @@
+# Generated
 build/
+
+# Vendors
 elm-stuff/
 node_modules/
