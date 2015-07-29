@@ -46,6 +46,26 @@ initialModel =
       , realLength = 346
       , directLength = 183.52544886845277
       }
+    , { id = "2"
+      , name = "Nile"
+      , countries =
+          [ "Ethiopia"
+          , "Sudan"
+          , "Egypt"
+          , "Uganda"
+          , "Democratic Republic of the Congo"
+          , "Kenya"
+          , "Tanzania"
+          , "Rwanda"
+          , "Burundi"
+          , "South Sudan"
+          ]
+      , source = { latitude = -2.282222, longitude = 29.331389 }
+      , mouth = { latitude = 30.166667, longitude = 31.1 }
+      , sinuosity = 1.8967430508041947
+      , realLength = 6853
+      , directLength = 3613.0355121609205
+      }
     ]
   , searchInput = ""
   }
