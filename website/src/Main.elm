@@ -4,9 +4,11 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Signal exposing (Address)
-import String exposing (toUpper, repeat, trimRight)
+import String exposing (contains, isEmpty)
 
 import StartApp
+
+import Utils
 
 
 -- MODEL
@@ -28,7 +30,9 @@ type alias Coordinate =
   }
 
 type alias Model =
-  { rivers : List River }
+  { rivers : List River
+  , searchInput : String
+  }
 
 initialModel : Model
 initialModel =
@@ -43,6 +47,7 @@ initialModel =
       , directLength = 183.52544886845277
       }
     ]
+  , searchInput = ""
   }
 
 
@@ -50,10 +55,16 @@ initialModel =
 
 type Action
   = NoOp
+  | UpdateSearchInput String
 
 update : Action -> Model -> Model
 update action model =
-  model
+  case action of
+    NoOp ->
+      model
+
+    UpdateSearchInput contents ->
+      { model | searchInput <- contents }
 
 
 -- VIEW
@@ -61,9 +72,41 @@ update action model =
 pageHeader : Html
 pageHeader =
   header [ class "hero" ]
-    [ h1 [ ] [ text "pi me a river" ]
+    [ h1 [ ] [ text "Pi me a river" ]
     --, h2 [ ] [ text "Is the average sinuosity of the world's rivers equal to π?" ]
+    , h2 [ ] [ text "A look into the data and relationships of the world's rivers" ]
     ]
+
+search : Address Action -> Model -> Html
+search address model =
+  div [ class "search" ]
+    [ searchForm address model
+    , searchResults model
+    ]
+
+searchForm : Address Action -> Model -> Html
+searchForm address model =
+  Html.form [ ]
+    [ input
+      [ type' "search"
+      , placeholder "Search for a river, e.g. Thames"
+      , value model.searchInput
+      , Utils.onInput address UpdateSearchInput
+      ]
+      [ ]
+    ]
+
+searchResults : Model -> Html
+searchResults model =
+  let
+    isMatching river =
+      river.name |> contains model.searchInput
+    results =
+      if not (isEmpty model.searchInput)
+        then model.rivers |> List.filter isMatching
+        else model.rivers
+  in
+    riversList results
 
 riverItem : River -> Html
 riverItem river =
@@ -90,7 +133,7 @@ view : Address Action -> Model -> Html
 view address model =
   div [ class "wrapper" ]
     [ pageHeader
-    , riversList model.rivers
+    , search address model
     ]
 
 main : Signal Html
