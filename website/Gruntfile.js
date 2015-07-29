@@ -2,16 +2,40 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     elm: {
-      compile: {
+      main: {
         files: {
-          "build/main.js": ["src/Main.elm"]
+          "public/assets/main.js": ["src/Main.elm"]
         }
+      }
+    },
+    sass: {
+      main: {
+        options: {
+          style: "expanded"
+        },
+        files: {
+          "public/assets/main.css": "src/assets/main.scss"
+        }
+      }
+    },
+    copy: {
+      main: {
+        src: 'src/index.html',
+        dest: 'public/index.html'
       }
     },
     watch: {
       elm: {
-        files: ["src/Main.elm"],
+        files: ["src/*.elm"],
         tasks: ["elm"]
+      },
+      scss: {
+        files: ["src/assets/*.scss"],
+        tasks: ["sass"]
+      },
+      html: {
+        files: ["src/*.html"],
+        tasks: ["copy"]
       }
     },
     clean: ["elm-stuff/build-artifacts"]
@@ -19,8 +43,12 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-elm');
 
-  grunt.registerTask('default', ['elm']);
+  grunt.registerTask('build', ['elm:main', 'sass:main', 'copy:main']);
+
+  grunt.registerTask('default', ['build']);
 
 };
