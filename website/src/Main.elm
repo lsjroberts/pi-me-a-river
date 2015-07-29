@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Signal exposing (Address)
-import String exposing (contains, isEmpty)
+import String exposing (contains, toLower, isEmpty)
 
 import StartApp
 
@@ -119,14 +119,23 @@ searchForm address model =
 searchResults : Model -> Html
 searchResults model =
   let
-    isMatching river =
-      river.name |> contains model.searchInput
     results =
       if not (isEmpty model.searchInput)
-        then model.rivers |> List.filter isMatching
+        then model.rivers |> filterRiversByName model.searchInput
         else model.rivers
   in
-    riversList results
+    results
+      |> List.sortBy .realLength
+      |> List.reverse
+      |> riversList
+
+filterRiversByName : String -> List River -> List River
+filterRiversByName search rivers =
+  let
+    isMatching search river =
+      (toLower river.name) |> contains search
+  in
+    rivers |> List.filter (search |> toLower |> isMatching)
 
 riverItem : River -> Html
 riverItem river =
