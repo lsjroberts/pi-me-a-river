@@ -9,6 +9,7 @@ import String exposing (contains, toLower, isEmpty)
 import StartApp
 
 import Utils
+import Partials
 
 
 -- MODEL
@@ -66,6 +67,15 @@ initialModel =
       , realLength = 6853
       , directLength = 3613.0355121609205
       }
+    , { id = "3"
+      , name = "Amazon"
+      , countries = [ "Brazil", "Peru", "Colombia" ]
+      , source = { latitude = -15.518056, longitude = -71.765278 }
+      , mouth = { latitude = -0.166667, longitude = -49 }
+      , sinuosity = 2.310103634478628
+      , realLength = 6992
+      , directLength = 3026.7040385735936
+      }
     ]
   , searchInput = ""
   }
@@ -89,14 +99,6 @@ update action model =
 
 -- VIEW
 
-pageHeader : Html
-pageHeader =
-  header [ class "hero" ]
-    [ h1 [ ] [ text "Pi me a river" ]
-    --, h2 [ ] [ text "Is the average sinuosity of the world's rivers equal to π?" ]
-    , h2 [ ] [ text "A look into the data and relationships of the world's rivers" ]
-    ]
-
 search : Address Action -> Model -> Html
 search address model =
   div [ class "search" ]
@@ -106,43 +108,79 @@ search address model =
 
 searchForm : Address Action -> Model -> Html
 searchForm address model =
-  Html.form [ ]
-    [ input
-      [ type' "search"
-      , placeholder "Search for a river, e.g. Thames"
-      , value model.searchInput
-      , Utils.onInput address UpdateSearchInput
+  let
+    title =
+      if isEmpty model.searchInput
+        then
+          [ text "Search the "
+          , text (model.rivers |> List.length |> toString)
+          , text " rivers in the database"
+          ]
+        else
+          [ text "Showing "
+          , text
+            ( filterRivers model.searchInput model.rivers
+              |> List.length
+              |> toString
+            )
+          , text " of "
+          , text (model.rivers |> List.length |> toString)
+          , text " rivers in the database"
+          ]
+  in
+    Html.form [ class "search" ]
+      [ h2 [ ] title
+      , input
+        [ type' "search"
+        , placeholder "e.g. \"Amazon\", \"Brazil\""
+        , value model.searchInput
+        , Utils.onInput address UpdateSearchInput
+        ]
+        [ ]
       ]
-      [ ]
-    ]
 
 searchResults : Model -> Html
 searchResults model =
   let
+    results : List River
     results =
       if not (isEmpty model.searchInput)
-        then model.rivers |> filterRiversByName model.searchInput
-        else model.rivers
+        then model.rivers |> filterRivers model.searchInput
+        else [ ]
   in
     results
       |> List.sortBy .realLength
       |> List.reverse
       |> riversList
 
-filterRiversByName : String -> List River -> List River
-filterRiversByName search rivers =
+filterRivers : String -> List River -> List River
+filterRivers term rivers =
   let
-    isMatching search river =
-      (toLower river.name) |> contains search
+    isMatching : String -> River -> Bool
+    isMatching term' river =
+      ((toLower river.name) |> contains term') ||
+      (river.countries
+        |> List.map toLower
+        |> List.filter (contains term')
+        |> List.length
+        |> (<) 0
+      )
   in
-    rivers |> List.filter (search |> toLower |> isMatching)
+    rivers |> List.filter (term |> toLower |> isMatching)
 
 riverItem : River -> Html
 riverItem river =
   li [ ]
     [ a [ href ("river/" ++ river.id) ] [ text river.name ]
     , ul [ ]
-        [ li [ ] [ text ("Length: " ++ (toString river.realLength) ++ " km") ]
+        [ li [ ]
+          [ text
+            ( river.countries
+              |> List.intersperse ", "
+              |> List.foldr (++) ""
+            )
+          ]
+        , li [ ] [ text ("Length: " ++ (toString river.realLength) ++ " km") ]
         , li [ ] [ text ("Direct: " ++ (toString river.directLength) ++ " km") ]
         , li [ ] [ text ("Sinuosity: " ++ (toString river.sinuosity)) ]
         ]
@@ -154,15 +192,15 @@ riversList rivers =
     riverItems = List.map (riverItem) rivers
   in
     div [ ]
-      [ h2 [ ] [ text "Rivers" ]
-      , ol [ ] riverItems
+      [ ol [ ] riverItems
       ]
 
 view : Address Action -> Model -> Html
 view address model =
   div [ class "wrapper" ]
-    [ pageHeader
+    [ Partials.pageHeader
     , search address model
+    , Partials.pageFooter
     ]
 
 main : Signal Html

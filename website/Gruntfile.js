@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     },
     watch: {
       elm: {
-        files: ["src/*.elm"],
+        files: ["src/**/*.elm"],
         tasks: ["elm"]
       },
       scss: {
