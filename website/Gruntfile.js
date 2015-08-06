@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           style: "expanded"
         },
         files: {
-          "public/assets/main.css": "src/assets/main.scss"
+          "public/assets/main.css": "src/assets/styles/main.scss"
         }
       }
     },
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         tasks: ["elm"]
       },
       scss: {
-        files: ["src/assets/*.scss"],
+        files: ["src/assets/styles/**/*.scss"],
         tasks: ["sass"]
       },
       html: {
