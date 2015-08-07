@@ -7,6 +7,9 @@ import Signal exposing (Address)
 
 import Model exposing (..)
 
+import Utils
+
+
 pageHeader : Html
 pageHeader =
   header [ class "page-header" ]
@@ -14,6 +17,7 @@ pageHeader =
     --, h2 [ ] [ text "Is the average sinuosity of the world's rivers equal to π?" ]
     , p [ ] [ text "A look into the data and relationships of the world's rivers" ]
     ]
+
 
 pageFooter : Address Action -> Model -> Html
 pageFooter address model =
@@ -29,12 +33,14 @@ pageFooter address model =
       ]
     ]
 
+
 navigation : Address Action -> Model -> Html
 navigation address model =
   nav [ ]
     [ ul [ ]
-      [ li [ ] [ a [ onClick address (ChangeUrl "/docs") ] [ text "API Documentation" ] ]
-      , li [ ] [ a [ onClick address (ChangeUrl "/data") ] [ text "Data & Resources" ] ]
-      , li [ ] [ a [ onClick address (ChangeUrl "/about") ] [ text "About" ] ]
+      [
+      --  li [ ] [ a [ Utils.routeTo address "/docs" ] [ text "API Documentation" ] ]
+      --, li [ ] [ a [ Utils.routeTo address "/data" ] [ text "Data & Resources" ] ]
+      --, li [ ] [ a [ Utils.routeTo address "/about" ] [ text "About" ] ]
       ]
     ]

@@ -3,13 +3,19 @@ module Utils where
 -}
 
 import Html exposing (Attribute)
-import Html.Events exposing (on, targetValue)
-import Signal exposing (Address)
+import Html.Events exposing (on, onClick, targetValue)
+import Signal exposing (Address, message)
+
+import History
 
 
 onInput : Address a -> (String -> a) -> Attribute
 onInput address f =
-  on "input" targetValue (\v -> Signal.message address (f v))
+  on "input" targetValue (\v -> message address (f v))
+
+--routeTo : Address a -> String -> Attribute
+routeTo address url =
+  onClick address (History.setPath url)
 
 join : String -> List String -> String
 join glue items =
