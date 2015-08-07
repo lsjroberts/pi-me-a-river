@@ -10,6 +10,11 @@ import StartApp
 
 import Model exposing (..)
 import Router exposing (..)
+import Pages.Index
+import Pages.About
+import Pages.Data
+import Pages.Docs
+import Pages.Errors
 
 import Mock
 

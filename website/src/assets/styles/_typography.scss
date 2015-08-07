@@ -18,6 +18,7 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 2.45em 0 0;
   font-weight: normal;
 }
 
@@ -30,13 +31,14 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
+  color: $color-primary;
 }
 
 h4 {
   font-size: 1em;
-  color: $color-primary;
+  color: $color-tertiary;
 }
 
 a {
