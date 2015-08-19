@@ -1,3 +1,4 @@
 node_modules/
+processed/
 storage/
-!storage/.gitkeep
+!*.gitkeep
