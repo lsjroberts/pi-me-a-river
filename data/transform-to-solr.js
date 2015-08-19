@@ -16,22 +16,22 @@ var fs = require('fs')
   ;
 
 // Variables
-// var
+var isJsonFile;
+
+isJsonFile = (function (filename) {
+  return filename.indexOf('.json') !== -1;
+});
 
 async.waterfall(
   [ _.partial(fs.readdir, paths.json)
   , function (files, next) {
-      files = _.filter(files, function (filename) {
-        return filename.indexOf('.json') !== -1;
-      });
+      files = _.filter(files, isJsonFile);
 
       async.eachLimit(files, 10, processFile, next);
     }
   , _.partial(fs.readdir, paths.transformed)
   , function (files, next) {
-      files = _.filter(files, function (filename) {
-        return filename.indexOf('.json') !== -1;
-      });
+      files = _.filter(files, isJsonFile);
 
       async.each(files, function (file, done) {
         fs.appendFile(paths.transformed + file, ']', done);
