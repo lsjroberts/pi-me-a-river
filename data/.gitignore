@@ -1,4 +1,9 @@
 node_modules/
+
 processed/
 storage/
-!*.gitkeep
+transformed/
+
+!processed/.gitkeep
+!storage/.gitkeep
+!transformed/.gitkeep
