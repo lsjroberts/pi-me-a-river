@@ -1,8 +1,8 @@
 node_modules/
 
-geojson/
-json/
-solr/
+geojson/*
+json/*
+solr/*
 
 !geojson/.gitkeep
 !json/.gitkeep
