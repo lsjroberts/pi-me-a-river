@@ -9,12 +9,14 @@ basePath = os.path.dirname(os.path.realpath(__file__)) + "/geojson/s_{south}_w_{
 
 dataTemplate  = "[out:json][timeout:900];("
 dataTemplate += "node['waterway'={waterway}]({south},{west},{north},{east});"
-dataTemplate += "way['waterway'={waterway}]]({south},{west},{north},{east});"
+dataTemplate += "way['waterway'={waterway}]({south},{west},{north},{east});"
 dataTemplate += "relation['waterway'='river']({south},{west},{north},{east});"
 dataTemplate += ");out body;>;out skel qt;"
 
 latStep = 30
 lonStep = 10
+
+count = (360 / latStep) * (180 / lonStep)
 
 batch = 0
 
@@ -26,7 +28,7 @@ def download_file(url, path):
         for chunk in r.iter_content(chunk_size=1024):
             if chunk: # filter out keep-alive new chunks
                 chunkNum += 1
-                print("chunk", chunkNum)
+                # print("chunk", chunkNum)
                 f.write(chunk)
                 f.flush()
     return path
@@ -40,6 +42,7 @@ for lat in range(-180,180,latStep):
         filePath = basePath.format(
             south=lon, north=lon+lonStep, west=lat, east=lat+latStep
         )
-        print(batch, "calling", url, "...")
+        # print(batch, "calling", url, "...")
         download_file(url, filePath)
-        print("...completed")
+        # print("...completed")
+        print("Downloaded %d of %d" % (batch, count))

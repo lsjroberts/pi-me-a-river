@@ -10,16 +10,22 @@ Ensure you have the correct version of python:
 
 ```
 $ python --version
-Python 2.7.6
+Python 2.7.10
 ```
 
-Then to download the whole globe of rivers go to the `/data` directory and run:
+And install the dependencies:
+
+```
+$ pip install requests
+```
+
+Then to download the whole globe of rivers go to the `data/` directory and run:
 
 ```
 $ python download.py
 ```
 
-This will download the river data into the `/data/geojson` directory as a series of geojson files.
+This will download the river data into the `data/geojson/` directory as a series of geojson files.
 
 > Warning! This could take a few hours depending on your connection speed, you will download over 6 GB of data.
 
@@ -38,7 +44,7 @@ $ node --version
 v0.12.5
 ```
 
-To prepare the data for import go to the `/data` directory and run:
+To prepare the data for import go to the `data/` directory and run:
 
 ```
 $ node transform-to-solr.js
@@ -46,15 +52,15 @@ $ node transform-to-solr.js
 
 > Warning! This could take several minutes depending on the speed of your machine.
 
-This will iterate over the list of geojson files in `/data/geojson` and generate the corresponding transformed json files in `/data/json`.
+This will iterate over the list of geojson files in `data/geojson/` and generate the corresponding transformed json files in `data/json/`.
 
 ### Running the import
 
 Once the json data has been prepared it can be imported into SOLR.
 
-You can [download SOLR from here](http://lucene.apache.org/solr/), be sure to get at least version `5.3.0`. Unzip the download and copy the directory to `/data/solr`.
+You can [download SOLR from here](http://lucene.apache.org/solr/), be sure to get at least version `5.3.0`. Unzip the download and copy the directory to `data/solr/`.
 
-You'll then need to create the `rivers` collection from within the `/data` directory using:
+You'll then need to create the `rivers` collection from within the `data/` directory using:
 
 ```
 $ solr/bin/solr create -c rivers
