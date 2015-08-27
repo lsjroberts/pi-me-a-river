@@ -1,9 +1,9 @@
 node_modules/
 
-processed/
-storage/
-transformed/
+geojson/
+json/
+solr/
 
-!processed/.gitkeep
-!storage/.gitkeep
-!transformed/.gitkeep
+!geojson/.gitkeep
+!json/.gitkeep
+!solr/.gitkeep
