@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var haversine = require('haversine');
 var expressValidator = require('express-validator');
+var json2csv = require('json2csv');
 
 var Datastore = require('nedb');
 var Stats = require('fast-stats').Stats;
@@ -348,6 +349,41 @@ app.get('/task/recalculate-lengths', function(req, res) {
 
         res.render('task/recalculate-lengths', {
             changed: changed
+        });
+    });
+});
+
+app.get('/csv', function (req, res) {
+    db.rivers.find({}).sort({ realLength: -1 }).exec(function(e, rivers) {
+        var flat = rivers.map(function (river) {
+            return {
+                name: river.name,
+                real_length: river.realLength,
+                direct_length: river.crowLength,
+                sinuosity: river.sinuosity,
+                source_lat: river.source.latitude,
+                source_lon: river.source.longitude,
+                mouth_lat: river.mouth.latitude,
+                mouth_lon: river.mouth.longitude,
+                countries: river.countries
+            };
+        });
+
+        var fields = [
+            'name',
+            'real_length',
+            'direct_length',
+            'sinuosity',
+            'source_lat',
+            'source_lon',
+            'mouth_lat',
+            'mouth_lon',
+            'countries'
+        ];
+
+        json2csv({ data: flat, fields: fields }, function (err, csv) {
+            if (err) console.log(err);
+            res.send(csv);
         });
     });
 });
