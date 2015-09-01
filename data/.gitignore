@@ -1,3 +1,9 @@
 node_modules/
-storage/
-!storage/.gitkeep
+
+geojson/*
+json/*
+solr/*
+
+!geojson/.gitkeep
+!json/.gitkeep
+!solr/.gitkeep
