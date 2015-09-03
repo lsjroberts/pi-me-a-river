@@ -1,0 +1,9 @@
+{
+  "name": "pi-me-a-river--api",
+  "author": "Laurence Roberts",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "request-promise": "^0.4.3"
+  }
+}
