@@ -9,7 +9,9 @@ router.get('/', viewIndex);
 // Views
 function viewIndex (req, res) {
   res.send({
-    message: 'boo!'
+    version: '1.0',
+    documentation: 'http://docs.pimeariver.apiary.io',
+    website: 'http://pimeariver.com'
   });
 }
 

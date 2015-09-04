@@ -1,0 +1,6 @@
+{
+  "url": "http://localhost:3000/api/1.0",
+  "solr": {
+    "url": "http://localhost:8983/solr/rivers/select"
+  }
+}

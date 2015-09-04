@@ -1,9 +1,12 @@
 {
-  "name": "pi-me-a-river--api",
+  "name": "pi-me-a-river",
   "author": "Laurence Roberts",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "lodash": "^3.10.1",
+    "nodemon": "^1.4.1",
     "request-promise": "^0.4.3"
   }
 }

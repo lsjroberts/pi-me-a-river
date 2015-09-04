@@ -4,14 +4,14 @@ var express = require('express')
   ;
 
 // Middlewares
-router.use(require('./middleware/auth'));
+// router.use(require('./middleware/auth'));
 
 // Routes
-// app.use('/', require('./routes/index'));
-// app.use('/search', require('./routes/search'));
-// app.use('/near', require('./routes/near'));
-// app.use('/within', require('./routes/within'));
-// app.use('/rivers', require('./routes/rivers'));
+router.use('/', require('./routes/index'));
+router.use('/search', require('./routes/search'));
+router.use('/near', require('./routes/near'));
+router.use('/within', require('./routes/within'));
+router.use('/rivers', require('./routes/rivers'));
 
 // Exports
 module.exports = router;
