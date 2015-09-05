@@ -29,6 +29,15 @@ function river (req, res) {
         .then(function (docs) {
           river.coords = _(docs)
             .map(function (doc) {
+              doc.id = parseInt(doc.id, 10);
+              return doc;
+            })
+            .sortBy(function (doc) {
+              return _.findIndex(river.ways, function (way) {
+                return way === doc.id;
+              });
+            })
+            .map(function (doc) {
               return doc.nodes;
             })
             .flatten()
@@ -55,8 +64,8 @@ function river (req, res) {
         });
     })
     .then(function (river) {
-      var pages = Math.ceil(river.coords.length / 100);
-      river.coords = _.times(pages, function (page) {
+      var pages = Math.ceil(river.coords.length / config.solr.coordsPerPage);
+      river.pages = _.times(pages, function (page) {
         return [
           config.url,
           '/coords/',
@@ -69,10 +78,11 @@ function river (req, res) {
     })
     .then(function (river) {
       delete river.ways;
+      delete river.coords;
       return river;
     })
-    .then(function (data) {
-      return res.send(data);
+    .then(function (river) {
+      return res.send(river);
     })
     .catch(console.error);
 }
