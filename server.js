@@ -4,7 +4,8 @@ var express = require('express')
   ;
 
 // Routes
-app.use('/api/1.0/', require('./api/src/index'));
+app.use('/api/1.0/', require('./api/src'));
+app.use(express.static('./website/public'));
 
 // Listen
 var server = app.listen(3000, function () {

@@ -2,9 +2,10 @@ module Mock where
 
 import Model exposing (..)
 
+
 model : Model
 model =
-  { url = "/about"
+  { url = "/"
   , rivers =
       [ thames
       , nile
@@ -13,6 +14,28 @@ model =
   , searchInput = ""
   }
 
+thames : River
+thames =
+  { id = "1"
+  , name = "River Thames"
+  , nameEn = "River Thames"
+  }
+
+nile : River
+nile =
+  { id = "2"
+  , name = "Nile"
+  , nameEn = "Nile"
+  }
+
+amazon : River
+amazon =
+  { id = "3"
+  , name = "Rio Amazonas"
+  , nameEn = "Amazon River"
+  }
+
+{-
 thames : River
 thames =
   { id = "1"
@@ -78,3 +101,4 @@ amazon =
   , realLength = 6992
   , directLength = 3026.7040385735936
   }
+-}

@@ -19,13 +19,13 @@ filterRivers term rivers =
   let
     isMatching : String -> River -> Bool
     isMatching term' river =
-      ((toLower river.name) |> contains term') ||
-      (river.countries
-        |> List.map toLower
-        |> List.filter (contains term')
-        |> List.length
-        |> (<) 0
-      )
+      ((toLower river.name) |> contains term')
+      --|| (river.countries
+      --  |> List.map toLower
+      --  |> List.filter (contains term')
+      --  |> List.length
+      --  |> (<) 0
+      --)
   in
     rivers |> List.filter (term |> toLower |> isMatching)
 
@@ -51,5 +51,5 @@ riverItem river =
     --    , li [ ] [ text ("Direct: " ++ (toString river.directLength) ++ " km") ]
     --    , li [ ] [ text ("Sinuosity: " ++ (toString river.sinuosity)) ]
     --    ]
-    , Map.river river
+    --, Map.river river
     ]

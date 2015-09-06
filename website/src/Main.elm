@@ -5,16 +5,20 @@ module Main where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Signal exposing (Address)
+import Task exposing (..)
+import Time exposing (Time)
 
-import StartApp
+-- https://github.com/evancz/start-app/pull/11
+--import StartApp
+import FancyStartApp exposing (LoopbackFun)
 
 import Model exposing (..)
 import Router exposing (..)
+import Api
 import Pages.Index
 import Pages.About
 import Pages.Data
 import Pages.Docs
-import Pages.Errors
 
 import Mock
 
@@ -23,8 +27,13 @@ import Mock
 
 main : Signal Html
 main =
-  StartApp.start
-    { model = initialModel
+  fst viewAndTasks
+
+viewAndTasks =
+  FancyStartApp.start
+    { initialState = initialModel
+    , initialTasks = initialTasks
+    , externalActions = externalActions
     , view = view
     , update = update
     }
@@ -34,22 +43,41 @@ main =
 
 initialModel : Model
 initialModel =
-  Mock.model
+  --Mock.model
+  Model.empty
+
+--initialTasks : LoopbackFun String Action -> List (Task String ())
+initialTasks loopback =
+  []
 
 
 -- UPDATE
 
-update : Action -> Model -> Model
-update action model =
+update : LoopbackFun String Action -> Time -> Action -> Model -> (Model, List (Task String ()))
+update loopback now action model =
   case action of
     NoOp ->
-      model
+      ( model
+      , []
+      )
 
     UpdateSearchInput contents ->
-      { model | searchInput <- contents }
+      ( { model | searchInput <- contents }
+      , [ Api.search contents
+            |> Task.map (\rivers -> UpdateSearchResults rivers)
+            |> loopback
+        ]
+      )
+
+    UpdateSearchResults rivers ->
+      ( { model | rivers <- rivers }
+      , []
+      )
 
     ChangeUrl url ->
-      { model | url <- url }
+      ( { model | url <- url }
+      , []
+      )
 
 
 -- VIEW
@@ -58,3 +86,24 @@ view : Address Action -> Model -> Html
 view address model =
   div [ class "wrapper" ]
     [ Router.view address model ]
+
+
+-- PORTS
+
+port tasks : Signal (Task String ())
+port tasks =
+  snd viewAndTasks
+
+
+port requestSearch : Signal (Task x ())
+port requestSearch =
+  let
+    query = Api.query
+    results = Api.results
+  in
+    Signal.map Api.search query.signal
+      |> Signal.map (\task -> toResult task `andThen` Signal.send results.address)
+
+
+externalActions =
+  Signal.constant NoOp

@@ -9,7 +9,9 @@ import String exposing (contains, toLower, isEmpty)
 import Model exposing (..)
 import River exposing (filterRivers, riversList)
 
-import Utils
+import Utils exposing (onInput)
+
+import Api
 
 
 -- VIEW
@@ -49,9 +51,9 @@ searchForm address model =
       [ h2 [ ] title
       , input
         [ type' "search"
-        , placeholder "e.g. \"Amazon\", \"Brazil\""
+        , placeholder "e.g. \"Amazon\", \"Orinoco\""
         , value model.searchInput
-        , Utils.onInput address UpdateSearchInput
+        , onInput address UpdateSearchInput
         ]
         [ ]
       ]
@@ -66,6 +68,47 @@ searchResults model =
         else model.rivers
   in
     results
-      |> List.sortBy .realLength
-      |> List.reverse
+      --|> List.sortBy .realLength
+      --|> List.reverse
       |> riversList
+
+{-
+view : String -> Result String (List River) -> Html
+view string result =
+  let
+    field =
+      input
+        [ placeholder "River"
+        , value string
+        , on "input" targetValue (Signal.message query.address)
+        , myStyle
+        ]
+        []
+
+    viewRiver river =
+      div [ myStyle ]
+        [ a [ href ("/river/" ++ (toString river.id)) ] [ text river.name ]
+        ]
+
+    messages =
+      case result of
+        Err msg ->
+          [ div [ myStyle ] [ text msg ] ]
+
+        Ok rivers ->
+          List.map viewRiver rivers
+  in
+    div [] (field :: messages)
+
+
+myStyle : Attribute
+myStyle =
+  style
+    [ ("width", "100%")
+    , ("height", "40px")
+    , ("padding", "10px 0")
+    , ("font-size", "2em")
+    , ("text-align", "center")
+    ]
+
+-}

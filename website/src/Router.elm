@@ -15,6 +15,7 @@ view address model =
   let
     view' =
       case model.url of
+        "" -> Pages.Index.view
         "/" -> Pages.Index.view
         "/about" -> Pages.About.view
         "/data" -> Pages.Data.view

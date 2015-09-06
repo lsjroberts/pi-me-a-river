@@ -8,6 +8,7 @@ import Model exposing (River, Coord, Bound)
 
 import Utils
 
+{-|
 type alias Line =
   { x1 : Float
   , y1 : Float
@@ -58,3 +59,4 @@ river river =
     , class "river-map"
     ]
     (toLines river.coords)
+-}
