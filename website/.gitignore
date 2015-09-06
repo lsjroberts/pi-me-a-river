@@ -1,0 +1,6 @@
+# Generated
+public/
+
+# Vendors
+elm-stuff/
+node_modules/

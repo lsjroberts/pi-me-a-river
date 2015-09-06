@@ -1,8 +1,11 @@
+# System
 .sass-cache
 .DS_Store
 npm-debug.log
-/node_modules
-/storage
-!/storage/database/.gitkeep
-/data/open-street-map
-/data/ordnance-survey
+
+# Common
+node_modules/
+
+# Documents
+raw/
+docs/

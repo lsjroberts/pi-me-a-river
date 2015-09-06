@@ -1,0 +1,12 @@
+{
+  "name": "pi-me-a-river--data",
+  "author": "Laurence Roberts",
+  "license": "MIT",
+  "dependencies": {
+    "JSONStream": "^1.0.4",
+    "async": "^1.4.2",
+    "event-stream": "^3.3.1",
+    "lodash": "^3.10.1",
+    "sqlite3": "^3.0.9"
+  }
+}
