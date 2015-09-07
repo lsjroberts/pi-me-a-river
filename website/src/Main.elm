@@ -15,12 +15,9 @@ import FancyStartApp exposing (LoopbackFun)
 import Model exposing (..)
 import Router exposing (..)
 import Api
-import Pages.Index
-import Pages.About
-import Pages.Data
-import Pages.Docs
 
 import Mock
+import Debug
 
 
 -- MAIN
@@ -28,6 +25,7 @@ import Mock
 main : Signal Html
 main =
   fst viewAndTasks
+
 
 viewAndTasks =
   FancyStartApp.start
@@ -43,8 +41,9 @@ viewAndTasks =
 
 initialModel : Model
 initialModel =
-  --Mock.model
-  Model.empty
+  Mock.model
+  --Model.empty
+
 
 initialTasks : LoopbackFun String Action -> List (Task String ())
 initialTasks loopback =
@@ -57,27 +56,25 @@ initialTasks loopback =
 update loopback now action model =
   case action of
     NoOp ->
-      ( model
-      , []
-      )
+      (model, [])
 
     UpdateSearchInput contents ->
-      ( { model | searchInput <- contents }
-      , [ Api.search contents
+      let
+        task =
+          Api.search contents
             |> Task.map (\rivers -> UpdateSearchResults rivers)
             |> loopback
-        ]
-      )
+      in
+        ({ model | searchInput <- contents }, [task])
 
     UpdateSearchResults rivers ->
-      ( { model | rivers <- rivers }
-      , []
-      )
+      let
+        log = Debug.log "rivers" rivers
+      in
+        ({ model | rivers <- rivers }, [])
 
     ChangeUrl url ->
-      ( { model | url <- url }
-      , []
-      )
+      ({ model | url <- url }, [])
 
 
 -- VIEW
@@ -90,20 +87,15 @@ view address model =
 
 -- PORTS
 
+externalActions =
+  Signal.constant NoOp
+
+
 port tasks : Signal (Task String ())
 port tasks =
   snd viewAndTasks
 
 
-port requestSearch : Signal (Task x ())
-port requestSearch =
-  let
-    query = Api.query
-    results = Api.results
-  in
-    Signal.map Api.search query.signal
-      |> Signal.map (\task -> toResult task `andThen` Signal.send results.address)
-
-
-externalActions =
-  Signal.constant NoOp
+--port requestSearch : Signal (Task x ())
+--port requestSearch =
+--  Api.portRequestSearch

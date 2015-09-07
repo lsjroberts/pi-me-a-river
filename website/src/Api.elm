@@ -79,23 +79,24 @@ results =
 search : String -> Task String (List River)
 search name =
   let
-    toUrl =
+    url =
+      "http://localhost:3000/api/1.0/search?name=" ++ name
+    handleError =
+      mapError (always "Nothing found")
+    validate =
       if String.length name >= 4
-        then succeed ("http://localhost:3000/api/1.0/search?name=" ++ name)
+        then succeed url
         else fail "Need 4 or more chars"
   in
-    toUrl `andThen` (mapError (always "Nothing found") << Http.get rivers)
+    validate `andThen` (handleError << Http.get rivers)
 
 
 -- PORTS
-{-|
 
-port requestSearch : Signal (Task x ())
-port requestSearch =
-  Signal.map search query.signal
-    |> Signal.map (\task -> toResult task `andThen` Signal.send results.address)
-
--}
+--portRequestSearch : Signal (Task x ())
+--portRequestSearch =
+--  Signal.map search query.signal
+--    |> Signal.map (\task -> toResult task `andThen` Signal.send results.address)
 
 
 -- TESTING
