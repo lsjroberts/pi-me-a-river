@@ -1,7 +1,11 @@
 // Dependencies
 var express = require('express')
   , app = express()
+  , logger = require('morgan')
   ;
+
+// Logger
+app.use(logger('[:date] :remote-addr :method :url :status :response-time ms - :res[content-length]'));
 
 // Routes
 app.use('/api/1.0/', require('./api/src'));

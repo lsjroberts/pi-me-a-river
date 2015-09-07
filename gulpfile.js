@@ -7,6 +7,6 @@ var gulp = require('gulp')
 gulp.task('serve', function (next) {
   nodemon({
     script: './server.js',
-    watch: './api'
+    watch: ['./server.js', './api']
   });
 });

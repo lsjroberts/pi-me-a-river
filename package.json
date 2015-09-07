@@ -6,6 +6,7 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "lodash": "^3.10.1",
+    "morgan": "^1.6.1",
     "nodemon": "^1.4.1",
     "request-promise": "^0.4.3"
   }

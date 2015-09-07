@@ -16,15 +16,10 @@ function nodes(q) {
 }
 
 function query (q, fq) {
-  var url = [
-    config.solr.url,
-    '?q=',
-    paramsToString(q),
-    '&fq=',
-    paramsToString(fq),
-    '&rows=500',
-    '&wt=json'
-  ].join('');
+  var url = createUrl({
+    'q': q,
+    'fq': fq
+  });
 
   return request(url)
     .then(JSON.parse)
@@ -33,16 +28,35 @@ function query (q, fq) {
     });
 }
 
+function count(q) {
+  var url = createUrl({
+    'q': q,
+    'rows': 0
+  });
+
+  return request(url)
+    .then(JSON.parse)
+    .then(function (data) {
+      return data.response.numFound;
+    });
+}
+
+function createUrl (params) {
+  if (!_.has(params, 'rows')) params['rows'] = '100';
+  if (!_.has(params, 'wt')) params['wt'] = 'json';
+
+  return _.reduce(params, function (url, value, key) {
+    return url + key + '=' + paramsToString(value) + '&';
+  }, config.solr.url + '?').slice(0, -1);
+}
+
 function paramsToString (params) {
   if (typeof params === 'string') return params;
 
   return _.reduce(params, function (result, value, key) {
     if (result) result += '\n';
     if (value instanceof Array) {
-      return result + value.reduce(function (r, v) {
-        if (r) r += '\n';
-        return r + key + ':' + v;
-      }, '');
+      return result + paramsToString(value);
     } else {
       return result + key + ':' + value;
     }
