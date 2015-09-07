@@ -35,7 +35,7 @@ url =
 
 
 type alias River =
-  { id : Int
+  { id : String
   , name : String
   , nameEn : String
   --, source : Coordinate
@@ -47,7 +47,7 @@ type alias River =
 river : Json.Decoder River
 river =
   Json.object3 River
-    ("id" := Json.int)
+    ("id" := Json.string)
     ("name" := Json.string)
     ("name_en" := Json.string)
     --("source" := coordinate)
@@ -76,12 +76,6 @@ results =
   Signal.mailbox (Err "getting ready...")
 
 
---port requestSearch : Signal (Task x ())
---port requestSearch =
---  Signal.map search query.signal
---    |> Signal.map (\task -> toResult task `andThen` Signal.send results.address)
-
-
 search : String -> Task String (List River)
 search name =
   let
@@ -91,6 +85,17 @@ search name =
         else fail "Need 4 or more chars"
   in
     toUrl `andThen` (mapError (always "Nothing found") << Http.get rivers)
+
+
+-- PORTS
+{-|
+
+port requestSearch : Signal (Task x ())
+port requestSearch =
+  Signal.map search query.signal
+    |> Signal.map (\task -> toResult task `andThen` Signal.send results.address)
+
+-}
 
 
 -- TESTING

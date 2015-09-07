@@ -46,14 +46,14 @@ initialModel =
   --Mock.model
   Model.empty
 
---initialTasks : LoopbackFun String Action -> List (Task String ())
+initialTasks : LoopbackFun String Action -> List (Task String ())
 initialTasks loopback =
   []
 
 
 -- UPDATE
 
-update : LoopbackFun String Action -> Time -> Action -> Model -> (Model, List (Task String ()))
+--update : LoopbackFun a Action -> Time -> Action -> Model -> (Model, List (Task a ()))
 update loopback now action model =
   case action of
     NoOp ->
