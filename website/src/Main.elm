@@ -2,79 +2,96 @@ module Main where
 {-| [describe main]
 -}
 
+import Effects exposing (Effects, Never)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Signal exposing (Address)
 import Task exposing (..)
 import Time exposing (Time)
 
--- https://github.com/evancz/start-app/pull/11
---import StartApp
-import FancyStartApp exposing (LoopbackFun)
+import StartApp
 
 import Model exposing (..)
 import Router exposing (..)
 import Api
 
-import Mock
+--import Mock
 import Debug
 
 
 -- MAIN
 
+app =
+  StartApp.start
+    { init = init
+    , update = update
+    , view = view
+    , inputs = []
+    }
+
+
 main : Signal Html
 main =
-  fst viewAndTasks
+  app.html
 
 
-viewAndTasks =
-  FancyStartApp.start
-    { initialState = initialModel
-    , initialTasks = initialTasks
-    , externalActions = externalActions
-    , view = view
-    , update = update
-    }
+init : (Model, Effects Action)
+init =
+  ( Model.empty
+  , Effects.none
+  )
 
 
 -- MODEL
 
 initialModel : Model
 initialModel =
-  Mock.model
-  --Model.empty
-
-
-initialTasks : LoopbackFun String Action -> List (Task String ())
-initialTasks loopback =
-  []
+  --Mock.model
+  Model.empty
 
 
 -- UPDATE
 
---update : LoopbackFun a Action -> Time -> Action -> Model -> (Model, List (Task a ()))
-update loopback now action model =
+update : Action -> Model -> (Model, Effects Action)
+update action model =
   case action of
     NoOp ->
-      (model, [])
+      ( model
+      , Effects.none
+      )
 
     UpdateSearchInput contents ->
       let
+        log = Debug.log "a"
         task =
           Api.search contents
-            |> Task.map (\rivers -> UpdateSearchResults rivers)
-            |> loopback
+            |> Task.toMaybe
+            |> Task.map UpdateSearchResults
+            |> Effects.task
       in
-        ({ model | searchInput <- contents }, [task])
+        ( { model | searchInput <- contents }
+        , task
+        )
 
-    UpdateSearchResults rivers ->
+    UpdateSearchResults maybeRivers ->
       let
-        log = Debug.log "rivers" rivers
+        log = Debug.log "b"
+        newSearchResults =
+          Maybe.withDefault model.searchResults maybeRivers
       in
-        ({ model | rivers <- rivers }, [])
+        ( { model | searchResults <- newSearchResults }
+        , Effects.none
+        )
+
+    UpdateRiver maybeRiver ->
+      ( { model | river <- maybeRiver }
+      , Effects.none
+      )
 
     ChangeUrl url ->
-      ({ model | url <- url }, [])
+      ( { model | url <- url }
+      , Effects.none
+      )
 
 
 -- VIEW
@@ -87,15 +104,6 @@ view address model =
 
 -- PORTS
 
-externalActions =
-  Signal.constant NoOp
-
-
-port tasks : Signal (Task String ())
+port tasks : Signal (Task Never ())
 port tasks =
-  snd viewAndTasks
-
-
---port requestSearch : Signal (Task x ())
---port requestSearch =
---  Api.portRequestSearch
+  app.tasks
