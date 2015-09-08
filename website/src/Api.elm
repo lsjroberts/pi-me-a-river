@@ -56,7 +56,7 @@ river =
 
 rivers : Json.Decoder (List River)
 rivers =
-  "rivers" := Json.list river
+  Json.list river
 
 
 -- WIRING
@@ -89,6 +89,31 @@ search name =
         else fail "Need 4 or more chars"
   in
     validate `andThen` (handleError << Http.get rivers)
+
+
+find : Int -> Task String River
+find id =
+  let
+    url =
+      "http://localhost:3000/api/1.0/rivers/" ++ (toString id)
+    handleError =
+      mapError (always "Nothing found")
+    validate =
+      if id > 0
+        then succeed url
+        else fail "ID must be a positive number"
+  in
+    validate `andThen` (handleError << Http.get river)
+
+
+--search : String -> Task x (List River)
+--search keywords =
+--  let
+--    url =
+--      Http.url "http://localhost:3000/api/1.0/search"
+--        [ "name" => keywords ]
+--  in
+--    Http.get rivers url
 
 
 -- PORTS

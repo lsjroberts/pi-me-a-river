@@ -23,11 +23,6 @@ function search (req, res) {
         .value();
     })
     .then(function (rivers) {
-      return {
-        "rivers": rivers
-      };
-    })
-    .then(function (rivers) {
       return res.send(rivers);
     })
     .catch(console.error);

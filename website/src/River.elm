@@ -36,11 +36,11 @@ filterRivers term rivers =
 
 riversList : List River -> Html
 riversList rivers =
-  show rivers |> fromElement
-  --let
-  --  riverItems = List.map riverItem rivers
-  --in
-  --  section [ class "rivers-list" ] riverItems
+  --show rivers |> fromElement
+  let
+    riverItems = List.map riverItem rivers
+  in
+    section [ class "rivers-list" ] riverItems
 
 riverItem : River -> Html
 riverItem river =

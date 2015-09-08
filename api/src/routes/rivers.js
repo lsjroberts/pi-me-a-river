@@ -84,7 +84,7 @@ function river (req, res) {
     .then(function (river) {
       return res.send(river);
     })
-    .catch(console.error);
+    .catch(solr.handleError);
 }
 
 // Exports

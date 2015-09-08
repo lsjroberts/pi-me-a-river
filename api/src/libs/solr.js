@@ -21,11 +21,14 @@ function query (q, fq) {
     'fq': fq
   });
 
+  console.log('[API] [query]', q, fq);
+
   return request(url)
     .then(JSON.parse)
     .then(function (data) {
       return data.response.docs;
-    });
+    })
+    .catch(handleError);
 }
 
 function count(q) {
@@ -34,11 +37,14 @@ function count(q) {
     'rows': 0
   });
 
+  console.log('[API] [count]', q, fq);
+
   return request(url)
     .then(JSON.parse)
     .then(function (data) {
       return data.response.numFound;
-    });
+    })
+    .catch(handleError);
 }
 
 function createUrl (params) {
@@ -56,16 +62,24 @@ function paramsToString (params) {
   return _.reduce(params, function (result, value, key) {
     if (result) result += '\n';
     if (value instanceof Array) {
-      return result + paramsToString(value);
+      return result + value.reduce(function (r, v) {
+        if (r) r += '\n';
+        return r + key + ':' + v;
+      }, '');
     } else {
       return result + key + ':' + value;
     }
   }, '');
 }
 
+function handleError (err) {
+  console.error('[API] [error]', err.name, err.statusCode, err.message);
+}
+
 module.exports = {
   query: query,
   relations: relations,
   ways: ways,
-  nodes: nodes
+  nodes: nodes,
+  handleError: handleError
 };

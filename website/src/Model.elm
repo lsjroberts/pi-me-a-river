@@ -7,7 +7,8 @@ type Action
   = NoOp
   | UpdateSearchInput String
   | ChangeUrl String
-  | UpdateSearchResults (List Api.River)
+  | UpdateSearchResults (Maybe (List River))
+  | UpdateRiver (Maybe River)
 
 
 type alias River =
@@ -37,16 +38,18 @@ type alias Bound =
 
 type alias Model =
   { url : String
-  , rivers : List River
+  , searchResults : List River
   , searchInput : String
+  , river : Maybe River
   }
 
 
 empty : Model
 empty =
   { url = "/"
-  , rivers = []
+  , searchResults = []
   , searchInput = ""
+  , river = Nothing
   }
 
 

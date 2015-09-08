@@ -28,18 +28,18 @@ searchForm address model =
   let
     searchTitle =
       [ text "Search the "
-      , text (model.rivers |> List.length |> toString)
+      , text (model.searchResults |> List.length |> toString)
       , text " rivers in the database"
       ]
     showingTitle =
       [ text "Showing "
       , text
-        ( filterRivers model.searchInput model.rivers
+        ( filterRivers model.searchInput model.searchResults
           |> List.length
           |> toString
         )
       , text " of "
-      , text (model.rivers |> List.length |> toString)
+      , text (model.searchResults |> List.length |> toString)
       , text " rivers in the database"
       ]
     title =
@@ -61,15 +61,19 @@ searchForm address model =
 searchResults : Model -> Html
 searchResults model =
   let
-    results : List River
+    --results : List River
+    --results =
+    --  if not (isEmpty model.searchInput)
+    --    then model.searchResults |> filterRivers model.searchInput
+    --    else model.searchResults
     results =
-      if not (isEmpty model.searchInput)
-        then model.rivers |> filterRivers model.searchInput
-        else model.rivers
+      case model.river of
+        Nothing -> []
+        Just river -> [ river ]
   in
     results
-      --|> List.sortBy .realLength
-      --|> List.reverse
+    --  --|> List.sortBy .realLength
+    --  --|> List.reverse
       |> riversList
 
 {-
