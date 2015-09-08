@@ -7,6 +7,8 @@ import Html.Attributes exposing (..)
 import Signal exposing (Address)
 
 import StartApp
+import Router
+import History
 
 import Model exposing (..)
 import Router exposing (..)
@@ -36,6 +38,14 @@ initialModel : Model
 initialModel =
   Mock.model
 
+route : Route (Address Action -> Model -> Html)
+route =
+  Router.match
+    [ ("/", Pages.Index.view)
+    , ("/about", Pages.About.view)
+    ]
+    Pages.Errors.notFound
+
 
 -- UPDATE
 
@@ -57,4 +67,4 @@ update action model =
 view : Address Action -> Model -> Html
 view address model =
   div [ class "wrapper" ]
-    [ Router.view address model ]
+    [ Signal.map3 route History.path address model ]
