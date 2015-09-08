@@ -62,7 +62,7 @@ update action model =
 
     UpdateSearchInput contents ->
       let
-        log = Debug.log "a"
+        log = Debug.log "UpdateSearchInput" contents
         task =
           Api.search contents
             |> Task.toMaybe
@@ -75,23 +75,37 @@ update action model =
 
     UpdateSearchResults maybeRivers ->
       let
-        log = Debug.log "b"
+        log = Debug.log "UpdateSearchResults" maybeRivers
         newSearchResults =
-          Maybe.withDefault model.searchResults maybeRivers
+          Maybe.withDefault [] maybeRivers
       in
         ( { model | searchResults <- newSearchResults }
         , Effects.none
         )
 
     UpdateRiver maybeRiver ->
-      ( { model | river <- maybeRiver }
-      , Effects.none
-      )
+      let
+        log = Debug.log "UpdateRiver" maybeRiver
+      in
+        ( { model | river <- maybeRiver }
+        , Effects.none
+        )
 
     ChangeUrl url ->
-      ( { model | url <- url }
-      , Effects.none
-      )
+      let
+        log = Debug.log "ChangeUrl" url
+      in
+        ( { model | url <- url }
+        , Effects.none
+        )
+
+
+--forward : Action -> Task -> Effects Action
+--forward action task =
+--  task
+--    |> Task.toMaybe
+--    |> Task.map action
+--    |> Effects.task
 
 
 -- VIEW

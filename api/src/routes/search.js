@@ -15,12 +15,17 @@ function search (req, res) {
       return _(docs)
         .map(function (doc) {
           return {
-            "id": parseInt(doc.id, 10),
+            "id": doc.id,
             "name": doc.name[0],
             "name_en": doc.name_en ? doc.name_en[0] : doc.name[0]
           };
         })
         .value();
+    })
+    .then(function (rivers) {
+      return {
+        "rivers": rivers
+      };
     })
     .then(function (rivers) {
       return res.send(rivers);

@@ -20,7 +20,7 @@ search : Address Action -> Model -> Html
 search address model =
   div [ class "search" ]
     [ searchForm address model
-    , searchResults model
+    , searchResults address model
     ]
 
 searchForm : Address Action -> Model -> Html
@@ -58,61 +58,16 @@ searchForm address model =
         [ ]
       ]
 
-searchResults : Model -> Html
-searchResults model =
+searchResults : Address Action -> Model -> Html
+searchResults address model =
   let
-    --results : List River
-    --results =
-    --  if not (isEmpty model.searchInput)
-    --    then model.searchResults |> filterRivers model.searchInput
-    --    else model.searchResults
+    results : List River
     results =
-      case model.river of
-        Nothing -> []
-        Just river -> [ river ]
+      if not (isEmpty model.searchInput)
+        then model.searchResults |> filterRivers model.searchInput
+        else model.searchResults
   in
     results
     --  --|> List.sortBy .realLength
     --  --|> List.reverse
-      |> riversList
-
-{-
-view : String -> Result String (List River) -> Html
-view string result =
-  let
-    field =
-      input
-        [ placeholder "River"
-        , value string
-        , on "input" targetValue (Signal.message query.address)
-        , myStyle
-        ]
-        []
-
-    viewRiver river =
-      div [ myStyle ]
-        [ a [ href ("/river/" ++ (toString river.id)) ] [ text river.name ]
-        ]
-
-    messages =
-      case result of
-        Err msg ->
-          [ div [ myStyle ] [ text msg ] ]
-
-        Ok rivers ->
-          List.map viewRiver rivers
-  in
-    div [] (field :: messages)
-
-
-myStyle : Attribute
-myStyle =
-  style
-    [ ("width", "100%")
-    , ("height", "40px")
-    , ("padding", "10px 0")
-    , ("font-size", "2em")
-    , ("text-align", "center")
-    ]
-
--}
+      |> riversList address
