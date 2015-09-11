@@ -35,7 +35,7 @@ url =
 
 
 type alias River =
-  { id : String
+  { id : Int
   , name : String
   , nameEn : String
   }
@@ -44,7 +44,7 @@ type alias River =
 river : Json.Decoder River
 river =
   Json.object3 River
-    ("id" := Json.string)
+    ("id" := Json.int)
     ("name" := Json.string)
     ("name_en" := Json.string)
 

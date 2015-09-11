@@ -12,7 +12,7 @@ type Action
 
 
 type alias River =
-  { id : String
+  { id : Int
   , name : String
   , nameEn : String
   --, countries : List String
