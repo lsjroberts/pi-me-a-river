@@ -16,7 +16,7 @@ function river (req, res) {
       return _(docs)
         .map(function (doc) {
           return {
-            'id': doc.id,
+            'id': parseInt(doc.id, 10),
             'name': doc.name[0],
             'name_en': doc.name_en ? doc.name_en[0] : doc.name[0],
             'ways': doc.ways
@@ -84,7 +84,7 @@ function river (req, res) {
     .then(function (river) {
       return res.send(river);
     })
-    .catch(console.error);
+    .catch(solr.handleError);
 }
 
 // Exports

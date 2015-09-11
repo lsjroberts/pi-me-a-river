@@ -16,21 +16,44 @@ function nodes(q) {
 }
 
 function query (q, fq) {
-  var url = [
-    config.solr.url,
-    '?q=',
-    paramsToString(q),
-    '&fq=',
-    paramsToString(fq),
-    '&rows=500',
-    '&wt=json'
-  ].join('');
+  var url = createUrl({
+    'q': q,
+    'fq': fq
+  });
+
+  console.log('[API] [query]', q, fq);
 
   return request(url)
     .then(JSON.parse)
     .then(function (data) {
       return data.response.docs;
-    });
+    })
+    .catch(handleError);
+}
+
+function count(q) {
+  var url = createUrl({
+    'q': q,
+    'rows': 0
+  });
+
+  console.log('[API] [count]', q, fq);
+
+  return request(url)
+    .then(JSON.parse)
+    .then(function (data) {
+      return data.response.numFound;
+    })
+    .catch(handleError);
+}
+
+function createUrl (params) {
+  if (!_.has(params, 'rows')) params['rows'] = '100';
+  if (!_.has(params, 'wt')) params['wt'] = 'json';
+
+  return _.reduce(params, function (url, value, key) {
+    return url + key + '=' + paramsToString(value) + '&';
+  }, config.solr.url + '?').slice(0, -1);
 }
 
 function paramsToString (params) {
@@ -49,9 +72,14 @@ function paramsToString (params) {
   }, '');
 }
 
+function handleError (err) {
+  console.error('[API] [error]', err.name, err.statusCode, err.message);
+}
+
 module.exports = {
   query: query,
   relations: relations,
   ways: ways,
-  nodes: nodes
+  nodes: nodes,
+  handleError: handleError
 };

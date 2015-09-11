@@ -6,10 +6,12 @@ import Html.Attributes exposing (..)
 import Signal exposing (Address)
 import String exposing (contains, toLower)
 
-import Model exposing (River)
+import Model exposing (..)
 import Map
 
 import Utils
+
+import Graphics.Element exposing (show)
 
 
 -- MODEL
@@ -19,30 +21,36 @@ filterRivers term rivers =
   let
     isMatching : String -> River -> Bool
     isMatching term' river =
-      ((toLower river.name) |> contains term') ||
-      (river.countries
-        |> List.map toLower
-        |> List.filter (contains term')
-        |> List.length
-        |> (<) 0
-      )
+      ((toLower river.name) |> contains term')
+      --|| (river.countries
+      --  |> List.map toLower
+      --  |> List.filter (contains term')
+      --  |> List.length
+      --  |> (<) 0
+      --)
   in
     rivers |> List.filter (term |> toLower |> isMatching)
 
 
 -- VIEW
 
-riversList : List River -> Html
-riversList rivers =
+riversList : Address Action -> List River -> Html
+riversList address rivers =
   let
-    riverItems = List.map riverItem rivers
+    riverItems =
+      rivers
+        |> List.map (riverItem address)
   in
     section [ class "rivers-list" ] riverItems
 
-riverItem : River -> Html
-riverItem river =
+riverItem : Address Action -> River -> Html
+riverItem address river =
   article [ class "river" ]
-    [ h2 [ ] [ a [ href ("river/" ++ river.id) ] [ text river.name ] ]
+    [ h2 [ ]
+      [ a [ onClick address (ShowRiver river.id) ]
+      --[ a [ href ("river/" ++ river.id) ]
+        [ text river.name ]
+      ]
     --, ul [ ]
     --    [ li [ ]
     --      [ text ( Utils.join ", " river.countries )
@@ -51,5 +59,5 @@ riverItem river =
     --    , li [ ] [ text ("Direct: " ++ (toString river.directLength) ++ " km") ]
     --    , li [ ] [ text ("Sinuosity: " ++ (toString river.sinuosity)) ]
     --    ]
-    , Map.river river
+    --, Map.river river
     ]

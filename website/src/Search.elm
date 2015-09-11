@@ -9,7 +9,9 @@ import String exposing (contains, toLower, isEmpty)
 import Model exposing (..)
 import River exposing (filterRivers, riversList)
 
-import Utils
+import Utils exposing (onInput)
+
+import Api
 
 
 -- VIEW
@@ -18,7 +20,7 @@ search : Address Action -> Model -> Html
 search address model =
   div [ class "search" ]
     [ searchForm address model
-    , searchResults model
+    , searchResults address model
     ]
 
 searchForm : Address Action -> Model -> Html
@@ -26,18 +28,18 @@ searchForm address model =
   let
     searchTitle =
       [ text "Search the "
-      , text (model.rivers |> List.length |> toString)
+      , text (model.searchResults |> List.length |> toString)
       , text " rivers in the database"
       ]
     showingTitle =
       [ text "Showing "
       , text
-        ( filterRivers model.searchInput model.rivers
+        ( filterRivers model.searchInput model.searchResults
           |> List.length
           |> toString
         )
       , text " of "
-      , text (model.rivers |> List.length |> toString)
+      , text (model.searchResults |> List.length |> toString)
       , text " rivers in the database"
       ]
     title =
@@ -49,23 +51,23 @@ searchForm address model =
       [ h2 [ ] title
       , input
         [ type' "search"
-        , placeholder "e.g. \"Amazon\", \"Brazil\""
+        , placeholder "e.g. \"Amazon\", \"Orinoco\""
         , value model.searchInput
-        , Utils.onInput address UpdateSearchInput
+        , onInput address Search
         ]
         [ ]
       ]
 
-searchResults : Model -> Html
-searchResults model =
+searchResults : Address Action -> Model -> Html
+searchResults address model =
   let
     results : List River
     results =
       if not (isEmpty model.searchInput)
-        then model.rivers |> filterRivers model.searchInput
-        else model.rivers
+        then model.searchResults |> filterRivers model.searchInput
+        else model.searchResults
   in
     results
-      |> List.sortBy .realLength
-      |> List.reverse
-      |> riversList
+    --  --|> List.sortBy .realLength
+    --  --|> List.reverse
+      |> riversList address

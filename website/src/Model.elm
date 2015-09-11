@@ -1,36 +1,62 @@
 module Model where
 
+import Api
+
+
 type Action
   = NoOp
-  | UpdateSearchInput String
-  | ChangeUrl String
+
+  -- Actions
+  | Search String
+  | ShowRiver Int
+  | Visit String
+
+  -- Side Effects
+  | UpdateSearchResults (Maybe (List River))
+  | UpdateRiver (Maybe River)
+
 
 type alias River =
-  { id : String
+  { id : Int
   , name : String
-  , countries : List String
-  , coords : List Coord
-  , bounds : Bound
-  , sinuosity : Float
-  , realLength : Float
-  , directLength : Float
+  , nameEn : String
+  --, countries : List String
+  --, coords : List Coord
+  --, bounds : Bound
+  --, sinuosity : Float
+  --, realLength : Float
+  --, directLength : Float
   }
+
 
 type alias Coord =
   { lat : Float
   , lon : Float
   }
 
+
 type alias Bound =
   { northEast : Coord
   , southWest : Coord
   }
 
+
 type alias Model =
   { url : String
-  , rivers : List River
+  , searchResults : List River
   , searchInput : String
+  , river : Maybe River
   }
+
+
+empty : Model
+empty =
+  { url = "/"
+  , searchResults = []
+  , searchInput = ""
+  , river = Nothing
+  }
+
 
 normaliseCoord : Coord -> Coord
 normaliseCoord { lat, lon } =

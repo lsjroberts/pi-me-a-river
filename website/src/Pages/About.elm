@@ -6,7 +6,6 @@ import Signal exposing (Address)
 import Markdown
 
 import Model exposing (..)
-import Search exposing (..)
 
 import Partials
 
