@@ -5,8 +5,13 @@ import Api
 
 type Action
   = NoOp
-  | UpdateSearchInput String
-  | ChangeUrl String
+
+  -- Actions
+  | Search String
+  | ShowRiver Int
+  | Visit String
+
+  -- Side Effects
   | UpdateSearchResults (Maybe (List River))
   | UpdateRiver (Maybe River)
 

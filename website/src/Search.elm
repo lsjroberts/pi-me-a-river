@@ -53,7 +53,7 @@ searchForm address model =
         [ type' "search"
         , placeholder "e.g. \"Amazon\", \"Orinoco\""
         , value model.searchInput
-        , onInput address UpdateSearchInput
+        , onInput address Search
         ]
         [ ]
       ]

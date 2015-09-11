@@ -33,8 +33,8 @@ navigation : Address Action -> Model -> Html
 navigation address model =
   nav [ ]
     [ ul [ ]
-      [ li [ ] [ a [ onClick address (ChangeUrl "/docs") ] [ text "API Documentation" ] ]
-      , li [ ] [ a [ onClick address (ChangeUrl "/data") ] [ text "Data & Resources" ] ]
-      , li [ ] [ a [ onClick address (ChangeUrl "/about") ] [ text "About" ] ]
+      [ li [ ] [ a [ onClick address (Visit "/docs") ] [ text "API Documentation" ] ]
+      , li [ ] [ a [ onClick address (Visit "/data") ] [ text "Data & Resources" ] ]
+      , li [ ] [ a [ onClick address (Visit "/about") ] [ text "About" ] ]
       ]
     ]

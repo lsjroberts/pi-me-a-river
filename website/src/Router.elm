@@ -6,6 +6,7 @@ import Signal exposing (Address)
 import Model exposing (Model, Action)
 
 import Pages.Index
+import Pages.River
 import Pages.About
 import Pages.Docs
 import Pages.Data
@@ -17,6 +18,7 @@ view address model =
       case model.url of
         "" -> Pages.Index.view
         "/" -> Pages.Index.view
+        "/river" -> Pages.River.view
         "/about" -> Pages.About.view
         "/data" -> Pages.Data.view
         "/docs" -> Pages.Docs.view

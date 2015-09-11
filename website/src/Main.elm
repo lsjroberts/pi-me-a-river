@@ -60,19 +60,37 @@ update action model =
       , Effects.none
       )
 
-    UpdateSearchInput contents ->
+    -- Actions
+    Search name ->
       let
-        log = Debug.log "UpdateSearchInput" contents
-        task =
-          Api.search contents
+        searchTask =
+          Api.search name
             |> Task.toMaybe
             |> Task.map UpdateSearchResults
             |> Effects.task
       in
-        ( { model | searchInput <- contents }
-        , task
+        ( { model | searchInput <- name }
+        , searchTask
         )
 
+    ShowRiver id ->
+      let
+        findTask =
+          Api.find id
+            |> Task.toMaybe
+            |> Task.map UpdateRiver
+            |> Effects.task
+      in
+        ( { model | url <- "/river" }
+        , findTask
+        )
+
+    Visit url ->
+      ( { model | url <- url }
+      , Effects.none
+      )
+
+    -- Side Effects
     UpdateSearchResults maybeRivers ->
       let
         log = Debug.log "UpdateSearchResults" maybeRivers
@@ -88,14 +106,6 @@ update action model =
         log = Debug.log "UpdateRiver" maybeRiver
       in
         ( { model | river <- maybeRiver }
-        , Effects.none
-        )
-
-    ChangeUrl url ->
-      let
-        log = Debug.log "ChangeUrl" url
-      in
-        ( { model | url <- url }
         , Effects.none
         )
 

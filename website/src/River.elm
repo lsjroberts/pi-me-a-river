@@ -47,7 +47,8 @@ riverItem : Address Action -> River -> Html
 riverItem address river =
   article [ class "river" ]
     [ h2 [ ]
-      [ a [ onClick address (ChangeUrl ("river/" ++ river.id)) ]
+      [ a [ onClick address (ShowRiver river.id) ]
+      --[ a [ href ("river/" ++ river.id) ]
         [ text river.name ]
       ]
     --, ul [ ]
