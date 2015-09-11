@@ -72,13 +72,13 @@ search : String -> Task String (List River)
 search name =
   let
     url =
-      "http://localhost:3000/api/1.0/search?name=" ++ name
+      "http://localhost:3000/api/1.0/search?name=" ++ name ++ "*"
     handleError =
       mapError (always "Nothing found")
     validate =
-      if String.length name >= 4
+      if String.length name >= 2
         then succeed url
-        else fail "Need 4 or more chars"
+        else fail "Need 2 or more chars"
   in
     validate `andThen` (handleError << Http.get rivers)
 
