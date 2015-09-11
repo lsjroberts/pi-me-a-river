@@ -10,6 +10,9 @@ app.use(logger('[:date] :remote-addr :method :url :status :response-time ms - :r
 // Routes
 app.use('/api/1.0/', require('./api/src'));
 app.use(express.static('./website/public'));
+app.use('/*', function (req, res) {
+  res.sendFile(__dirname + '/website/public/index.html');
+});
 
 // Listen
 var server = app.listen(3000, function () {
