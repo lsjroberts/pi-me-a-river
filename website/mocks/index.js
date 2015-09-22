@@ -1,0 +1,1 @@
+export { default as MockRivers } from './Rivers';
