@@ -1,8 +1,7 @@
 import React from 'react';
-import App from './containers/App';
-import './styles/main.scss';
+import AppProvider from './containers/AppProvider';
 
 React.render(
-  <App />,
+  <AppProvider />,
   document.getElementById('root')
 );

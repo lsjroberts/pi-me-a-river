@@ -1,0 +1,19 @@
+@import '../config/colors';
+
+.site-header {
+  margin: 0 0 100px 0;
+  padding: 20px 0 30px;
+  text-align: center;
+
+  h1 {
+    margin: 0 0 20px 0;
+    font-size: 6rem;
+    line-height: 1.2;
+    color: $color-primary;
+  }
+
+  p {
+    margin: 0;
+    color: $color-primary;
+  }
+}

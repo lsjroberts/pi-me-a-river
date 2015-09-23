@@ -19,14 +19,3 @@ export function clearRivers() {
     type: types.CLEAR_RIVERS
   };
 }
-
-
-// -------
-
-export function changeView(view, params) {
-  return {
-    type: types.CHANGE_VIEW,
-    view,
-    params
-  };
-}

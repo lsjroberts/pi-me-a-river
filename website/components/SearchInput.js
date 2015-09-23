@@ -24,7 +24,7 @@ export default class SearchInput extends Component {
 
   render() {
     return (
-      <section className="search">
+      <section className="search-input">
         <label>Search</label>
         <input name="keywords"
                type="search"

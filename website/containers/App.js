@@ -1,38 +1,57 @@
 import React, { Component } from 'react';
-import { createStore, combineReducers, compose } from 'redux';
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-// import { devTools, persistState } from 'redux-devtools';
-// import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
+import Home from '../views/Home';
+import River from '../views/River';
+import Error404 from '../views/Error404';
 
-import * as reducers from '../reducers';
-import RiverApp from './RiverApp';
+import * as RiverActions from  '../actions/RiverActions';
+import * as views from '../constants/Views';
 
-
-// const finalCreateStore = compose(
-  // devTools(),
-  // persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
-// )(createStore);
-const finalCreateStore = createStore;
-
-const reducer = combineReducers(reducers);
-const store = finalCreateStore(reducer);
-
-if (module.hot) {
-  module.hot.accept('../reducers', () =>
-    store.replaceReducer(combineReducers(require('../reducers')))
-  );
-}
+import '../styles/containers/app.scss';
 
 
-export default class App extends Component {
+class App extends Component {
   render() {
-    return (
-      <div>
-        <Provider store={store}>
-          {() => <RiverApp />}
-        </Provider>
-      </div>
-    );
+    const { view, rivers, actions } = this.props;
+
+    console.log(this.props);
+
+    switch (view) {
+    case views.HOME:
+      return (
+        <Home rivers={rivers} actions={actions} />
+      );
+
+    case views.RIVER:
+      let river = rivers[0];
+
+      return (
+        <River river={river} />
+      );
+
+    default:
+      return (
+        <Error404 />
+      );
+    }
   }
 }
+
+function mapState(state) {
+  console.log('mapState', state);
+
+  return {
+    view: state.view,
+    rivers: state.rivers
+  };
+}
+
+function mapDispatch(dispatch) {
+  return {
+    actions: bindActionCreators(RiverActions, dispatch)
+  };
+}
+
+export default connect(mapState, mapDispatch)(App);

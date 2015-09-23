@@ -1,14 +1,11 @@
 // Vendor
-@import 'vendor/normalize';
+@import '../vendor/normalize';
 
 // Config
-@import 'colors';
+@import '../config/colors';
 
 // Base
 @import 'base';
 @import 'typography';
 @import 'layout';
 @import 'forms';
-
-// Components
-@import 'rivers';

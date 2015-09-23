@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RiverComponent from '../components/River';
 
@@ -13,7 +12,6 @@ export default class River extends Component {
 
     return (
       <section className="view river">
-        <Header />
         <RiverComponent river={river} />
         <Footer />
       </section>

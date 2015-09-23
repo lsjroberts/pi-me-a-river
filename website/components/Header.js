@@ -1,5 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 
+import '../styles/components/header.scss';
+
 export default class Header extends Component {
   render() {
     return (
