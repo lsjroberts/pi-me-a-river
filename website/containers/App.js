@@ -1,56 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import _ from 'lodash';
 
-import Home from '../views/Home';
-import River from '../views/River';
-import Error404 from '../views/Error404';
+import Router from '../components/Router/View';
 
-import * as RiverActions from  '../actions/RiverActions';
-import * as views from '../constants/Views';
+import * as actions from  '../actions';
 
 import '../styles/containers/app.scss';
 
 
 class App extends Component {
   render() {
-    const { view, rivers, actions } = this.props;
+    const { state, actions } = this.props;
 
-    console.log(this.props);
-
-    switch (view) {
-    case views.HOME:
-      return (
-        <Home rivers={rivers} actions={actions} />
-      );
-
-    case views.RIVER:
-      let river = rivers[0];
-
-      return (
-        <River river={river} />
-      );
-
-    default:
-      return (
-        <Error404 />
-      );
-    }
+    return (
+      <Router state={state} actions={actions} />
+    );
   }
 }
 
 function mapState(state) {
   console.log('mapState', state);
 
-  return {
-    view: state.view,
-    rivers: state.rivers
-  };
+  return { state };
 }
 
 function mapDispatch(dispatch) {
+  let mappedActions = {};
+
+  _.each(actions, function(componentActions, component) {
+    mappedActions[component] = bindActionCreators(componentActions, dispatch);
+  });
+
+  console.log('mapDispatch', mappedActions);
+
   return {
-    actions: bindActionCreators(RiverActions, dispatch)
+    actions: mappedActions
   };
 }
 

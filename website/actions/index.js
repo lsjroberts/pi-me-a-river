@@ -1,2 +1,5 @@
-export { default as View } from './ViewActions';
-export { default as River } from './RiverActions';
+import * as search from '../components/Search/Actions';
+
+export {
+  search
+};

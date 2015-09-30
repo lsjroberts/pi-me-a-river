@@ -2,7 +2,7 @@
 
 The website for [Pi Me A River](http://pimeariver.com) provides an easy way to access visualisations of the rivers with basic analysis and comparisons.
 
-## Grunt
+## Install
 
 Ensure you have the correct versions of npm & node installed:
 
@@ -18,6 +18,9 @@ Then install the node packages using:
 ```
 $ npm install --dev
 ```
+
+
+## Grunt
 
 You can install grunt globally using:
 
@@ -35,4 +38,32 @@ And watch the source files to auto build on changes using:
 
 ```
 $ grunt watch
+```
+
+
+## Redux
+
+### State Shape
+
+```
+{
+  "router": {
+    "route": String,
+    "params": [String],
+    "url": String
+  },
+  "search": {
+    "keywords": String,
+    "results": [Int],
+    "isFetching": Boolean,
+  },
+  "river": Int,
+  "rivers": {
+    Int: {
+      "id": Int,
+      "name": String,
+      "nameEn": String
+    }
+  }
+}
 ```

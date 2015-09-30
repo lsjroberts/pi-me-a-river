@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
-import '../styles/components/footer.scss';
+import './styles.scss';
 
 export default class Header extends Component {
   render() {

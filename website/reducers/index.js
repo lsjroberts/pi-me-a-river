@@ -1,2 +1,2 @@
-export { default as view } from './view';
-export { default as rivers } from './rivers';
+export { default as route } from '../components/Router/Reducer';
+export { default as search } from '../components/Search/Reducer';
