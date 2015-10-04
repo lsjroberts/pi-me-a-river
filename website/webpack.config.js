@@ -34,11 +34,12 @@ module.exports = {
       exclude: /node_modules/,
       include: __dirname
     }, {
-      test: /\.scss?$/,
-      loaders: ['style', 'css', 'sass'],
+      test: /\.s?css$/,
+      loaders: ['style', 'css?modules&localIdentName=[name]__[local]___[hash:base64:5]', 'sass'],
       include: [
         path.join(__dirname, 'styles'),
-        path.join(__dirname, 'components')
+        path.join(__dirname, 'components'),
+        path.join(__dirname, 'containers')
       ]
     }]
   }

@@ -1,4 +1,4 @@
 export const SEARCH_RIVERS = 'SEARCH_RIVERS';
 export const REQUEST_RIVERS = 'REQUEST_RIVERS';
 export const RECEIVE_RIVERS = 'RECEIVE_RIVERS';
-export const SEARCH_RIVERS = 'SEARCH_RIVERS';
+export const CLEAR_RIVERS = 'CLEAR_RIVERS';

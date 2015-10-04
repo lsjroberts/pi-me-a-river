@@ -1,5 +1,8 @@
-import * as search from '../components/Search/Actions';
+export const SEARCH = 'SEARCH';
 
-export {
-  search
-};
+function search (term) {
+  return {
+    type: SEARCH,
+    term: term
+  };
+}
