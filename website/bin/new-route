@@ -1,0 +1,97 @@
+#!/usr/bin/env node
+
+var fs = require('fs'),
+    async = require('async'),
+    _ = require('lodash');
+
+var argv = require('yargs')
+  .option('name', {
+    alias: 'n',
+    demand: true,
+    describe: 'route name',
+    type: 'string'
+  })
+
+  // TODO: update to build all components
+  .option('components', {
+    alias: 'c',
+    describe: 'components',
+    type: 'string'
+  })
+
+  .argv;
+
+var camelName = _(argv.name).split('-').map(function (word) {
+  return _.first(word).toUpperCase() + _.rest(word).join('');
+}).join('');
+
+var lowerName = argv.name;
+
+var templatesPath = __dirname + '/_new-route',
+    routePath = __dirname + '/../routes/' + lowerName,
+    templateFiles = [
+      'index.js',
+      'containers/name.js',
+      'components/index.js',
+      'components/name/index.js',
+      'components/name/name.js',
+      'components/name/name.scss'
+    ],
+    routeFiles = [
+      'index.js',
+      'containers/' + lowerName + '.js',
+      'components/index.js',
+      'components/' + lowerName + '/index.js',
+      'components/' + lowerName + '/' + lowerName + '.js',
+      'components/' + lowerName + '/' + lowerName + '.scss'
+    ];
+
+async.waterfall([
+  function (next) {
+    async.map(
+      [
+        __dirname + '/../routes/' + lowerName,
+        __dirname + '/../routes/' + lowerName + '/components',
+        __dirname + '/../routes/' + lowerName + '/containers',
+        __dirname + '/../routes/' + lowerName + '/components/' + lowerName
+      ],
+      function (dir, then) {
+        fs.mkdir(dir, then);
+      },
+      function (err, dirs) {
+        next(err);
+      }
+    );
+  },
+  function (next) {
+    async.map(
+      templateFiles,
+      function (template, then) {
+        fs.readFile(templatesPath + '/' + template, then);
+      },
+      function (err, templates) {
+        var camelRegex = new RegExp('\{\{Name\}\}', 'g'),
+            lowerRegex = new RegExp('\{\{name\}\}', 'g');
+
+        var index = 0;
+
+        async.map(
+          templates,
+          function (template, then) {
+            var compiled = template.toString()
+              .replace(camelRegex, camelName)
+              .replace(lowerRegex, lowerName.toLowerCase());
+
+            fs.writeFile(routePath + '/' + routeFiles[index++], compiled, then);
+          },
+          function (err) {
+            next(err);
+          }
+        );
+      }
+    );
+  }
+], function (err) {
+  if (err) throw err;
+  console.log('Created route "' + lowerName + '"');
+});

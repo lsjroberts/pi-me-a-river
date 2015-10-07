@@ -1,0 +1,1 @@
+export { Term as SearchTerm } from './search/reducers';

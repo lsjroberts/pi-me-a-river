@@ -1,0 +1,11 @@
+.default {
+  padding: 0.6em 0.6em;
+  border: 1px solid #dddddd;
+  font-family: "Arvo", serif;
+  font-size: 18px;
+
+  &:focus {
+    border: 1px dotted #5FDB80;
+    outline: none;
+  }
+}
