@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './formgroup.scss';
+import styles from './formGroup.scss';
 
 export default class FormGroup extends Component {
   render() {

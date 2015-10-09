@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-import styles from './textinput.scss';
+import styles from './textInput.scss';
 
 export default class TextInput extends Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    type: PropTypes.string
+  };
 
-    this.props.type = this.props.type || 'text';
-  }
+  static defaultProps = {
+    type: 'text'
+  };
 
   render() {
     const { type, value, placeholder } = this.props;

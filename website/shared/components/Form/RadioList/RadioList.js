@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Label, Radio } from '../';
-import styles from './radiolist.scss';
+import styles from './radioList.scss';
 
 export default class RadioList extends Component {
   render() {

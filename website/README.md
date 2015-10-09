@@ -19,45 +19,26 @@ Then install the node packages using:
 $ npm install --dev
 ```
 
-
-## Grunt
-
-You can install grunt globally using:
+And finally start the server with:
 
 ```
-$ npm install --global grunt
-```
-
-You should then be able to run the build process with:
-
-```
-$ grunt build
-```
-
-And watch the source files to auto build on changes using:
-
-```
-$ grunt watch
+$ npm start
 ```
 
 
 ## Redux
 
-### State Shape
+### State
 
 ```
 {
-  "router": {
-    "route": String,
-    "params": [String],
-    "url": String
-  },
   "search": {
-    "keywords": String,
+    "term": String,
     "results": [Int],
     "isFetching": Boolean,
   },
   "river": Int,
+  "compare": [Int],
   "rivers": {
     Int: {
       "id": Int,
@@ -66,4 +47,43 @@ $ grunt watch
     }
   }
 }
+```
+
+
+## Project
+
+```
+website/
+  modules/
+    rivers/
+  routes/
+    home/
+      index.js
+      containers/
+        home.js
+      components/
+        header.js
+        searchForm.js
+        footer.js
+    search/
+      index.js
+      containers/
+        search.js
+      components/
+        advancedSearchForm.js
+    river/
+      index.js
+      containers/
+      components/
+        header.js
+        map.js
+        charts.js
+        footer.js
+    compare/
+      index.js
+      containers/
+      components/
+  index.html
+  index.js
+  server.js
 ```

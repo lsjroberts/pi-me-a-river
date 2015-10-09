@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import styles from './button.scss';
 
 export default class Button extends Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    style: PropTypes.string
+  };
 
-    this.props.style = this.props.style || 'default';
-  }
+  static defaultProps = {
+    style: 'default'
+  };
 
   render() {
     const { style, children } = this.props;

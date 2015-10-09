@@ -1,3 +1,6 @@
+export { default as Home } from './containers/Home';
+
+/*
 var HomeRoute = {
   path: 'home',
 
@@ -13,8 +16,9 @@ var HomeRoute = {
     require.ensure([], function (require) {
       next(null, [
         require('./containers/home'),
-        require('./components/home')
+        require('./components')
       ]);
     })
   }
 }
+*/

@@ -12,7 +12,9 @@ export default class Home extends Component {
 
   render() {
     const { state } = this.props;
-    const { term, rivers } = state;
+    // const { term, rivers } = state;
+    const term = '';
+    const rivers = [];
 
     return (
       <section>

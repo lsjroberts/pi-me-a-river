@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import { Content } from '../../../shared/layout';
+import { Content } from '../../../../shared/components/layout';
 import {
   Form,
   FormGroup,
   Label,
   TextInput,
   Button
-} from '../../../shared/form';
+} from '../../../../shared/components/form';
 
 import styles from './search.scss';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './listitem.scss';
+import styles from './listItem.scss';
 
 export default class ListItem extends Component {
   render() {
