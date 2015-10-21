@@ -1,12 +1,10 @@
 import { routerStateReducer as router } from 'redux-router';
+import * as modules from '../modules/reducers';
 import { combineReducers } from 'redux';
 
-// export default function (state = '', actions) {
-//   return state;
-// }
-
 export default combineReducers({
-  router
+  router,
+  modules
 });
 
 

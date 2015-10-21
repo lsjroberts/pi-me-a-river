@@ -10,7 +10,7 @@ export default class Nav extends Component {
 
     return (
       <nav className={styles.default}>
-        <List style="clean">{children}</List>
+        <List style="clean-inline">{children}</List>
       </nav>
     );
   }

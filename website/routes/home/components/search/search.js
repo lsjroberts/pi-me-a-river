@@ -1,40 +1,34 @@
 import React, { Component } from 'react';
 
-import { Content } from '../../../../shared/components/layout';
+import { Wrapper } from '../../../../shared/components/Layout';
 import {
   Form,
   FormGroup,
   Label,
   TextInput,
   Button
-} from '../../../../shared/components/form';
+} from '../../../../shared/components/Form';
 
-import styles from './search.scss';
+// import styles from './search.scss';
 
 export default class Search extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  handleChange(e) {
-
-  }
-
   render() {
     const { term } = this.props;
 
+    console.log(this.props);
+
     return (
-      <section className={styles.default}>
-        <Content>
-          <Form>
+      <Wrapper>
+        <Form onSubmit={this.props.onSubmit}>
+          <FormGroup>
             <TextInput
               placeholder="Search"
               value={term}
-              onChange={e => this.handleChange(e)}
+              onChange={this.props.onChange}
             />
-          </Form>
-        </Content>
-      </section>
+          </FormGroup>
+        </Form>
+      </Wrapper>
     );
   }
 }

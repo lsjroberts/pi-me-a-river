@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { P, A } from '../../../../shared/typography';
-import { Nav } from '../../../../shared/layout';
+import { P, A } from '../../../../shared/components/Typography';
+import { Nav } from '../../../../shared/components/Layout';
 
 import styles from './footer.scss';
 

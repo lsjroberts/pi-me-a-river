@@ -6,8 +6,12 @@ export default class ListItem extends Component {
   render() {
     const { children } = this.props;
 
+    let style = (this.props.style && styles[this.props.style])
+      ? this.props.style
+      : 'default';
+
     return (
-      <li className={styles.default}>
+      <li className={styles[style]}>
         {children}
       </li>
     );

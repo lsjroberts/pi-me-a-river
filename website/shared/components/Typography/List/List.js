@@ -20,7 +20,7 @@ export default class List extends Component {
       <ul className={styles[style]}>
         {children.map(child => {
           return (
-            <ListItem>{child}</ListItem>
+            <ListItem style={style}>{child}</ListItem>
           );
         })}
       </ul>

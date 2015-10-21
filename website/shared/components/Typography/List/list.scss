@@ -7,6 +7,11 @@
   list-style: none;
 }
 
+.clean-inline {
+  @extends .clean;
+  display: inline-block;
+}
+
 .numbered {
   list-style: decimal;
 }
