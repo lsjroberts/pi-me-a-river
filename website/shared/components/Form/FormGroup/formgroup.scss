@@ -1,0 +1,31 @@
+.block {
+  margin: 1.625rem 0;
+
+  label {
+    margin-bottom: 0.8125rem;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+
+  button + button {
+    margin-left: 1rem;
+  }
+}
+
+.inline {
+  margin: 1.625rem 0;
+
+  label {
+    display: inline-block;
+    width: 30%;
+  }
+
+  input,
+  select {
+    display: inline-block;
+    width: 70%;
+  }
+}

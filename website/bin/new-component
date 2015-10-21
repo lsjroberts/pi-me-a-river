@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var fs = require('fs'),
+    async = require('async'),
+    _ = require('lodash');
+
+var argv = require('yargs')
+  .option('name', {
+    alias: 'n',
+    demand: true,
+    describe: 'component name',
+    type: 'string'
+  })
+  .argv;
+
+var templatesPath = __dirname + '/_new-component',
+    componentPath = __dirname + '/../components/' + argv.name,
+    templateFiles = ['Component.js', 'component.scss', 'index.js'],
+    componentFiles = [argv.name + '.js', argv.name.toLowerCase() + '.scss', 'index.js'];
+
+fs.mkdir(__dirname + '/../components/' + argv.name, function () {
+  async.map(
+    templateFiles,
+    function (template, next) {
+      fs.readFile(templatesPath + '/' + template, next);
+    },
+    function (err, templates) {
+      var capitalisedRegex = new RegExp('\{\{Component\}\}', 'g'),
+          lowercaseRegex = new RegExp('\{\{component\}\}', 'g');
+
+      var index = 0;
+
+      async.map(
+        templates,
+        function (template, next) {
+          var compiled = template.toString()
+            .replace(capitalisedRegex, argv.name)
+            .replace(lowercaseRegex, argv.name.toLowerCase());
+
+          fs.writeFile(componentPath + '/' + componentFiles[index++], compiled, next);
+        },
+        function (err) {
+          if (err) {
+            return console.error(err);
+          }
+
+          console.log('Created', componentFiles);
+        }
+      );
+    }
+  );
+});

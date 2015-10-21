@@ -1,0 +1,15 @@
+.default {
+
+}
+
+.clean-inline {
+  display: inline-block;
+
+  &:not(:first-child) {
+    margin-left: 1em;
+  }
+
+  &:not(:last-child) {
+    margin-right: 1em;
+  }
+}

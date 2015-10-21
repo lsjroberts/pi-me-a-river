@@ -1,0 +1,22 @@
+@import '../../styles/config/colors';
+
+.header {
+  margin: 0 0 100px 0;
+  padding: 20px 0 30px;
+  text-align: center;
+
+  h1 {
+    margin: 0 auto 20px;
+    width: 80%;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: $color-primary;
+  }
+
+  p {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1rem;
+    color: $color-primary;
+  }
+}

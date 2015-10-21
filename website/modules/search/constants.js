@@ -1,0 +1,2 @@
+export const TERM_UPDATE = 'TERM_UPDATE';
+export const RESULTS_UPDATE = 'RESULTS_UPDATE';

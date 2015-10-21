@@ -2,25 +2,7 @@
 
 The website for [Pi Me A River](http://pimeariver.com) provides an easy way to access visualisations of the rivers with basic analysis and comparisons.
 
-It is written in [Elm](http://elm-lang.org) with a [Grunt](http://gruntjs.com/) build process.
-
-## Elm
-
-Ensure you have the correct version of elm:
-
-```
-$ elm
-Elm Platform 0.15.1 - a way to run all Elm tools
-...
-```
-
-Then install the elm packages using:
-
-```
-$ elm package install
-```
-
-## Grunt
+## Install
 
 Ensure you have the correct versions of npm & node installed:
 
@@ -37,20 +19,71 @@ Then install the node packages using:
 $ npm install --dev
 ```
 
-You can install grunt globally using:
+And finally start the server with:
 
 ```
-$ npm install --global grunt
+$ npm start
 ```
 
-You should then be able to run the build process with:
+
+## Redux
+
+### State
 
 ```
-$ grunt build
+{
+  "search": {
+    "term": String,
+    "results": [Int],
+    "isFetching": Boolean,
+  },
+  "river": Int,
+  "compare": [Int],
+  "rivers": {
+    Int: {
+      "id": Int,
+      "name": String,
+      "nameEn": String
+    }
+  }
+}
 ```
 
-And watch the source files to auto build on changes using:
+
+## Project
 
 ```
-$ grunt watch
+website/
+  modules/
+    rivers/
+  routes/
+    home/
+      index.js
+      containers/
+        home.js
+      components/
+        header.js
+        searchForm.js
+        footer.js
+    search/
+      index.js
+      containers/
+        search.js
+      components/
+        advancedSearchForm.js
+    river/
+      index.js
+      containers/
+      components/
+        header.js
+        map.js
+        charts.js
+        footer.js
+    compare/
+      index.js
+      containers/
+      components/
+  index.html
+  index.js
+  server.js
 ```
